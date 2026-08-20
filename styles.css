@@ -539,6 +539,103 @@ code {
   object-position: center;
 }
 
+.llm-comparison-content {
+  flex-direction: column;
+  gap: 16px;
+}
+
+.llm-selection-row {
+  display: grid;
+  grid-template-columns: 1.55fr 0.75fr;
+  gap: 24px;
+  flex: 0 0 170px;
+}
+
+.llm-selection-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  padding: 14px 24px;
+  border: 2px solid var(--navy);
+  border-radius: 28px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.llm-selection-box__label {
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.llm-selection-box__models {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+  color: var(--blue-text);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.llm-selection-box__models span {
+  display: grid;
+  place-items: center;
+  min-height: 58px;
+  padding: 8px;
+  border-radius: 10px;
+  background: var(--paper-soft);
+}
+
+.llm-selection-box__models img {
+  display: block;
+  width: 100%;
+  height: 62px;
+  object-fit: contain;
+}
+
+.llm-selection-box--selected {
+  padding-inline: 18px;
+}
+
+.llm-selection-box--selected .llm-selection-box__label {
+  margin-bottom: 2px;
+}
+
+.llm-selection-box__selected-name {
+  color: #4285f4;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.llm-selection-box__selected-name img {
+  display: block;
+  width: 190px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.llm-selection-box__detail {
+  margin-top: 8px;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.llm-comparison-content .diagram-frame {
+  min-height: 0;
+  border: 0;
+  box-shadow: none;
+}
+
 /* ================================================================
    AI-GENERATION CONVENTIONS
    ================================================================
@@ -3431,6 +3528,104 @@ code {
   font-size: 22px;
   line-height: 1.5;
   margin: 0;
+}
+
+/* Embedding model selection slide */
+.slide-content--embedding {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  height: 100%;
+}
+
+.embedding-model-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.embedding-model-box {
+  min-height: 108px;
+  padding: 18px 24px;
+  border: 2px solid var(--line);
+  border-top: 7px solid var(--navy);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.embedding-model-box--selected {
+  border-color: var(--gold);
+  border-top-color: var(--gold);
+  background: rgba(198, 164, 74, 0.1);
+}
+
+.embedding-model-box__label {
+  margin-bottom: 8px;
+  color: var(--navy);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.embedding-model-box__value {
+  color: var(--blue-text);
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.embedding-model-box--selected .embedding-model-box__value {
+  color: var(--navy);
+  font-weight: 800;
+}
+
+.embedding-model-box__rationale {
+  margin-top: 7px;
+  color: var(--blue-muted);
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.embedding-table {
+  max-width: none;
+  font-size: 16px;
+}
+
+.embedding-table th {
+  padding: 9px 14px;
+  font-size: 17px;
+}
+
+.embedding-table td {
+  padding: 8px 14px;
+  line-height: 1.22;
+}
+
+.embedding-table th:first-child,
+.embedding-table td:first-child {
+  width: 23%;
+}
+
+.embedding-table th:nth-child(2),
+.embedding-table td:nth-child(2) {
+  width: 41%;
+}
+
+.embedding-callout {
+  padding: 12px 22px;
+}
+
+.embedding-callout .goal-panel-horizontal__text {
+  font-size: 15px;
+  line-height: 1.22;
+}
+
+.embedding-sources {
+  margin-top: auto;
+  color: var(--blue-muted);
+  font-size: 14px;
 }
 
 .timeline-2row-wrapper {

@@ -248,6 +248,165 @@
       </section>
 
       <!-- =========================================================
+         SLIDE 6A · LLM MODEL COMPARISON
+         ========================================================= -->
+      <section class="slide slide--content slide--diagram" data-slide="content">
+        <header class="slide-header">
+          <div class="brand-mark">
+            <div class="brand-mark__icon">▤</div>
+            <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
+          </div>
+          <div class="slide-title">
+            <span class="slide-title__en">LLM Model Comparison</span>
+          </div>
+          <div class="org-mark">GDCE</div>
+        </header>
+        <div class="gold-rule"></div>
+        <div class="slide-body">
+          <div class="slide-content llm-comparison-content">
+            <div class="llm-selection-row">
+              <div class="llm-selection-box">
+                <div class="llm-selection-box__label">Tested LLM</div>
+                <div class="llm-selection-box__models">
+                  <span>
+                    <img src="img/deepseek-color.svg" alt="DeepSeek" />
+                  </span>
+                  <span>
+                    <img src="img/openai-color.svg" alt="ChatGPT" />
+                  </span>
+                  <span>
+                    <img src="img/gemini-color.svg" alt="Gemini" />
+                  </span>
+                  <span>
+                    <img src="img/claude-color.svg" alt="Claude" />
+                  </span>
+                </div>
+              </div>
+              <div class="llm-selection-box llm-selection-box--selected">
+                <div class="llm-selection-box__label">Selected LLM:</div>
+                <div class="llm-selection-box__selected-name">
+                  <img src="img/gemini-color.svg" alt="Gemini" />
+                </div>
+                <div class="llm-selection-box__detail">
+                  Gemini 3.7 Flash and 3.5 Flash Lite
+                </div>
+              </div>
+            </div>
+            <div class="diagram-frame">
+              <img
+                src="img/llm.png"
+                alt="LLM model comparison benchmarks for intelligence, speed, and cost per task" />
+            </div>
+          </div>
+        </div>
+        <footer class="slide-footer">
+          <div class="footer-left">
+            Multi-domain Customs Artificial Intelligent Assistant &middot; GDCE
+          </div>
+          <div class="page-number">6A</div>
+        </footer>
+      </section>
+
+      <!-- =========================================================
+         SLIDE 6B · EMBEDDING MODEL SELECTION
+         ========================================================= -->
+      <section
+        class="slide slide--content slide--embedding-selection"
+        data-slide="content">
+        <header class="slide-header">
+          <div class="brand-mark">
+            <div class="brand-mark__icon">▤</div>
+            <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
+          </div>
+          <div class="slide-title">
+            <span class="slide-title__en">Embedding Model Selection</span>
+          </div>
+          <div class="org-mark">GDCE</div>
+        </header>
+        <div class="gold-rule"></div>
+        <div class="slide-body">
+          <div class="slide-content slide-content--embedding">
+            <div class="embedding-model-boxes">
+              <div class="embedding-model-box">
+                <div class="embedding-model-box__label">Research Models Evaluated</div>
+                <div class="embedding-model-box__value">
+                  BGE-M3 <span aria-hidden="true">&middot;</span> Jina-Embeddings-v3
+                  <span aria-hidden="true">&middot;</span> Qwen3-Embedding
+                  <span aria-hidden="true">&middot;</span> LaBSE
+                </div>
+              </div>
+              <div class="embedding-model-box embedding-model-box--selected">
+                <div class="embedding-model-box__label">Selected Model</div>
+                <div class="embedding-model-box__value">BAAI/bge-m3</div>
+              </div>
+            </div>
+
+            <table class="data-table embedding-table">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Strength</th>
+                  <th>Limitation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>BGE-M3</strong> &#9989;</td>
+                  <td>Best Khmer retrieval accuracy; dense + sparse + multi-vector</td>
+                  <td>Not top-ranked on general multilingual benchmarks (BEIR, Italian) &mdash; mE5-L scores higher there</td>
+                </tr>
+                <tr>
+                  <td><strong>Jina-Embeddings-v3</strong></td>
+                  <td>Task-specific adapters, ~90 languages; highest raw cosine similarity (0.759)</td>
+                  <td>Lower Khmer Hit Rate (0.135 vs. 0.285) despite high similarity scores</td>
+                </tr>
+                <tr>
+                  <td><strong>Qwen3-Embedding</strong></td>
+                  <td>Compact (597M), multilingual semantic search</td>
+                  <td>Lower Khmer Hit Rate (0.175) and File Hit Rate (52.5% vs. 70%)</td>
+                </tr>
+                <tr>
+                  <td><strong>LaBSE</strong></td>
+                  <td>Strong short cross-lingual sentence pairs</td>
+                  <td>Trained for symmetric sentence-pair alignment, not asymmetric query&ndash;passage relevance &mdash; wrong objective for retrieval</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="goal-panel-horizontal embedding-callout">
+              <div class="goal-panel-horizontal__label">Why BGE-M3</div>
+              <p class="goal-panel-horizontal__text">
+                BGE-M3 is not the top performer on general multilingual
+                benchmarks &mdash; but it is the best-performing model
+                specifically for Khmer retrieval. At k=3, it achieves more than
+                double the Hit Rate of Jina v3 (0.285 vs. 0.135) and outperforms
+                Qwen3-Embedding by 63% (0.285 vs. 0.175). At the file level, it
+                retrieves the correct source file 70% of the time, vs. 52.5%
+                (Qwen3-Embedding) and 48.5% (Jina v3). Notably, Jina v3 scored
+                highest on raw top-1 cosine similarity (0.759) yet had the worst
+                retrieval accuracy &mdash; a reminder that similarity score is
+                not the same as retrieval correctness. Selection criterion: best
+                performance for Khmer specifically, not overall leaderboard
+                rank.
+              </p>
+            </div>
+
+            <div class="embedding-sources">
+              Khmer benchmark (BGE-M3, Jina v3, Qwen3-Embedding):
+              arxiv.org/abs/2605.22099 &middot; General multilingual context
+              (BGE-M3 vs. mE5-L, LaBSE): arxiv.org/abs/2605.23618
+            </div>
+          </div>
+        </div>
+        <footer class="slide-footer">
+          <div class="footer-left">
+            Multi-domain Customs Artificial Intelligent Assistant &middot; GDCE
+          </div>
+          <div class="page-number">6B</div>
+        </footer>
+      </section>
+
+      <!-- =========================================================
          SLIDE 6 · SECTION 3
          ========================================================= -->
       <section class="slide slide--section" data-slide="section">
