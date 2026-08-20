@@ -3432,32 +3432,21 @@ code {
   line-height: 1.5;
   margin: 0;
 }
-/* ================================================================
-   NEW Slide 8: 7 Stages Timeline (Orchestrator Deep Dive)
-   ================================================================ */
-/* ================================================================
-   NEW Slide 8: 2-Row Process Flow Grid (Enlarged Cards)
-   ================================================================ */
+
 .timeline-2row-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Tighter gap to balance 3 rows */
+  justify-content: center;
+  gap: 26px; /* was 22px */
   width: 100%;
-  padding: 10px 0;
   box-sizing: border-box;
 }
 
-.timeline-row-1 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 24px;
-  width: 100%;
-}
-
+.timeline-row-1,
 .timeline-row-2 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px; /* was 22px */
   width: 100%;
 }
 
@@ -3466,9 +3455,8 @@ code {
   justify-content: center;
   width: 100%;
 }
-
 .timeline-row-3 .timeline-column-large {
-  width: calc(33.333% - 16px); /* Centers the 7th stage aligned with the grid column widths */
+  width: calc(33.333% - 17.3px);
 }
 
 .timeline-column-large {
@@ -3480,54 +3468,50 @@ code {
 
 .timeline-card-large {
   background: #ffffff;
-  border: 2px solid var(--stage-color); /* Full solid border in stage color */
-  border-radius: 14px;
-  padding: 16px 20px;
+  border: 2px solid var(--stage-color);
+  border-radius: 16px; /* was 14px */
+  padding: 18px 22px; /* was 16px 20px */
   display: flex;
-  flex-direction: row; /* Horizontal flex layout */
-  gap: 20px;
+  flex-direction: row;
+  gap: 20px; /* was 18px */
   align-items: center;
-  box-shadow: 0 6px 20px rgba(7, 61, 82, 0.03);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 18px rgba(7, 61, 82, 0.05);
   box-sizing: border-box;
-  height: 165px; /* Compact height that easily fits horizontal layout */
+  height: 224px; /* was 200px */
   width: 100%;
   position: relative;
 }
 
-.timeline-card-large:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 28px rgba(7, 61, 82, 0.08);
-}
-
 .timeline-card-large__badge {
   color: #ffffff;
-  font-size: 11px;
+  font-size: 13px; /* was 12px */
   font-weight: 800;
   letter-spacing: 0.05em;
-  padding: 4px 16px;
+  padding: 5px 16px; /* was 4px 14px */
   border-radius: 20px;
   text-transform: uppercase;
   background: var(--stage-color);
   position: absolute;
-  top: -13px; /* Centered overlap of top border */
+  top: -13px; /* was -12px */
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  white-space: nowrap;
 }
 
 .timeline-card-large__content-right {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px; /* was 8px */
   flex: 1;
   text-align: left;
+  min-width: 0;
 }
 
 .timeline-card-large__title {
   color: var(--navy);
-  font-size: 19px; /* Highly readable left-aligned title */
+  font-size: 24px; /* was 20px */
   font-weight: 800;
   margin: 0;
   text-align: left;
@@ -3535,14 +3519,14 @@ code {
 }
 
 .timeline-card-large__image-container {
-  width: 130px; /* Square box on the left */
-  height: 130px;
+  width: 168px; /* was 150px */
+  height: 168px; /* was 150px */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-radius: 10px;
-  background: #e0f2fe; /* Soft premium sky-blue background */
+  border-radius: 12px; /* was 10px */
+  background: #e0f2fe;
   border: 1px solid rgba(7, 61, 82, 0.04);
   box-sizing: border-box;
   flex-shrink: 0;
@@ -3551,21 +3535,187 @@ code {
 .timeline-card-large__image-container svg {
   width: 100%;
   height: 100%;
-  padding: 8px; /* Roomier SVG padding inside the blue box */
+  padding: 10px; /* was 8px */
   box-sizing: border-box;
-  transition: transform 0.3s ease;
-}
-
-.timeline-card-large:hover .timeline-card-large__image-container svg {
-  transform: scale(1.05);
 }
 
 .timeline-card-large__text {
   color: var(--blue-text);
-  font-size: 14px; /* Description text */
+  font-size: 18px; /* was 15px */
   line-height: 1.45;
   margin: 0;
   text-align: left;
+}
+/* ================================================================
+   Slide 10: Multi-Turn Ask-Back Flow — all navy palette, full-height
+   ================================================================ */
+.askback-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 1540px;
+  margin: 10px auto 0;
+  box-sizing: border-box;
+}
+
+.askback-card {
+  --accent-color: var(--navy);
+  background: #ffffff;
+  border: 2px solid var(--navy);
+  border-radius: 14px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 6px 18px rgba(7, 61, 82, 0.06);
+  position: relative;
+  height: 660px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.askback-card:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 26px;
+  color: var(--navy);
+  z-index: 10;
+  opacity: 0.5;
+  font-weight: bold;
+}
+
+/* ---- header ---- */
+.askback-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.askback-card__turn {
+  background: var(--navy);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.askback-card__title {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  line-height: 1.25;
+}
+
+.askback-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+  min-height: 0;
+  justify-content: flex-start;
+}
+
+/* ---- chat bubbles: shared base ---- */
+.chat-bubble {
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  flex-shrink: 0;
+}
+
+/* USER REQUEST — no fill, just border accent */
+.chat-bubble--user {
+  background: var(--navy);
+  border-left: none;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.chat-bubble--user .chat-bubble__label {
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.chat-bubble--user .chat-bubble__text {
+  color: #ffffff;
+}
+
+/* SYSTEM RESPONSE — solid navy fill, white text */
+.chat-bubble--system {
+  background: var(--navy);
+  color: #ffffff;
+  margin-top: auto;
+}
+
+.chat-bubble--system .chat-bubble__label {
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.chat-bubble--system .chat-bubble__text {
+  color: #ffffff;
+}
+
+.chat-bubble__label {
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+}
+
+.chat-bubble__text {
+  margin: 0;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+/* ---- process / action notes between the two bubbles ---- */
+.action-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--navy);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+  min-height: 0;
+  overflow-wrap: break-word;
+}
+
+.action-list li {
+  margin: 0;
+}
+
+.action-list code {
+  font-family: var(--font-mono);
+  background: rgba(7, 61, 82, 0.08);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 12.5px;
+  color: var(--navy);
 }
 
 /* ================================================================
