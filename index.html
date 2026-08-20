@@ -270,15 +270,19 @@
                 <div class="llm-selection-box__models">
                   <span>
                     <img src="img/deepseek-color.svg" alt="DeepSeek" />
+                    <small>DeepSeek</small>
                   </span>
                   <span>
                     <img src="img/openai-color.svg" alt="ChatGPT" />
+                    <small>ChatGPT</small>
                   </span>
                   <span>
                     <img src="img/gemini-color.svg" alt="Gemini" />
+                    <small>Gemini</small>
                   </span>
                   <span>
                     <img src="img/claude-color.svg" alt="Claude" />
+                    <small>Claude</small>
                   </span>
                 </div>
               </div>
@@ -290,12 +294,36 @@
                 <div class="llm-selection-box__detail">
                   Gemini 3.7 Flash and 3.5 Flash Lite
                 </div>
+                <div class="llm-selection-box__roles">
+                  3.7 Flash for complex queries; 3.5 Flash Lite for simple,
+                  low-cost fallback routing
+                </div>
               </div>
             </div>
             <div class="diagram-frame">
               <img
                 src="img/llm.png"
                 alt="LLM model comparison benchmarks for intelligence, speed, and cost per task" />
+            </div>
+            <div class="llm-selection-callout">
+              <div class="llm-selection-callout__label">Why Gemini 3.7 Flash</div>
+              <p>
+                Selected for the best speed-cost-intelligence balance &mdash; not
+                the top Intelligence score, but 2x+ faster than any comparable
+                model at a fraction of the cost, which matters for a live
+                citizen-facing chatbot.
+              </p>
+            </div>
+            <div class="llm-selection-source">
+              Source: Artificial Analysis benchmark snapshot, August 2026.
+              Chart controls shown above are part of the static source image and
+              are not interactive.<br />
+              Reference: The Decoder, "Ling 3.0 Flash is the smartest open
+              model at its size" (Aug 13, 2026) &mdash;
+              <a
+                href="https://the-decoder.com/ling-3-0-flash-is-the-smartest-open-model-at-its-size/"
+                target="_blank"
+                rel="noopener noreferrer">the-decoder.com</a>.
             </div>
           </div>
         </div>
@@ -417,6 +445,79 @@
           <div class="section-slide__line"></div>
         </div>
         <div class="page-number">6</div>
+      </section>
+
+      <!-- =========================================================
+         SLIDE 6A · ARCHITECTURE & TECH STACK OVERVIEW
+         ========================================================= -->
+      <section class="slide slide--content slide--stack-overview" data-slide="content">
+        <header class="slide-header">
+          <div class="brand-mark">
+            <div class="brand-mark__icon">▤</div>
+            <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
+          </div>
+          <div class="slide-title">
+            <span class="slide-title__en">Architecture &amp; Tech Stack</span>
+          </div>
+          <div class="org-mark">GDCE</div>
+        </header>
+        <div class="gold-rule"></div>
+        <div class="slide-body">
+          <div class="slide-content slide-content--stack-overview">
+            <table class="stack-overview-table">
+              <thead>
+                <tr>
+                  <th>Layer</th>
+                  <th>Technology</th>
+                  <th>Role</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Backend</td>
+                  <td>Python 3.11&ndash;3.13, FastAPI, Uvicorn, Pydantic</td>
+                  <td>API control plane, validation, orchestration</td>
+                </tr>
+                <tr>
+                  <td>AI / NLU</td>
+                  <td>Google Gemini, Sentence Transformers, PyTorch</td>
+                  <td>Language understanding, generation, embedding workflows</td>
+                </tr>
+                <tr>
+                  <td>RAG / Search</td>
+                  <td>Qdrant, dense embeddings, semantic retrieval</td>
+                  <td>Grounded search across official customs knowledge</td>
+                </tr>
+                <tr>
+                  <td>Data</td>
+                  <td>PostgreSQL + Alembic, Redis</td>
+                  <td>Authoritative state, migrations, caching</td>
+                </tr>
+                <tr>
+                  <td>Integration</td>
+                  <td>httpx / aiohttp, RabbitMQ, MinIO</td>
+                  <td>HTTP services, messaging, object storage</td>
+                </tr>
+                <tr>
+                  <td>Deployment</td>
+                  <td>Docker, Docker Compose, isolated service networks</td>
+                  <td>Environment-based configuration and sovereign deployment</td>
+                </tr>
+                <tr>
+                  <td>Quality</td>
+                  <td>Pytest, pytest-asyncio, Ruff / Black / Flake8, mypy, Prometheus</td>
+                  <td>Testing, formatting, typing, and operational metrics</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <footer class="slide-footer">
+          <div class="footer-left">
+            Multi-domain Customs Artificial Intelligent Assistant &middot; GDCE
+          </div>
+          <div class="page-number">6A</div>
+        </footer>
       </section>
 
       <!-- =========================================================
