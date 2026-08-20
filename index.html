@@ -133,7 +133,8 @@
          ========================================================= -->
       <section
         class="slide slide--content slide--overview-challenges"
-        data-slide="content">
+        data-slide="content"
+      >
         <header class="slide-header">
           <div class="brand-mark">
             <div class="brand-mark__icon">▤</div>
@@ -170,7 +171,8 @@
                 <div class="challenge-card-vertical__image-container">
                   <img
                     src="img/challenge_scattered.jpg"
-                    alt="Information Is Hard to Find" />
+                    alt="Information Is Hard to Find"
+                  />
                 </div>
               </div>
 
@@ -182,7 +184,8 @@
                 <div class="challenge-card-vertical__image-container">
                   <img
                     src="img/challenge_repetitive.jpg"
-                    alt="Too Much Time Spent on Repeated Questions" />
+                    alt="Too Much Time Spent on Repeated Questions"
+                  />
                 </div>
               </div>
 
@@ -194,7 +197,8 @@
                 <div class="challenge-card-vertical__image-container">
                   <img
                     src="img/challenge_inconsistent.jpg"
-                    alt="Inconsistent Answers to the Same Question" />
+                    alt="Inconsistent Answers to the Same Question"
+                  />
                 </div>
               </div>
 
@@ -206,7 +210,8 @@
                 <div class="challenge-card-vertical__image-container">
                   <img
                     src="img/challenge_limited.jpg"
-                    alt="Help Is Only Available During Office Hours" />
+                    alt="Help Is Only Available During Office Hours"
+                  />
                 </div>
               </div>
             </div>
@@ -303,27 +308,32 @@
             <div class="diagram-frame">
               <img
                 src="img/llm.png"
-                alt="LLM model comparison benchmarks for intelligence, speed, and cost per task" />
+                alt="LLM model comparison benchmarks for intelligence, speed, and cost per task"
+              />
             </div>
             <div class="llm-selection-callout">
-              <div class="llm-selection-callout__label">Why Gemini 3.7 Flash</div>
+              <div class="llm-selection-callout__label">
+                Why Gemini 3.7 Flash
+              </div>
               <p>
-                Selected for the best speed-cost-intelligence balance &mdash; not
-                the top Intelligence score, but 2x+ faster than any comparable
-                model at a fraction of the cost, which matters for a live
-                citizen-facing chatbot.
+                Selected for the best speed-cost-intelligence balance &mdash;
+                not the top Intelligence score, but 2x+ faster than any
+                comparable model at a fraction of the cost, which matters for a
+                live citizen-facing chatbot.
               </p>
             </div>
             <div class="llm-selection-source">
-              Source: Artificial Analysis benchmark snapshot, August 2026.
-              Chart controls shown above are part of the static source image and
-              are not interactive.<br />
-              Reference: The Decoder, "Ling 3.0 Flash is the smartest open
-              model at its size" (Aug 13, 2026) &mdash;
+              Source: Artificial Analysis benchmark snapshot, August 2026. Chart
+              controls shown above are part of the static source image and are
+              not interactive.<br />
+              Reference: The Decoder, "Ling 3.0 Flash is the smartest open model
+              at its size" (Aug 13, 2026) &mdash;
               <a
                 href="https://the-decoder.com/ling-3-0-flash-is-the-smartest-open-model-at-its-size/"
                 target="_blank"
-                rel="noopener noreferrer">the-decoder.com</a>.
+                rel="noopener noreferrer"
+                >the-decoder.com</a
+              >.
             </div>
           </div>
         </div>
@@ -340,7 +350,8 @@
          ========================================================= -->
       <section
         class="slide slide--content slide--embedding-selection"
-        data-slide="content">
+        data-slide="content"
+      >
         <header class="slide-header">
           <div class="brand-mark">
             <div class="brand-mark__icon">▤</div>
@@ -356,9 +367,12 @@
           <div class="slide-content slide-content--embedding">
             <div class="embedding-model-boxes">
               <div class="embedding-model-box">
-                <div class="embedding-model-box__label">Research Models Evaluated</div>
+                <div class="embedding-model-box__label">
+                  Research Models Evaluated
+                </div>
                 <div class="embedding-model-box__value">
-                  BGE-M3 <span aria-hidden="true">&middot;</span> Jina-Embeddings-v3
+                  BGE-M3
+                  <span aria-hidden="true">&middot;</span> Jina-Embeddings-v3
                   <span aria-hidden="true">&middot;</span> Qwen3-Embedding
                   <span aria-hidden="true">&middot;</span> LaBSE
                 </div>
@@ -380,23 +394,41 @@
               <tbody>
                 <tr>
                   <td><strong>BGE-M3</strong> &#9989;</td>
-                  <td>Best Khmer retrieval accuracy; dense + sparse + multi-vector</td>
-                  <td>Not top-ranked on general multilingual benchmarks (BEIR, Italian) &mdash; mE5-L scores higher there</td>
+                  <td>
+                    Best Khmer retrieval accuracy; dense + sparse + multi-vector
+                  </td>
+                  <td>
+                    Not top-ranked on general multilingual benchmarks (BEIR,
+                    Italian) &mdash; mE5-L scores higher there
+                  </td>
                 </tr>
                 <tr>
                   <td><strong>Jina-Embeddings-v3</strong></td>
-                  <td>Task-specific adapters, ~90 languages; highest raw cosine similarity (0.759)</td>
-                  <td>Lower Khmer Hit Rate (0.135 vs. 0.285) despite high similarity scores</td>
+                  <td>
+                    Task-specific adapters, ~90 languages; highest raw cosine
+                    similarity (0.759)
+                  </td>
+                  <td>
+                    Lower Khmer Hit Rate (0.135 vs. 0.285) despite high
+                    similarity scores
+                  </td>
                 </tr>
                 <tr>
                   <td><strong>Qwen3-Embedding</strong></td>
                   <td>Compact (597M), multilingual semantic search</td>
-                  <td>Lower Khmer Hit Rate (0.175) and File Hit Rate (52.5% vs. 70%)</td>
+                  <td>
+                    Lower Khmer Hit Rate (0.175) and File Hit Rate (52.5% vs.
+                    70%)
+                  </td>
                 </tr>
                 <tr>
                   <td><strong>LaBSE</strong></td>
                   <td>Strong short cross-lingual sentence pairs</td>
-                  <td>Trained for symmetric sentence-pair alignment, not asymmetric query&ndash;passage relevance &mdash; wrong objective for retrieval</td>
+                  <td>
+                    Trained for symmetric sentence-pair alignment, not
+                    asymmetric query&ndash;passage relevance &mdash; wrong
+                    objective for retrieval
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -448,9 +480,45 @@
       </section>
 
       <!-- =========================================================
-         SLIDE 6A · ARCHITECTURE & TECH STACK OVERVIEW
+         SLIDE 6A · OVERALL ARCHITECTURE
          ========================================================= -->
-      <section class="slide slide--content slide--stack-overview" data-slide="content">
+      <section class="slide slide--content slide--diagram" data-slide="content">
+        <header class="slide-header">
+          <div class="brand-mark">
+            <div class="brand-mark__icon">▤</div>
+            <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
+          </div>
+          <div class="slide-title">
+            <span class="slide-title__en">Architecture &amp; Tech Stack</span>
+          </div>
+          <div class="org-mark">GDCE</div>
+        </header>
+        <div class="gold-rule"></div>
+        <div class="slide-body">
+          <div class="slide-content">
+            <figure class="diagram-frame">
+              <img
+                src="img/Customs%20Chatbot%20GDCE%20-%20Overall%20Architecture.drawio.png"
+                alt="GDCE customs chatbot overall architecture diagram"
+              />
+            </figure>
+          </div>
+        </div>
+        <footer class="slide-footer">
+          <div class="footer-left">
+            Multi-domain Customs Artificial Intelligent Assistant &middot; GDCE
+          </div>
+          <div class="page-number">6A</div>
+        </footer>
+      </section>
+
+      <!-- =========================================================
+         SLIDE 6B · ARCHITECTURE & TECH STACK OVERVIEW
+         ========================================================= -->
+      <section
+        class="slide slide--content slide--stack-overview"
+        data-slide="content"
+      >
         <header class="slide-header">
           <div class="brand-mark">
             <div class="brand-mark__icon">▤</div>
@@ -481,7 +549,9 @@
                 <tr>
                   <td>AI / NLU</td>
                   <td>Google Gemini, Sentence Transformers, PyTorch</td>
-                  <td>Language understanding, generation, embedding workflows</td>
+                  <td>
+                    Language understanding, generation, embedding workflows
+                  </td>
                 </tr>
                 <tr>
                   <td>RAG / Search</td>
@@ -501,11 +571,16 @@
                 <tr>
                   <td>Deployment</td>
                   <td>Docker, Docker Compose, isolated service networks</td>
-                  <td>Environment-based configuration and sovereign deployment</td>
+                  <td>
+                    Environment-based configuration and sovereign deployment
+                  </td>
                 </tr>
                 <tr>
                   <td>Quality</td>
-                  <td>Pytest, pytest-asyncio, Ruff / Black / Flake8, mypy, Prometheus</td>
+                  <td>
+                    Pytest, pytest-asyncio, Ruff / Black / Flake8, mypy,
+                    Prometheus
+                  </td>
                   <td>Testing, formatting, typing, and operational metrics</td>
                 </tr>
               </tbody>
@@ -516,21 +591,8 @@
           <div class="footer-left">
             Multi-domain Customs Artificial Intelligent Assistant &middot; GDCE
           </div>
-          <div class="page-number">6A</div>
+          <div class="page-number">6B</div>
         </footer>
-      </section>
-
-      <!-- =========================================================
-         SLIDE 7 · SECTION 4
-         ========================================================= -->
-      <section class="slide slide--section" data-slide="section">
-        <div class="section-slide-content">
-          <div class="section-slide__num">4</div>
-          <h2>Orchestrator Module Deep Dive</h2>
-          <p class="section-slide__sub">The 7 stags of process flow</p>
-          <div class="section-slide__line"></div>
-        </div>
-        <div class="page-number">7</div>
       </section>
 
       <!-- =========================================================
@@ -543,289 +605,1196 @@
             <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
           </div>
           <div class="slide-title">
-            <span class="slide-title__en">Orchestrator: 7-Stage Process Flow</span>
+            <span class="slide-title__en"
+              >Orchestrator: 7-Stage Process Flow</span
+            >
           </div>
           <div class="org-mark">GDCE</div>
         </header>
         <div class="gold-rule"></div>
-        <div class="slide-body" style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="slide-body" style="padding-top: 20px; padding-bottom: 20px">
           <div class="slide-content">
             <div class="timeline-2row-wrapper">
-              
               <!-- Row 1: Stages 01 to 03 -->
               <div class="timeline-row-1">
-                
                 <!-- Stage 1 -->
                 <div class="timeline-column-large">
-                  <div class="timeline-card-large" style="--stage-color: #3bb3a4;">
+                  <div
+                    class="timeline-card-large"
+                    style="--stage-color: #3bb3a4"
+                  >
                     <span class="timeline-card-large__badge">Stage 01</span>
                     <div class="timeline-card-large__image-container">
                       <svg viewBox="0 0 160 100">
                         <!-- Robot Head -->
-                        <rect x="33" y="70" width="10" height="10" rx="3" fill="#073d52" opacity="0.8" />
-                        <rect x="12" y="45" width="5" height="16" rx="3" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        <rect x="59" y="45" width="5" height="16" rx="3" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        <rect x="17" y="30" width="42" height="40" rx="12" fill="#f5f7fa" stroke="var(--stage-color)" stroke-width="3" />
-                        <rect x="23" y="36" width="30" height="24" rx="8" fill="#073d52" />
-                        <circle cx="32" cy="47" r="3.5" fill="var(--stage-color)" />
-                        <circle cx="44" cy="47" r="3.5" fill="var(--stage-color)" />
-                        <path d="M 34,53 Q 38,57 42,53" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" />
-                        <line x1="38" y1="30" x2="38" y2="18" stroke="#073d52" stroke-width="2" />
-                        <circle cx="38" cy="15" r="4.5" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        
+                        <rect
+                          x="33"
+                          y="70"
+                          width="10"
+                          height="10"
+                          rx="3"
+                          fill="#073d52"
+                          opacity="0.8"
+                        />
+                        <rect
+                          x="12"
+                          y="45"
+                          width="5"
+                          height="16"
+                          rx="3"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="59"
+                          y="45"
+                          width="5"
+                          height="16"
+                          rx="3"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="17"
+                          y="30"
+                          width="42"
+                          height="40"
+                          rx="12"
+                          fill="#f5f7fa"
+                          stroke="var(--stage-color)"
+                          stroke-width="3"
+                        />
+                        <rect
+                          x="23"
+                          y="36"
+                          width="30"
+                          height="24"
+                          rx="8"
+                          fill="#073d52"
+                        />
+                        <circle
+                          cx="32"
+                          cy="47"
+                          r="3.5"
+                          fill="var(--stage-color)"
+                        />
+                        <circle
+                          cx="44"
+                          cy="47"
+                          r="3.5"
+                          fill="var(--stage-color)"
+                        />
+                        <path
+                          d="M 34,53 Q 38,57 42,53"
+                          stroke="#ffffff"
+                          stroke-width="2"
+                          fill="none"
+                          stroke-linecap="round"
+                        />
+                        <line
+                          x1="38"
+                          y1="30"
+                          x2="38"
+                          y2="18"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <circle
+                          cx="38"
+                          cy="15"
+                          r="4.5"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+
                         <!-- Stage Graphic: Input Search and Database -->
-                        <rect x="75" y="24" width="70" height="16" rx="4" fill="#ffffff" stroke="#073d52" stroke-width="2" />
-                        <line x1="83" y1="32" x2="115" y2="32" stroke="rgba(7, 61, 82, 0.4)" stroke-width="3" stroke-linecap="round" />
-                        <circle cx="134" cy="32" r="3" fill="none" stroke="#3bb3a4" stroke-width="2" />
-                        <line x1="136" y1="34" x2="140" y2="38" stroke="#3bb3a4" stroke-width="2" />
-                        <path d="M 110,40 Q 110,50 110,55" stroke="rgba(7, 61, 82, 0.3)" stroke-width="2" fill="none" stroke-dasharray="3,3" />
-                        <ellipse cx="110" cy="56" rx="14" ry="4" fill="#ffffff" stroke="#073d52" stroke-width="2" />
-                        <path d="M 96,56 L 96,76 A 14,4 0 0 0 124,76 L 124,56 Z" fill="var(--stage-color)" opacity="0.15" />
-                        <path d="M 96,56 V 76 A 14,4 0 0 0 124,76 V 56" fill="none" stroke="#073d52" stroke-width="2" />
-                        <path d="M 96,63 A 14,4 0 0 0 124,63" fill="none" stroke="#073d52" stroke-width="2" />
-                        <path d="M 96,70 A 14,4 0 0 0 124,70" fill="none" stroke="#073d52" stroke-width="2" />
-                        <path d="M 104,65 L 108,69 L 116,61" stroke="#3bb3a4" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                        <rect
+                          x="75"
+                          y="24"
+                          width="70"
+                          height="16"
+                          rx="4"
+                          fill="#ffffff"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <line
+                          x1="83"
+                          y1="32"
+                          x2="115"
+                          y2="32"
+                          stroke="rgba(7, 61, 82, 0.4)"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                        />
+                        <circle
+                          cx="134"
+                          cy="32"
+                          r="3"
+                          fill="none"
+                          stroke="#3bb3a4"
+                          stroke-width="2"
+                        />
+                        <line
+                          x1="136"
+                          y1="34"
+                          x2="140"
+                          y2="38"
+                          stroke="#3bb3a4"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M 110,40 Q 110,50 110,55"
+                          stroke="rgba(7, 61, 82, 0.3)"
+                          stroke-width="2"
+                          fill="none"
+                          stroke-dasharray="3,3"
+                        />
+                        <ellipse
+                          cx="110"
+                          cy="56"
+                          rx="14"
+                          ry="4"
+                          fill="#ffffff"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M 96,56 L 96,76 A 14,4 0 0 0 124,76 L 124,56 Z"
+                          fill="var(--stage-color)"
+                          opacity="0.15"
+                        />
+                        <path
+                          d="M 96,56 V 76 A 14,4 0 0 0 124,76 V 56"
+                          fill="none"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M 96,63 A 14,4 0 0 0 124,63"
+                          fill="none"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M 96,70 A 14,4 0 0 0 124,70"
+                          fill="none"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <path
+                          d="M 104,65 L 108,69 L 116,61"
+                          stroke="#3bb3a4"
+                          stroke-width="2.5"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
                       </svg>
                     </div>
                     <div class="timeline-card-large__content-right">
-                      <h3 class="timeline-card-large__title">User Query &amp; Caching</h3>
-                      <p class="timeline-card-large__text">Starts the request, assigns a tracking ID, and locks the session and verify cache hit.</p>
+                      <h3 class="timeline-card-large__title">
+                        User Query &amp; Caching
+                      </h3>
+                      <p class="timeline-card-large__text">
+                        Starts the request, assigns a tracking ID, and locks the
+                        session and verify cache hit.
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <!-- Stage 2 -->
                 <div class="timeline-column-large">
-                  <div class="timeline-card-large" style="--stage-color: #6f308a;">
+                  <div
+                    class="timeline-card-large"
+                    style="--stage-color: #6f308a"
+                  >
                     <span class="timeline-card-large__badge">Stage 02</span>
                     <div class="timeline-card-large__image-container">
                       <svg viewBox="0 0 160 100">
                         <!-- Robot Head -->
-                        <rect x="33" y="70" width="10" height="10" rx="3" fill="#073d52" opacity="0.8" />
-                        <rect x="12" y="45" width="5" height="16" rx="3" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        <rect x="59" y="45" width="5" height="16" rx="3" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        <rect x="17" y="30" width="42" height="40" rx="12" fill="#f5f7fa" stroke="var(--stage-color)" stroke-width="3" />
-                        <rect x="23" y="36" width="30" height="24" rx="8" fill="#073d52" />
-                        <circle cx="32" cy="47" r="3.5" fill="var(--stage-color)" />
-                        <circle cx="44" cy="47" r="3.5" fill="var(--stage-color)" />
-                        <path d="M 34,53 Q 38,57 42,53" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" />
-                        <line x1="38" y1="30" x2="38" y2="18" stroke="#073d52" stroke-width="2" />
-                        <circle cx="38" cy="15" r="4.5" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        
+                        <rect
+                          x="33"
+                          y="70"
+                          width="10"
+                          height="10"
+                          rx="3"
+                          fill="#073d52"
+                          opacity="0.8"
+                        />
+                        <rect
+                          x="12"
+                          y="45"
+                          width="5"
+                          height="16"
+                          rx="3"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="59"
+                          y="45"
+                          width="5"
+                          height="16"
+                          rx="3"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="17"
+                          y="30"
+                          width="42"
+                          height="40"
+                          rx="12"
+                          fill="#f5f7fa"
+                          stroke="var(--stage-color)"
+                          stroke-width="3"
+                        />
+                        <rect
+                          x="23"
+                          y="36"
+                          width="30"
+                          height="24"
+                          rx="8"
+                          fill="#073d52"
+                        />
+                        <circle
+                          cx="32"
+                          cy="47"
+                          r="3.5"
+                          fill="var(--stage-color)"
+                        />
+                        <circle
+                          cx="44"
+                          cy="47"
+                          r="3.5"
+                          fill="var(--stage-color)"
+                        />
+                        <path
+                          d="M 34,53 Q 38,57 42,53"
+                          stroke="#ffffff"
+                          stroke-width="2"
+                          fill="none"
+                          stroke-linecap="round"
+                        />
+                        <line
+                          x1="38"
+                          y1="30"
+                          x2="38"
+                          y2="18"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <circle
+                          cx="38"
+                          cy="15"
+                          r="4.5"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+
                         <!-- Stage Graphic: Safety Shield & Scanning -->
-                        <path d="M 90,22 Q 110,15 130,22 Q 130,48 110,64 Q 90,48 90,22 Z" fill="#6f308a" opacity="0.1" />
-                        <path d="M 90,22 Q 110,15 130,22 Q 130,48 110,64 Q 90,48 90,22 Z" fill="none" stroke="#6f308a" stroke-width="2.5" />
-                        <rect x="104" y="38" width="12" height="10" rx="2" fill="var(--stage-color)" stroke="#073d52" stroke-width="1.5" />
-                        <path d="M 107,38 V 34 A 3,3 0 0 1 113,34 V 38" fill="none" stroke="#073d52" stroke-width="1.5" />
-                        <circle cx="85" cy="50" r="8" fill="none" stroke="#073d52" stroke-width="2" />
-                        <line x1="91" y1="56" x2="98" y2="63" stroke="#073d52" stroke-width="3" stroke-linecap="round" />
+                        <path
+                          d="M 90,22 Q 110,15 130,22 Q 130,48 110,64 Q 90,48 90,22 Z"
+                          fill="#6f308a"
+                          opacity="0.1"
+                        />
+                        <path
+                          d="M 90,22 Q 110,15 130,22 Q 130,48 110,64 Q 90,48 90,22 Z"
+                          fill="none"
+                          stroke="#6f308a"
+                          stroke-width="2.5"
+                        />
+                        <rect
+                          x="104"
+                          y="38"
+                          width="12"
+                          height="10"
+                          rx="2"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M 107,38 V 34 A 3,3 0 0 1 113,34 V 38"
+                          fill="none"
+                          stroke="#073d52"
+                          stroke-width="1.5"
+                        />
+                        <circle
+                          cx="85"
+                          cy="50"
+                          r="8"
+                          fill="none"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <line
+                          x1="91"
+                          y1="56"
+                          x2="98"
+                          y2="63"
+                          stroke="#073d52"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                        />
                       </svg>
                     </div>
                     <div class="timeline-card-large__content-right">
-                      <h3 class="timeline-card-large__title">Validation &amp; Normalization</h3>
-                      <p class="timeline-card-large__text">Corrects typos, checks safety, and rejects off-topic queries early.</p>
+                      <h3 class="timeline-card-large__title">
+                        Validation &amp; Normalization
+                      </h3>
+                      <p class="timeline-card-large__text">
+                        Corrects typos, checks safety, and rejects off-topic
+                        queries early.
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <!-- Stage 3 -->
                 <div class="timeline-column-large">
-                  <div class="timeline-card-large" style="--stage-color: #1b73e8;">
+                  <div
+                    class="timeline-card-large"
+                    style="--stage-color: #1b73e8"
+                  >
                     <span class="timeline-card-large__badge">Stage 03</span>
                     <div class="timeline-card-large__image-container">
                       <svg viewBox="0 0 160 100">
                         <!-- Robot Head -->
-                        <rect x="33" y="70" width="10" height="10" rx="3" fill="#073d52" opacity="0.8" />
-                        <rect x="12" y="45" width="5" height="16" rx="3" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        <rect x="59" y="45" width="5" height="16" rx="3" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        <rect x="17" y="30" width="42" height="40" rx="12" fill="#f5f7fa" stroke="var(--stage-color)" stroke-width="3" />
-                        <rect x="23" y="36" width="30" height="24" rx="8" fill="#073d52" />
-                        <circle cx="32" cy="47" r="3.5" fill="var(--stage-color)" />
-                        <circle cx="44" cy="47" r="3.5" fill="var(--stage-color)" />
-                        <path d="M 34,53 Q 38,57 42,53" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" />
-                        <line x1="38" y1="30" x2="38" y2="18" stroke="#073d52" stroke-width="2" />
-                        <circle cx="38" cy="15" r="4.5" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        
+                        <rect
+                          x="33"
+                          y="70"
+                          width="10"
+                          height="10"
+                          rx="3"
+                          fill="#073d52"
+                          opacity="0.8"
+                        />
+                        <rect
+                          x="12"
+                          y="45"
+                          width="5"
+                          height="16"
+                          rx="3"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="59"
+                          y="45"
+                          width="5"
+                          height="16"
+                          rx="3"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="17"
+                          y="30"
+                          width="42"
+                          height="40"
+                          rx="12"
+                          fill="#f5f7fa"
+                          stroke="var(--stage-color)"
+                          stroke-width="3"
+                        />
+                        <rect
+                          x="23"
+                          y="36"
+                          width="30"
+                          height="24"
+                          rx="8"
+                          fill="#073d52"
+                        />
+                        <circle
+                          cx="32"
+                          cy="47"
+                          r="3.5"
+                          fill="var(--stage-color)"
+                        />
+                        <circle
+                          cx="44"
+                          cy="47"
+                          r="3.5"
+                          fill="var(--stage-color)"
+                        />
+                        <path
+                          d="M 34,53 Q 38,57 42,53"
+                          stroke="#ffffff"
+                          stroke-width="2"
+                          fill="none"
+                          stroke-linecap="round"
+                        />
+                        <line
+                          x1="38"
+                          y1="30"
+                          x2="38"
+                          y2="18"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <circle
+                          cx="38"
+                          cy="15"
+                          r="4.5"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+
                         <!-- Stage Graphic: NLU Intent Detection bubble -->
-                        <path d="M 85,22 H 135 A 8,8 0 0 1 143,30 V 50 A 8,8 0 0 1 135,58 H 105 L 95,68 V 58 H 85 A 8,8 0 0 1 77,50 V 30 A 8,8 0 0 1 85,22 Z" fill="var(--stage-color)" opacity="0.12" stroke="var(--stage-color)" stroke-width="2" />
-                        <rect x="85" y="30" width="22" height="8" rx="2" fill="#ffffff" stroke="#073d52" stroke-width="1.5" />
-                        <line x1="89" y1="34" x2="103" y2="34" stroke="#073d52" stroke-width="1.5" />
-                        <rect x="112" y="30" width="24" height="8" rx="2" fill="#ffffff" stroke="#073d52" stroke-width="1.5" />
-                        <line x1="116" y1="34" x2="132" y2="34" stroke="#073d52" stroke-width="1.5" />
-                        <rect x="90" y="44" width="40" height="8" rx="2" fill="var(--stage-color)" stroke="var(--stage-color)" stroke-width="1" />
-                        <line x1="96" y1="48" x2="124" y2="48" stroke="#ffffff" stroke-width="2" />
+                        <path
+                          d="M 85,22 H 135 A 8,8 0 0 1 143,30 V 50 A 8,8 0 0 1 135,58 H 105 L 95,68 V 58 H 85 A 8,8 0 0 1 77,50 V 30 A 8,8 0 0 1 85,22 Z"
+                          fill="var(--stage-color)"
+                          opacity="0.12"
+                          stroke="var(--stage-color)"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="85"
+                          y="30"
+                          width="22"
+                          height="8"
+                          rx="2"
+                          fill="#ffffff"
+                          stroke="#073d52"
+                          stroke-width="1.5"
+                        />
+                        <line
+                          x1="89"
+                          y1="34"
+                          x2="103"
+                          y2="34"
+                          stroke="#073d52"
+                          stroke-width="1.5"
+                        />
+                        <rect
+                          x="112"
+                          y="30"
+                          width="24"
+                          height="8"
+                          rx="2"
+                          fill="#ffffff"
+                          stroke="#073d52"
+                          stroke-width="1.5"
+                        />
+                        <line
+                          x1="116"
+                          y1="34"
+                          x2="132"
+                          y2="34"
+                          stroke="#073d52"
+                          stroke-width="1.5"
+                        />
+                        <rect
+                          x="90"
+                          y="44"
+                          width="40"
+                          height="8"
+                          rx="2"
+                          fill="var(--stage-color)"
+                          stroke="var(--stage-color)"
+                          stroke-width="1"
+                        />
+                        <line
+                          x1="96"
+                          y1="48"
+                          x2="124"
+                          y2="48"
+                          stroke="#ffffff"
+                          stroke-width="2"
+                        />
                       </svg>
                     </div>
                     <div class="timeline-card-large__content-right">
-                      <h3 class="timeline-card-large__title">Unified NLU &amp; Intent</h3>
-                      <p class="timeline-card-large__text">Identifies the user's goal, selects Khmer/English, and asks for clarification if vague.</p>
+                      <h3 class="timeline-card-large__title">
+                        Unified NLU &amp; Intent
+                      </h3>
+                      <p class="timeline-card-large__text">
+                        Identifies the user's goal, selects Khmer/English, and
+                        asks for clarification if vague.
+                      </p>
                     </div>
                   </div>
                 </div>
-
               </div>
 
               <!-- Row 2: Stages 04 to 06 -->
               <div class="timeline-row-2">
-
                 <!-- Stage 4 -->
                 <div class="timeline-column-large">
-                  <div class="timeline-card-large" style="--stage-color: #22a356;">
+                  <div
+                    class="timeline-card-large"
+                    style="--stage-color: #22a356"
+                  >
                     <span class="timeline-card-large__badge">Stage 04</span>
                     <div class="timeline-card-large__image-container">
                       <svg viewBox="0 0 160 100">
                         <!-- Robot Head -->
-                        <rect x="33" y="70" width="10" height="10" rx="3" fill="#073d52" opacity="0.8" />
-                        <rect x="12" y="45" width="5" height="16" rx="3" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        <rect x="59" y="45" width="5" height="16" rx="3" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        <rect x="17" y="30" width="42" height="40" rx="12" fill="#f5f7fa" stroke="var(--stage-color)" stroke-width="3" />
-                        <rect x="23" y="36" width="30" height="24" rx="8" fill="#073d52" />
-                        <circle cx="32" cy="47" r="3.5" fill="var(--stage-color)" />
-                        <circle cx="44" cy="47" r="3.5" fill="var(--stage-color)" />
-                        <path d="M 34,53 Q 38,57 42,53" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" />
-                        <line x1="38" y1="30" x2="38" y2="18" stroke="#073d52" stroke-width="2" />
-                        <circle cx="38" cy="15" r="4.5" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        
+                        <rect
+                          x="33"
+                          y="70"
+                          width="10"
+                          height="10"
+                          rx="3"
+                          fill="#073d52"
+                          opacity="0.8"
+                        />
+                        <rect
+                          x="12"
+                          y="45"
+                          width="5"
+                          height="16"
+                          rx="3"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="59"
+                          y="45"
+                          width="5"
+                          height="16"
+                          rx="3"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="17"
+                          y="30"
+                          width="42"
+                          height="40"
+                          rx="12"
+                          fill="#f5f7fa"
+                          stroke="var(--stage-color)"
+                          stroke-width="3"
+                        />
+                        <rect
+                          x="23"
+                          y="36"
+                          width="30"
+                          height="24"
+                          rx="8"
+                          fill="#073d52"
+                        />
+                        <circle
+                          cx="32"
+                          cy="47"
+                          r="3.5"
+                          fill="var(--stage-color)"
+                        />
+                        <circle
+                          cx="44"
+                          cy="47"
+                          r="3.5"
+                          fill="var(--stage-color)"
+                        />
+                        <path
+                          d="M 34,53 Q 38,57 42,53"
+                          stroke="#ffffff"
+                          stroke-width="2"
+                          fill="none"
+                          stroke-linecap="round"
+                        />
+                        <line
+                          x1="38"
+                          y1="30"
+                          x2="38"
+                          y2="18"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <circle
+                          cx="38"
+                          cy="15"
+                          r="4.5"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+
                         <!-- Stage Graphic: Rewrite merging bubbles -->
-                        <path d="M 75,18 H 115 A 5,5 0 0 1 120,23 V 33 A 5,5 0 0 1 115,38 H 85 L 80,43 V 38 H 75 A 5,5 0 0 1 70,33 V 23 A 5,5 0 0 1 75,18 Z" fill="#eeeeee" stroke="#b0bec5" stroke-width="1.5" />
-                        <line x1="76" y1="25" x2="114" y2="25" stroke="#b0bec5" stroke-width="1.5" />
-                        <path d="M 124,32 H 132 M 128,28 V 36" stroke="#073d52" stroke-width="2" stroke-linecap="round" />
-                        <path d="M 75,50 H 115 A 5,5 0 0 1 120,55 V 65 A 5,5 0 0 1 115,70 H 85 L 80,75 V 70 H 75 A 5,5 0 0 1 70,65 V 55 A 5,5 0 0 1 75,50 Z" fill="#eeeeee" stroke="#b0bec5" stroke-width="1.5" />
-                        <line x1="76" y1="57" x2="114" y2="57" stroke="#b0bec5" stroke-width="1.5" />
-                        <path d="M 134,50 Q 140,50 144,55" fill="none" stroke="var(--stage-color)" stroke-width="2.5" stroke-linecap="round" />
-                        <rect x="120" y="58" width="35" height="24" rx="4" fill="var(--stage-color)" opacity="0.15" stroke="var(--stage-color)" stroke-width="2" />
-                        <line x1="124" y1="65" x2="151" y2="65" stroke="var(--stage-color)" stroke-width="2" />
-                        <line x1="124" y1="71" x2="145" y2="71" stroke="var(--stage-color)" stroke-width="2" />
+                        <path
+                          d="M 75,18 H 115 A 5,5 0 0 1 120,23 V 33 A 5,5 0 0 1 115,38 H 85 L 80,43 V 38 H 75 A 5,5 0 0 1 70,33 V 23 A 5,5 0 0 1 75,18 Z"
+                          fill="#eeeeee"
+                          stroke="#b0bec5"
+                          stroke-width="1.5"
+                        />
+                        <line
+                          x1="76"
+                          y1="25"
+                          x2="114"
+                          y2="25"
+                          stroke="#b0bec5"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M 124,32 H 132 M 128,28 V 36"
+                          stroke="#073d52"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M 75,50 H 115 A 5,5 0 0 1 120,55 V 65 A 5,5 0 0 1 115,70 H 85 L 80,75 V 70 H 75 A 5,5 0 0 1 70,65 V 55 A 5,5 0 0 1 75,50 Z"
+                          fill="#eeeeee"
+                          stroke="#b0bec5"
+                          stroke-width="1.5"
+                        />
+                        <line
+                          x1="76"
+                          y1="57"
+                          x2="114"
+                          y2="57"
+                          stroke="#b0bec5"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M 134,50 Q 140,50 144,55"
+                          fill="none"
+                          stroke="var(--stage-color)"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                        />
+                        <rect
+                          x="120"
+                          y="58"
+                          width="35"
+                          height="24"
+                          rx="4"
+                          fill="var(--stage-color)"
+                          opacity="0.15"
+                          stroke="var(--stage-color)"
+                          stroke-width="2"
+                        />
+                        <line
+                          x1="124"
+                          y1="65"
+                          x2="151"
+                          y2="65"
+                          stroke="var(--stage-color)"
+                          stroke-width="2"
+                        />
+                        <line
+                          x1="124"
+                          y1="71"
+                          x2="145"
+                          y2="71"
+                          stroke="var(--stage-color)"
+                          stroke-width="2"
+                        />
                       </svg>
                     </div>
                     <div class="timeline-card-large__content-right">
-                      <h3 class="timeline-card-large__title">Context-Aware Rewrite</h3>
-                      <p class="timeline-card-large__text">Merges the current question with chat history.</p>
+                      <h3 class="timeline-card-large__title">
+                        Context-Aware Rewrite
+                      </h3>
+                      <p class="timeline-card-large__text">
+                        Merges the current question with chat history.
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <!-- Stage 5 -->
                 <div class="timeline-column-large">
-                  <div class="timeline-card-large" style="--stage-color: #ec9a29;">
+                  <div
+                    class="timeline-card-large"
+                    style="--stage-color: #ec9a29"
+                  >
                     <span class="timeline-card-large__badge">Stage 05</span>
                     <div class="timeline-card-large__image-container">
                       <svg viewBox="0 0 160 100">
                         <!-- Robot Head -->
-                        <rect x="33" y="70" width="10" height="10" rx="3" fill="#073d52" opacity="0.8" />
-                        <rect x="12" y="45" width="5" height="16" rx="3" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        <rect x="59" y="45" width="5" height="16" rx="3" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        <rect x="17" y="30" width="42" height="40" rx="12" fill="#f5f7fa" stroke="var(--stage-color)" stroke-width="3" />
-                        <rect x="23" y="36" width="30" height="24" rx="8" fill="#073d52" />
-                        <circle cx="32" cy="47" r="3.5" fill="var(--stage-color)" />
-                        <circle cx="44" cy="47" r="3.5" fill="var(--stage-color)" />
-                        <path d="M 34,53 Q 38,57 42,53" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" />
-                        <line x1="38" y1="30" x2="38" y2="18" stroke="#073d52" stroke-width="2" />
-                        <circle cx="38" cy="15" r="4.5" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        
+                        <rect
+                          x="33"
+                          y="70"
+                          width="10"
+                          height="10"
+                          rx="3"
+                          fill="#073d52"
+                          opacity="0.8"
+                        />
+                        <rect
+                          x="12"
+                          y="45"
+                          width="5"
+                          height="16"
+                          rx="3"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="59"
+                          y="45"
+                          width="5"
+                          height="16"
+                          rx="3"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="17"
+                          y="30"
+                          width="42"
+                          height="40"
+                          rx="12"
+                          fill="#f5f7fa"
+                          stroke="var(--stage-color)"
+                          stroke-width="3"
+                        />
+                        <rect
+                          x="23"
+                          y="36"
+                          width="30"
+                          height="24"
+                          rx="8"
+                          fill="#073d52"
+                        />
+                        <circle
+                          cx="32"
+                          cy="47"
+                          r="3.5"
+                          fill="var(--stage-color)"
+                        />
+                        <circle
+                          cx="44"
+                          cy="47"
+                          r="3.5"
+                          fill="var(--stage-color)"
+                        />
+                        <path
+                          d="M 34,53 Q 38,57 42,53"
+                          stroke="#ffffff"
+                          stroke-width="2"
+                          fill="none"
+                          stroke-linecap="round"
+                        />
+                        <line
+                          x1="38"
+                          y1="30"
+                          x2="38"
+                          y2="18"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <circle
+                          cx="38"
+                          cy="15"
+                          r="4.5"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+
                         <!-- Stage Graphic: Service Routing branching -->
                         <circle cx="85" cy="50" r="6" fill="#073d52" />
-                        <path d="M 91,48 L 105,30 H 125" fill="none" stroke="var(--stage-color)" stroke-width="2" stroke-linecap="round" />
-                        <path d="M 91,50 H 125" fill="none" stroke="var(--stage-color)" stroke-width="2" stroke-linecap="round" />
-                        <path d="M 91,52 L 105,70 H 125" fill="none" stroke="var(--stage-color)" stroke-width="2" stroke-linecap="round" />
-                        <rect x="125" y="22" width="22" height="15" rx="3" fill="#ffffff" stroke="#073d52" stroke-width="2" />
-                        <rect x="125" y="42" width="22" height="15" rx="3" fill="#ffffff" stroke="#073d52" stroke-width="2" />
-                        <rect x="125" y="62" width="22" height="15" rx="3" fill="#ffffff" stroke="#073d52" stroke-width="2" />
+                        <path
+                          d="M 91,48 L 105,30 H 125"
+                          fill="none"
+                          stroke="var(--stage-color)"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M 91,50 H 125"
+                          fill="none"
+                          stroke="var(--stage-color)"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M 91,52 L 105,70 H 125"
+                          fill="none"
+                          stroke="var(--stage-color)"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                        />
+                        <rect
+                          x="125"
+                          y="22"
+                          width="22"
+                          height="15"
+                          rx="3"
+                          fill="#ffffff"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="125"
+                          y="42"
+                          width="22"
+                          height="15"
+                          rx="3"
+                          fill="#ffffff"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="125"
+                          y="62"
+                          width="22"
+                          height="15"
+                          rx="3"
+                          fill="#ffffff"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
                         <circle cx="130" cy="30" r="1.5" fill="#3bb3a4" />
                         <circle cx="130" cy="50" r="1.5" fill="#ec9a29" />
                         <circle cx="130" cy="70" r="1.5" fill="#d34e4e" />
                       </svg>
                     </div>
                     <div class="timeline-card-large__content-right">
-                      <h3 class="timeline-card-large__title">Microservice Routing</h3>
-                      <p class="timeline-card-large__text">Dispatches the polished query to the best-suited backend service.</p>
+                      <h3 class="timeline-card-large__title">
+                        Microservice Routing
+                      </h3>
+                      <p class="timeline-card-large__text">
+                        Dispatches the polished query to the best-suited backend
+                        service.
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <!-- Stage 6 -->
                 <div class="timeline-column-large">
-                  <div class="timeline-card-large" style="--stage-color: #d34e4e;">
+                  <div
+                    class="timeline-card-large"
+                    style="--stage-color: #d34e4e"
+                  >
                     <span class="timeline-card-large__badge">Stage 06</span>
                     <div class="timeline-card-large__image-container">
                       <svg viewBox="0 0 160 100">
                         <!-- Robot Head -->
-                        <rect x="33" y="70" width="10" height="10" rx="3" fill="#073d52" opacity="0.8" />
-                        <rect x="12" y="45" width="5" height="16" rx="3" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        <rect x="59" y="45" width="5" height="16" rx="3" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        <rect x="17" y="30" width="42" height="40" rx="12" fill="#f5f7fa" stroke="var(--stage-color)" stroke-width="3" />
-                        <rect x="23" y="36" width="30" height="24" rx="8" fill="#073d52" />
-                        <circle cx="32" cy="47" r="3.5" fill="var(--stage-color)" />
-                        <circle cx="44" cy="47" r="3.5" fill="var(--stage-color)" />
-                        <path d="M 34,53 Q 38,57 42,53" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" />
-                        <line x1="38" y1="30" x2="38" y2="18" stroke="#073d52" stroke-width="2" />
-                        <circle cx="38" cy="15" r="4.5" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        
+                        <rect
+                          x="33"
+                          y="70"
+                          width="10"
+                          height="10"
+                          rx="3"
+                          fill="#073d52"
+                          opacity="0.8"
+                        />
+                        <rect
+                          x="12"
+                          y="45"
+                          width="5"
+                          height="16"
+                          rx="3"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="59"
+                          y="45"
+                          width="5"
+                          height="16"
+                          rx="3"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="17"
+                          y="30"
+                          width="42"
+                          height="40"
+                          rx="12"
+                          fill="#f5f7fa"
+                          stroke="var(--stage-color)"
+                          stroke-width="3"
+                        />
+                        <rect
+                          x="23"
+                          y="36"
+                          width="30"
+                          height="24"
+                          rx="8"
+                          fill="#073d52"
+                        />
+                        <circle
+                          cx="32"
+                          cy="47"
+                          r="3.5"
+                          fill="var(--stage-color)"
+                        />
+                        <circle
+                          cx="44"
+                          cy="47"
+                          r="3.5"
+                          fill="var(--stage-color)"
+                        />
+                        <path
+                          d="M 34,53 Q 38,57 42,53"
+                          stroke="#ffffff"
+                          stroke-width="2"
+                          fill="none"
+                          stroke-linecap="round"
+                        />
+                        <line
+                          x1="38"
+                          y1="30"
+                          x2="38"
+                          y2="18"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <circle
+                          cx="38"
+                          cy="15"
+                          r="4.5"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+
                         <!-- Stage Graphic: Doc page & Calculator -->
-                        <rect x="80" y="16" width="30" height="42" rx="3" fill="#ffffff" stroke="#073d52" stroke-width="2" />
-                        <line x1="86" y1="24" x2="104" y2="24" stroke="rgba(7, 61, 82, 0.4)" stroke-width="1.5" />
-                        <line x1="86" y1="30" x2="104" y2="30" stroke="rgba(7, 61, 82, 0.4)" stroke-width="1.5" />
-                        <line x1="86" y1="36" x2="98" y2="36" stroke="rgba(7, 61, 82, 0.4)" stroke-width="1.5" />
-                        <rect x="115" y="38" width="25" height="34" rx="4" fill="var(--stage-color)" opacity="0.15" stroke="var(--stage-color)" stroke-width="2" />
-                        <rect x="119" y="42" width="17" height="7" rx="1.5" fill="#ffffff" stroke="#073d52" stroke-width="1" />
+                        <rect
+                          x="80"
+                          y="16"
+                          width="30"
+                          height="42"
+                          rx="3"
+                          fill="#ffffff"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <line
+                          x1="86"
+                          y1="24"
+                          x2="104"
+                          y2="24"
+                          stroke="rgba(7, 61, 82, 0.4)"
+                          stroke-width="1.5"
+                        />
+                        <line
+                          x1="86"
+                          y1="30"
+                          x2="104"
+                          y2="30"
+                          stroke="rgba(7, 61, 82, 0.4)"
+                          stroke-width="1.5"
+                        />
+                        <line
+                          x1="86"
+                          y1="36"
+                          x2="98"
+                          y2="36"
+                          stroke="rgba(7, 61, 82, 0.4)"
+                          stroke-width="1.5"
+                        />
+                        <rect
+                          x="115"
+                          y="38"
+                          width="25"
+                          height="34"
+                          rx="4"
+                          fill="var(--stage-color)"
+                          opacity="0.15"
+                          stroke="var(--stage-color)"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="119"
+                          y="42"
+                          width="17"
+                          height="7"
+                          rx="1.5"
+                          fill="#ffffff"
+                          stroke="#073d52"
+                          stroke-width="1"
+                        />
                         <circle cx="122" cy="54" r="1" fill="#073d52" />
                         <circle cx="127" cy="54" r="1" fill="#073d52" />
                         <circle cx="132" cy="54" r="1" fill="#073d52" />
                         <circle cx="122" cy="59" r="1" fill="#073d52" />
                         <circle cx="127" cy="59" r="1" fill="#073d52" />
                         <circle cx="132" cy="59" r="1" fill="#073d52" />
-                        <rect x="121" y="63" width="12" height="2" fill="#073d52" />
+                        <rect
+                          x="121"
+                          y="63"
+                          width="12"
+                          height="2"
+                          fill="#073d52"
+                        />
                       </svg>
                     </div>
                     <div class="timeline-card-large__content-right">
-                      <h3 class="timeline-card-large__title">Downstream Execution</h3>
-                      <p class="timeline-card-large__text">Fetches regulations (RAG), looks up tariffs, trade statistic or computes tax duties.</p>
+                      <h3 class="timeline-card-large__title">
+                        Downstream Execution
+                      </h3>
+                      <p class="timeline-card-large__text">
+                        Fetches regulations (RAG), looks up tariffs, trade
+                        statistic or computes tax duties.
+                      </p>
                     </div>
                   </div>
                 </div>
-
               </div>
 
               <!-- Row 3: Stage 07 Centered -->
               <div class="timeline-row-3">
-
                 <!-- Stage 7 -->
                 <div class="timeline-column-large">
-                  <div class="timeline-card-large" style="--stage-color: #455a64;">
+                  <div
+                    class="timeline-card-large"
+                    style="--stage-color: #455a64"
+                  >
                     <span class="timeline-card-large__badge">Stage 07</span>
                     <div class="timeline-card-large__image-container">
                       <svg viewBox="0 0 160 100">
                         <!-- Robot Head -->
-                        <rect x="33" y="70" width="10" height="10" rx="3" fill="#073d52" opacity="0.8" />
-                        <rect x="12" y="45" width="5" height="16" rx="3" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        <rect x="59" y="45" width="5" height="16" rx="3" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        <rect x="17" y="30" width="42" height="40" rx="12" fill="#f5f7fa" stroke="var(--stage-color)" stroke-width="3" />
-                        <rect x="23" y="36" width="30" height="24" rx="8" fill="#073d52" />
-                        <circle cx="32" cy="47" r="3.5" fill="var(--stage-color)" />
-                        <circle cx="44" cy="47" r="3.5" fill="var(--stage-color)" />
-                        <path d="M 34,53 Q 38,57 42,53" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" />
-                        <line x1="38" y1="30" x2="38" y2="18" stroke="#073d52" stroke-width="2" />
-                        <circle cx="38" cy="15" r="4.5" fill="var(--stage-color)" stroke="#073d52" stroke-width="2" />
-                        
+                        <rect
+                          x="33"
+                          y="70"
+                          width="10"
+                          height="10"
+                          rx="3"
+                          fill="#073d52"
+                          opacity="0.8"
+                        />
+                        <rect
+                          x="12"
+                          y="45"
+                          width="5"
+                          height="16"
+                          rx="3"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="59"
+                          y="45"
+                          width="5"
+                          height="16"
+                          rx="3"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="17"
+                          y="30"
+                          width="42"
+                          height="40"
+                          rx="12"
+                          fill="#f5f7fa"
+                          stroke="var(--stage-color)"
+                          stroke-width="3"
+                        />
+                        <rect
+                          x="23"
+                          y="36"
+                          width="30"
+                          height="24"
+                          rx="8"
+                          fill="#073d52"
+                        />
+                        <circle
+                          cx="32"
+                          cy="47"
+                          r="3.5"
+                          fill="var(--stage-color)"
+                        />
+                        <circle
+                          cx="44"
+                          cy="47"
+                          r="3.5"
+                          fill="var(--stage-color)"
+                        />
+                        <path
+                          d="M 34,53 Q 38,57 42,53"
+                          stroke="#ffffff"
+                          stroke-width="2"
+                          fill="none"
+                          stroke-linecap="round"
+                        />
+                        <line
+                          x1="38"
+                          y1="30"
+                          x2="38"
+                          y2="18"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <circle
+                          cx="38"
+                          cy="15"
+                          r="4.5"
+                          fill="var(--stage-color)"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+
                         <!-- Stage Graphic: SSE Streaming waves & Database save -->
-                        <path d="M 85,25 Q 92,20 100,25 T 115,25 T 130,25" fill="none" stroke="var(--stage-color)" stroke-width="2" stroke-linecap="round" />
-                        <path d="M 85,35 Q 92,30 100,35 T 115,35 T 130,35" fill="none" stroke="var(--stage-color)" stroke-width="2" stroke-linecap="round" />
-                        <path d="M 115,48 H 135 L 140,53 V 73 H 115 Z" fill="#ffffff" stroke="#073d52" stroke-width="2" />
-                        <rect x="120" y="58" width="15" height="15" rx="1" fill="none" stroke="#073d52" stroke-width="1.5" />
-                        <path d="M 127.5,38 V 50 M 124,46 L 127.5,50 L 131,46" fill="none" stroke="#3bb3a4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                          d="M 85,25 Q 92,20 100,25 T 115,25 T 130,25"
+                          fill="none"
+                          stroke="var(--stage-color)"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M 85,35 Q 92,30 100,35 T 115,35 T 130,35"
+                          fill="none"
+                          stroke="var(--stage-color)"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M 115,48 H 135 L 140,53 V 73 H 115 Z"
+                          fill="#ffffff"
+                          stroke="#073d52"
+                          stroke-width="2"
+                        />
+                        <rect
+                          x="120"
+                          y="58"
+                          width="15"
+                          height="15"
+                          rx="1"
+                          fill="none"
+                          stroke="#073d52"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="M 127.5,38 V 50 M 124,46 L 127.5,50 L 131,46"
+                          fill="none"
+                          stroke="#3bb3a4"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
                       </svg>
                     </div>
                     <div class="timeline-card-large__content-right">
-                      <h3 class="timeline-card-large__title">SSE Streaming &amp; Persist</h3>
-                      <p class="timeline-card-large__text">Streams the answer live to the screen, then saves the conversation to the database.</p>
+                      <h3 class="timeline-card-large__title">
+                        SSE Streaming &amp; Persist
+                      </h3>
+                      <p class="timeline-card-large__text">
+                        Streams the answer live to the screen, then saves the
+                        conversation to the database.
+                      </p>
                     </div>
                   </div>
                 </div>
-
               </div>
-
             </div>
-            
           </div>
         </div>
         <footer class="slide-footer">
@@ -861,20 +1830,36 @@
             <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
           </div>
           <div class="slide-title">
-            <span class="slide-title__en">Real Testing: Multi-Turn Ask-Back Flow (Calculation)</span>
+            <span class="slide-title__en"
+              >Real Testing: Multi-Turn Ask-Back Flow (Calculation)</span
+            >
           </div>
           <div class="org-mark">GDCE</div>
         </header>
         <div class="gold-rule"></div>
-        <div class="slide-body" style="padding-top: 15px; padding-bottom: 15px;">
+        <div class="slide-body" style="padding-top: 15px; padding-bottom: 15px">
           <div class="slide-content">
-            <p class="slide-intro-text" style="font-size: 20px; color: var(--blue-muted); margin: 0 0 15px 0;">
-              Execution sequence of the <strong>Unified Sequential Slot-Collection Gate</strong> inside the Calculator handler resolving missing slots dynamically.
+            <p
+              class="slide-intro-text"
+              style="
+                font-size: 20px;
+                color: var(--blue-muted);
+                margin: 0 0 15px 0;
+              "
+            >
+              Execution sequence of the
+              <strong>Unified Sequential Slot-Collection Gate</strong> inside
+              the Calculator handler resolving missing slots dynamically.
             </p>
             <div class="askback-timeline">
-              
               <!-- Turn 1 -->
-              <div class="askback-card" style="--accent-color: #1b73e8; --chat-bg: rgba(27, 115, 232, 0.08);">
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #1b73e8;
+                  --chat-bg: rgba(27, 115, 232, 0.08);
+                "
+              >
                 <div class="askback-card__header">
                   <span class="askback-card__turn">Turn 01</span>
                   <h3 class="askback-card__title">Product Identification</h3>
@@ -885,23 +1870,44 @@
                     <p class="chat-bubble__text">"hs code of iphone?"</p>
                   </div>
                   <ul class="action-list">
-                    <li><strong>Intent:</strong> Extract entity &amp; lock type</li>
-                    <li><strong>NLU Resolution:</strong> <code>hs_code_lookup</code>, <code>entity="iphone"</code></li>
-                    <li><strong>Session Cache:</strong> Save <code>last_entity="iphone"</code></li>
-                    <li><strong>Candidate:</strong> <code>["8517.13.00"]</code> saved to Redis</li>
+                    <li>
+                      <strong>Intent:</strong> Extract entity &amp; lock type
+                    </li>
+                    <li>
+                      <strong>NLU Resolution:</strong>
+                      <code>hs_code_lookup</code>, <code>entity="iphone"</code>
+                    </li>
+                    <li>
+                      <strong>Session Cache:</strong> Save
+                      <code>last_entity="iphone"</code>
+                    </li>
+                    <li>
+                      <strong>Candidate:</strong>
+                      <code>["8517.13.00"]</code> saved to Redis
+                    </li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">Returns matching HS candidate list</p>
+                    <p class="chat-bubble__text">
+                      Returns matching HS candidate list
+                    </p>
                   </div>
                 </div>
               </div>
 
               <!-- Turn 2 -->
-              <div class="askback-card" style="--accent-color: #6f308a; --chat-bg: rgba(111, 48, 138, 0.08);">
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #6f308a;
+                  --chat-bg: rgba(111, 48, 138, 0.08);
+                "
+              >
                 <div class="askback-card__header">
                   <span class="askback-card__turn">Turn 02</span>
-                  <h3 class="askback-card__title">Pronoun Resolution &amp; Missing Slots</h3>
+                  <h3 class="askback-card__title">
+                    Pronoun Resolution &amp; Missing Slots
+                  </h3>
                 </div>
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
@@ -909,23 +1915,47 @@
                     <p class="chat-bubble__text">"calculate its import tax"</p>
                   </div>
                   <ul class="action-list">
-                    <li><strong>Co-reference:</strong> Resolve pronoun <code>"its"</code> &rarr; <code>"iphone"</code></li>
-                    <li><strong>Rewritten:</strong> "calculate import tax for iphone"</li>
-                    <li><strong>Slot Gate:</strong> <code>hs_code</code> unconfirmed, <code>cif_value</code> missing</li>
-                    <li><strong>State:</strong> Set <code>pending_clarification=True</code></li>
+                    <li>
+                      <strong>Co-reference:</strong> Resolve pronoun
+                      <code>"its"</code> &rarr; <code>"iphone"</code>
+                    </li>
+                    <li>
+                      <strong>Rewritten:</strong> "calculate import tax for
+                      iphone"
+                    </li>
+                    <li>
+                      <strong>Slot Gate:</strong>
+                      <code>hs_code</code> unconfirmed,
+                      <code>cif_value</code> missing
+                    </li>
+                    <li>
+                      <strong>State:</strong> Set
+                      <code>pending_clarification=True</code>
+                    </li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Ask-Back Response</span>
-                    <p class="chat-bubble__text">"Ask user to confirm one of the following HS code options, and the price user spend"</p>
+                    <p class="chat-bubble__text">
+                      "Ask user to confirm one of the following HS code options,
+                      and the price user spend"
+                    </p>
                   </div>
                 </div>
               </div>
 
               <!-- Turn 3 -->
-              <div class="askback-card" style="--accent-color: #ec9a29; --chat-bg: rgba(236, 154, 41, 0.08);">
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #ec9a29;
+                  --chat-bg: rgba(236, 154, 41, 0.08);
+                "
+              >
                 <div class="askback-card__header">
                   <span class="askback-card__turn">Turn 03</span>
-                  <h3 class="askback-card__title">HS Lock &amp; Next Missing Slot</h3>
+                  <h3 class="askback-card__title">
+                    HS Lock &amp; Next Missing Slot
+                  </h3>
                 </div>
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
@@ -933,22 +1963,40 @@
                     <p class="chat-bubble__text">"8517.13.00"</p>
                   </div>
                   <ul class="action-list">
-                    <li><strong>Validation:</strong> Match against candidate_codes</li>
-                    <li><strong>Slot Lock:</strong> Confirm <code>hs_code="8517.13.00"</code></li>
-                    <li><strong>Slot Gate:</strong> <code>hs_code</code> OK, <code>cif_value</code> still MISSING</li>
+                    <li>
+                      <strong>Validation:</strong> Match against candidate_codes
+                    </li>
+                    <li>
+                      <strong>Slot Lock:</strong> Confirm
+                      <code>hs_code="8517.13.00"</code>
+                    </li>
+                    <li>
+                      <strong>Slot Gate:</strong> <code>hs_code</code> OK,
+                      <code>cif_value</code> still MISSING
+                    </li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Ask-Back Response</span>
-                    <p class="chat-bubble__text">"What is the price that user paid"</p>
+                    <p class="chat-bubble__text">
+                      "What is the price that user paid"
+                    </p>
                   </div>
                 </div>
               </div>
 
               <!-- Turn 4 -->
-              <div class="askback-card" style="--accent-color: #22a356; --chat-bg: rgba(34, 163, 86, 0.08);">
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #22a356;
+                  --chat-bg: rgba(34, 163, 86, 0.08);
+                "
+              >
                 <div class="askback-card__header">
                   <span class="askback-card__turn">Turn 04</span>
-                  <h3 class="askback-card__title">Formula Execution &amp; Persist</h3>
+                  <h3 class="askback-card__title">
+                    Formula Execution &amp; Persist
+                  </h3>
                 </div>
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
@@ -956,18 +2004,30 @@
                     <p class="chat-bubble__text">"$1000"</p>
                   </div>
                   <ul class="action-list">
-                    <li><strong>Slot Lock:</strong> Parse price &rarr; <code>cif_value=1000</code></li>
-                    <li><strong>DB Fetch:</strong> Get duty rates (CD=0%, ST=5%, VAT=10%)</li>
-                    <li><strong>Formula:</strong> Execute ceiling rounding math</li>
-                    <li><strong>Persist:</strong> Save conversation + telemetry to DB</li>
+                    <li>
+                      <strong>Slot Lock:</strong> Parse price &rarr;
+                      <code>cif_value=1000</code>
+                    </li>
+                    <li>
+                      <strong>DB Fetch:</strong> Get duty rates (CD=0%, ST=5%,
+                      VAT=10%)
+                    </li>
+                    <li>
+                      <strong>Formula:</strong> Execute ceiling rounding math
+                    </li>
+                    <li>
+                      <strong>Persist:</strong> Save conversation + telemetry to
+                      DB
+                    </li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Final Response</span>
-                    <p class="chat-bubble__text">SSE streams iphone's tax breakdown</p>
+                    <p class="chat-bubble__text">
+                      SSE streams iphone's tax breakdown
+                    </p>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -989,20 +2049,38 @@
             <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
           </div>
           <div class="slide-title">
-            <span class="slide-title__en">Real Testing: Multi-Turn Context (Trade Query)</span>
+            <span class="slide-title__en"
+              >Real Testing: Multi-Turn Context (Trade Query)</span
+            >
           </div>
           <div class="org-mark">GDCE</div>
         </header>
         <div class="gold-rule"></div>
-        <div class="slide-body" style="padding-top: 15px; padding-bottom: 15px;">
+        <div class="slide-body" style="padding-top: 15px; padding-bottom: 15px">
           <div class="slide-content">
-            <p class="slide-intro-text" style="font-size: 20px; color: var(--blue-muted); margin: 0 0 15px 0;">
-              Session context automatically fills in prior slots, enabling query re-writing to merge multi-turn conversational deltas.
+            <p
+              class="slide-intro-text"
+              style="
+                font-size: 20px;
+                color: var(--blue-muted);
+                margin: 0 0 15px 0;
+              "
+            >
+              Session context automatically fills in prior slots, enabling query
+              re-writing to merge multi-turn conversational deltas.
             </p>
-            <div class="askback-timeline" style="grid-template-columns: repeat(3, 1fr);">
-              
+            <div
+              class="askback-timeline"
+              style="grid-template-columns: repeat(3, 1fr)"
+            >
               <!-- Turn 1 -->
-              <div class="askback-card" style="--accent-color: #1b73e8; --chat-bg: rgba(27, 115, 232, 0.08);">
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #1b73e8;
+                  --chat-bg: rgba(27, 115, 232, 0.08);
+                "
+              >
                 <div class="askback-card__header">
                   <span class="askback-card__turn">Turn 01</span>
                   <h3 class="askback-card__title">Initial Query Extraction</h3>
@@ -1010,25 +2088,44 @@
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
                     <span class="chat-bubble__label">User Request</span>
-                    <p class="chat-bubble__text">"Show me Cambodia rice exports in 2024"</p>
+                    <p class="chat-bubble__text">
+                      "Show me Cambodia rice exports in 2024"
+                    </p>
                   </div>
                   <ul class="action-list">
                     <li><strong>Intent:</strong> <code>trade_query</code></li>
-                    <li><strong>NLU Resolution:</strong> Extract slots: <code>product="rice"</code>, <code>direction="export"</code>, <code>year="2023"</code></li>
-                    <li><strong>Pipeline Execution:</strong> Trade service runs its 7-stage processing pipeline</li>
+                    <li>
+                      <strong>NLU Resolution:</strong> Extract slots:
+                      <code>product="rice"</code>,
+                      <code>direction="export"</code>, <code>year="2023"</code>
+                    </li>
+                    <li>
+                      <strong>Pipeline Execution:</strong> Trade service runs
+                      its 7-stage processing pipeline
+                    </li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">Returns interactive trade chart</p>
+                    <p class="chat-bubble__text">
+                      Returns interactive trade chart
+                    </p>
                   </div>
                 </div>
               </div>
 
               <!-- Turn 2 -->
-              <div class="askback-card" style="--accent-color: #6f308a; --chat-bg: rgba(111, 48, 138, 0.08);">
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #6f308a;
+                  --chat-bg: rgba(111, 48, 138, 0.08);
+                "
+              >
                 <div class="askback-card__header">
                   <span class="askback-card__turn">Turn 02</span>
-                  <h3 class="askback-card__title">Relative Reference Resolution</h3>
+                  <h3 class="askback-card__title">
+                    Relative Reference Resolution
+                  </h3>
                 </div>
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
@@ -1036,19 +2133,37 @@
                     <p class="chat-bubble__text">"What about 2025?"</p>
                   </div>
                   <ul class="action-list">
-                    <li><strong>Query Rewriter:</strong> Detects relative temporal reference</li>
-                    <li><strong>Context Carry-over:</strong> Enrich query with <code>product="rice"</code>, <code>direction="export"</code> from session</li>
-                    <li><strong>Execution:</strong> Trade service re-runs query for <code>year="2024"</code></li>
+                    <li>
+                      <strong>Query Rewriter:</strong> Detects relative temporal
+                      reference
+                    </li>
+                    <li>
+                      <strong>Context Carry-over:</strong> Enrich query with
+                      <code>product="rice"</code>,
+                      <code>direction="export"</code> from session
+                    </li>
+                    <li>
+                      <strong>Execution:</strong> Trade service re-runs query
+                      for <code>year="2024"</code>
+                    </li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">Returns updated chart for 2024 exports</p>
+                    <p class="chat-bubble__text">
+                      Returns updated chart for 2024 exports
+                    </p>
                   </div>
                 </div>
               </div>
 
               <!-- Turn 3 -->
-              <div class="askback-card" style="--accent-color: #ec9a29; --chat-bg: rgba(236, 154, 41, 0.08);">
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #ec9a29;
+                  --chat-bg: rgba(236, 154, 41, 0.08);
+                "
+              >
                 <div class="askback-card__header">
                   <span class="askback-card__turn">Turn 03</span>
                   <h3 class="askback-card__title">Bilateral Query Merging</h3>
@@ -1059,17 +2174,30 @@
                     <p class="chat-bubble__text">"And for Vietnam?"</p>
                   </div>
                   <ul class="action-list">
-                    <li><strong>Query Rewriter:</strong> Detects partner country change</li>
-                    <li><strong>Context Merging:</strong> Merge <code>partner_country="Vietnam"</code> onto existing <code>rice</code> / <code>export</code> / <code>2024</code> context</li>
-                    <li><strong>Execution:</strong> Queries bilateral Cambodia-Vietnam rice export statistics</li>
+                    <li>
+                      <strong>Query Rewriter:</strong> Detects partner country
+                      change
+                    </li>
+                    <li>
+                      <strong>Context Merging:</strong> Merge
+                      <code>partner_country="Vietnam"</code> onto existing
+                      <code>rice</code> / <code>export</code> /
+                      <code>2024</code> context
+                    </li>
+                    <li>
+                      <strong>Execution:</strong> Queries bilateral
+                      Cambodia-Vietnam rice export statistics
+                    </li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">Returns updated trade related to Cambodia–Vietnam rice exports</p>
+                    <p class="chat-bubble__text">
+                      Returns updated trade related to Cambodia–Vietnam rice
+                      exports
+                    </p>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -1091,20 +2219,39 @@
             <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
           </div>
           <div class="slide-title">
-            <span class="slide-title__en">Real Testing: Multi-Turn Context (HS Code Retrieval)</span>
+            <span class="slide-title__en"
+              >Real Testing: Multi-Turn Context (HS Code Retrieval)</span
+            >
           </div>
           <div class="org-mark">GDCE</div>
         </header>
         <div class="gold-rule"></div>
-        <div class="slide-body" style="padding-top: 15px; padding-bottom: 15px;">
+        <div class="slide-body" style="padding-top: 15px; padding-bottom: 15px">
           <div class="slide-content">
-            <p class="slide-intro-text" style="font-size: 20px; color: var(--blue-muted); margin: 0 0 15px 0;">
-              Search queries are progressively narrowed down by using only the delta, while the session automatically maintains the product context.
+            <p
+              class="slide-intro-text"
+              style="
+                font-size: 20px;
+                color: var(--blue-muted);
+                margin: 0 0 15px 0;
+              "
+            >
+              Search queries are progressively narrowed down by using only the
+              delta, while the session automatically maintains the product
+              context.
             </p>
-            <div class="askback-timeline" style="grid-template-columns: repeat(3, 1fr);">
-              
+            <div
+              class="askback-timeline"
+              style="grid-template-columns: repeat(3, 1fr)"
+            >
               <!-- Turn 1 -->
-              <div class="askback-card" style="--accent-color: #1b73e8; --chat-bg: rgba(27, 115, 232, 0.08);">
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #1b73e8;
+                  --chat-bg: rgba(27, 115, 232, 0.08);
+                "
+              >
                 <div class="askback-card__header">
                   <span class="askback-card__turn">Turn 01</span>
                   <h3 class="askback-card__title">Candidate Retrieval</h3>
@@ -1115,22 +2262,42 @@
                     <p class="chat-bubble__text">"hs code of car?"</p>
                   </div>
                   <ul class="action-list">
-                    <li><strong>Intent:</strong> <code>hs_code_lookup</code>, <code>entity="car"</code></li>
-                    <li><strong>Retrieval:</strong> Orchestrator calls Retrieval Service (Port 8003)</li>
-                    <li><strong>Vector Search:</strong> Embeds query &rarr; searches Qdrant <code>:6333</code> (<code>gdce_hs_code</code>)</li>
+                    <li>
+                      <strong>Intent:</strong> <code>hs_code_lookup</code>,
+                      <code>entity="car"</code>
+                    </li>
+                    <li>
+                      <strong>Retrieval:</strong> Orchestrator calls Retrieval
+                      Service (Port 8003)
+                    </li>
+                    <li>
+                      <strong>Vector Search:</strong> Embeds query &rarr;
+                      searches Qdrant
+                      <code>:6333</code> (<code>gdce_hs_code</code>)
+                    </li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">returns candidates in 8703.xx.xx, entity = car</p>
+                    <p class="chat-bubble__text">
+                      returns candidates in 8703.xx.xx, entity = car
+                    </p>
                   </div>
                 </div>
               </div>
 
               <!-- Turn 2 -->
-              <div class="askback-card" style="--accent-color: #6f308a; --chat-bg: rgba(111, 48, 138, 0.08);">
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #6f308a;
+                  --chat-bg: rgba(111, 48, 138, 0.08);
+                "
+              >
                 <div class="askback-card__header">
                   <span class="askback-card__turn">Turn 02</span>
-                  <h3 class="askback-card__title">Context Refinement &amp; Re-ranking</h3>
+                  <h3 class="askback-card__title">
+                    Context Refinement &amp; Re-ranking
+                  </h3>
                 </div>
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
@@ -1138,41 +2305,77 @@
                     <p class="chat-bubble__text">"its fully assembled"</p>
                   </div>
                   <ul class="action-list">
-                    <li><strong>Query Rewriter:</strong> Detects follow-up &amp; enriches with <code>car</code> context</li>
-                    <li><strong>Rewritten:</strong> "hs code for assembled car"</li>
-                    <li><strong>Re-ranking:</strong> Retrieval Service narrows results to <code>8703.xx.xx</code></li>
-                    <li><strong>Session Cache:</strong> Saves <code>last_entity="fully assembled car"</code>, <code>candidate_codes=["8703.xx.xx"]</code></li>
+                    <li>
+                      <strong>Query Rewriter:</strong> Detects follow-up &amp;
+                      enriches with <code>car</code> context
+                    </li>
+                    <li>
+                      <strong>Rewritten:</strong> "hs code for assembled car"
+                    </li>
+                    <li>
+                      <strong>Re-ranking:</strong> Retrieval Service narrows
+                      results to <code>8703.xx.xx</code>
+                    </li>
+                    <li>
+                      <strong>Session Cache:</strong> Saves
+                      <code>last_entity="fully assembled car"</code>,
+                      <code>candidate_codes=["8703.xx.xx"]</code>
+                    </li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">Returns narrowed candidate: The hs list narrows to other-than-CKD</p>
+                    <p class="chat-bubble__text">
+                      Returns narrowed candidate: The hs list narrows to
+                      other-than-CKD
+                    </p>
                   </div>
                 </div>
               </div>
 
               <!-- Turn 3 -->
-              <div class="askback-card" style="--accent-color: #ec9a29; --chat-bg: rgba(236, 154, 41, 0.08);">
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #ec9a29;
+                  --chat-bg: rgba(236, 154, 41, 0.08);
+                "
+              >
                 <div class="askback-card__header">
                   <span class="askback-card__turn">Turn 03</span>
-                  <h3 class="askback-card__title">Specific Subheading Lookup</h3>
+                  <h3 class="askback-card__title">
+                    Specific Subheading Lookup
+                  </h3>
                 </div>
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
                     <span class="chat-bubble__label">User Request</span>
-                    <p class="chat-bubble__text">"Is there a more specific subheading under that?"</p>
+                    <p class="chat-bubble__text">
+                      "Is there a more specific subheading under that?"
+                    </p>
                   </div>
                   <ul class="action-list">
-                    <li><strong>Co-reference:</strong> Resolves pronoun <code>"that"</code> &rarr; <code>"fully assembled car"</code></li>
-                    <li><strong>Rewritten:</strong> "fully assembled car subheadings HS code"</li>
-                    <li><strong>Bilateral Check:</strong> Searches 8-digit AHTN extensions under <code>8703.23.xx</code></li>
+                    <li>
+                      <strong>Co-reference:</strong> Resolves pronoun
+                      <code>"that"</code> &rarr;
+                      <code>"fully assembled car"</code>
+                    </li>
+                    <li>
+                      <strong>Rewritten:</strong> "fully assembled car
+                      subheadings HS code"
+                    </li>
+                    <li>
+                      <strong>Bilateral Check:</strong> Searches 8-digit AHTN
+                      extensions under <code>8703.23.xx</code>
+                    </li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">Returns 8703.23.xx subheading </p>
+                    <p class="chat-bubble__text">
+                      Returns 8703.23.xx subheading
+                    </p>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -1194,20 +2397,38 @@
             <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
           </div>
           <div class="slide-title">
-            <span class="slide-title__en">Real Testing: Multi-Turn Context (General FAQ)</span>
+            <span class="slide-title__en"
+              >Real Testing: Multi-Turn Context (General FAQ)</span
+            >
           </div>
           <div class="org-mark">GDCE</div>
         </header>
         <div class="gold-rule"></div>
-        <div class="slide-body" style="padding-top: 15px; padding-bottom: 15px;">
+        <div class="slide-body" style="padding-top: 15px; padding-bottom: 15px">
           <div class="slide-content">
-            <p class="slide-intro-text" style="font-size: 20px; color: var(--blue-muted); margin: 0 0 15px 0;">
-              Conversational QA resolving domain-specific inquiries with topic narrowing and grounded answers with legal citations.
+            <p
+              class="slide-intro-text"
+              style="
+                font-size: 20px;
+                color: var(--blue-muted);
+                margin: 0 0 15px 0;
+              "
+            >
+              Conversational QA resolving domain-specific inquiries with topic
+              narrowing and grounded answers with legal citations.
             </p>
-            <div class="askback-timeline" style="grid-template-columns: repeat(3, 1fr);">
-              
+            <div
+              class="askback-timeline"
+              style="grid-template-columns: repeat(3, 1fr)"
+            >
               <!-- Turn 1 -->
-              <div class="askback-card" style="--accent-color: #1b73e8; --chat-bg: rgba(27, 115, 232, 0.08);">
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #1b73e8;
+                  --chat-bg: rgba(27, 115, 232, 0.08);
+                "
+              >
                 <div class="askback-card__header">
                   <span class="askback-card__turn">Turn 01</span>
                   <h3 class="askback-card__title">General Inquiry RAG</h3>
@@ -1215,22 +2436,40 @@
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
                     <span class="chat-bubble__label">User Request</span>
-                    <p class="chat-bubble__text">"what documents do I need to import goods into Cambodia?"</p>
+                    <p class="chat-bubble__text">
+                      "what documents do I need to import goods into Cambodia?"
+                    </p>
                   </div>
                   <ul class="action-list">
                     <li><strong>Intent:</strong> <code>general</code></li>
-                    <li><strong>Retrieval:</strong> General Service (Port 8005) pulls chunks from Qdrant <code>:6334</code> (<code>gdce_docs</code>)</li>
-                    <li><strong>Synthesis:</strong> Gemini synthesizes a grounded answer with citations from the customs law</li>
+                    <li>
+                      <strong>Retrieval:</strong> General Service (Port 8005)
+                      pulls chunks from Qdrant
+                      <code>:6334</code> (<code>gdce_docs</code>)
+                    </li>
+                    <li>
+                      <strong>Synthesis:</strong> Gemini synthesizes a grounded
+                      answer with citations from the customs law
+                    </li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">Returns required document list with citations to Customs Law</p>
+                    <p class="chat-bubble__text">
+                      Returns required document list with citations to Customs
+                      Law
+                    </p>
                   </div>
                 </div>
               </div>
 
               <!-- Turn 2 -->
-              <div class="askback-card" style="--accent-color: #6f308a; --chat-bg: rgba(111, 48, 138, 0.08);">
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #6f308a;
+                  --chat-bg: rgba(111, 48, 138, 0.08);
+                "
+              >
                 <div class="askback-card__header">
                   <span class="askback-card__turn">Turn 02</span>
                   <h3 class="askback-card__title">Topic Narrowing</h3>
@@ -1238,42 +2477,75 @@
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
                     <span class="chat-bubble__label">User Request</span>
-                    <p class="chat-bubble__text">"what about for agricultural products specifically?"</p>
+                    <p class="chat-bubble__text">
+                      "what about for agricultural products specifically?"
+                    </p>
                   </div>
                   <ul class="action-list">
-                    <li><strong>Query Rewriter:</strong> Detects topic narrowing, carrying forward <code>"importing into Cambodia"</code></li>
-                    <li><strong>Retrieval:</strong> Fetches chunks filtered specifically to agricultural import procedures</li>
+                    <li>
+                      <strong>Query Rewriter:</strong> Detects topic narrowing,
+                      carrying forward <code>"importing into Cambodia"</code>
+                    </li>
+                    <li>
+                      <strong>Retrieval:</strong> Fetches chunks filtered
+                      specifically to agricultural import procedures
+                    </li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">Returns updated procedure list with agricultural regulation citations</p>
+                    <p class="chat-bubble__text">
+                      Returns updated procedure list with agricultural
+                      regulation citations
+                    </p>
                   </div>
                 </div>
               </div>
 
               <!-- Turn 3 -->
-              <div class="askback-card" style="--accent-color: #ec9a29; --chat-bg: rgba(236, 154, 41, 0.08);">
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #ec9a29;
+                  --chat-bg: rgba(236, 154, 41, 0.08);
+                "
+              >
                 <div class="askback-card__header">
                   <span class="askback-card__turn">Turn 03</span>
-                  <h3 class="askback-card__title">Specific Product Resolution</h3>
+                  <h3 class="askback-card__title">
+                    Specific Product Resolution
+                  </h3>
                 </div>
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
                     <span class="chat-bubble__label">User Request</span>
-                    <p class="chat-bubble__text">"does this apply to rice too?"</p>
+                    <p class="chat-bubble__text">
+                      "does this apply to rice too?"
+                    </p>
                   </div>
                   <ul class="action-list">
-                    <li><strong>Query Rewriter:</strong> Resolves <code>"this"</code> &rarr; <code>"agricultural import procedures"</code></li>
-                    <li><strong>Retrieval:</strong> General Service retrieves rice-specific customs requirements</li>
-                    <li><strong>Grounded Answer:</strong> References the exact legal article (e.g. Prakas on Agricultural Imports)</li>
+                    <li>
+                      <strong>Query Rewriter:</strong> Resolves
+                      <code>"this"</code> &rarr;
+                      <code>"agricultural import procedures"</code>
+                    </li>
+                    <li>
+                      <strong>Retrieval:</strong> General Service retrieves
+                      rice-specific customs requirements
+                    </li>
+                    <li>
+                      <strong>Grounded Answer:</strong> References the exact
+                      legal article (e.g. Prakas on Agricultural Imports)
+                    </li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">Returns answers referencing the specific Prakas on Agricultural Imports</p>
+                    <p class="chat-bubble__text">
+                      Returns answers referencing the specific Prakas on
+                      Agricultural Imports
+                    </p>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -1284,8 +2556,6 @@
           <div class="page-number">13</div>
         </footer>
       </section>
-
-
 
       <!-- =========================================================
          SLIDE 44 · SECTION 6
@@ -1302,9 +2572,6 @@
         <div class="page-number">14</div>
       </section>
 
-
-
-
       <!-- =========================================================
          SLIDE 15 · RECOMMENDATIONS & FUTURE IMPROVEMENT
          ========================================================= -->
@@ -1315,81 +2582,117 @@
             <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
           </div>
           <div class="slide-title">
-            <span class="slide-title__en">Conclusion &amp; Recommendations</span>
+            <span class="slide-title__en"
+              >Conclusion &amp; Recommendations</span
+            >
           </div>
           <div class="org-mark">GDCE</div>
         </header>
         <div class="gold-rule"></div>
         <div class="slide-body slide-body--rec-future">
           <div class="slide-content rec-container">
-            
             <!-- Intro Paragraph -->
             <p class="rec-intro">
-              Phase 1 delivers a production-grade, bilingual RAG/NLU platform across HS classification, tax calculation, 
-              trade statistics, and FAQ retrieval, but the Orchestrator remains a single-shot classifier, not a true agent.
+              Phase 1 delivers a production-grade, bilingual RAG/NLU platform
+              across HS classification, tax calculation, trade statistics, and
+              FAQ retrieval, but the Orchestrator remains a single-shot
+              classifier, not a true agent.
             </p>
 
             <!-- Two Columns Container -->
             <div class="rec-grid">
-            <!-- Limitation Card -->
-            <div class="rec-card rec-card--limitation">
-              <h3 class="rec-card-title rec-card-title--limitation">Current Limitation</h3>
-              <ul class="rec-list">
-                <li>
-                  <span class="rec-item-title">One Intent Per Turn</span>
-                  <span class="rec-item-desc">Compound requests (e.g. HS lookup + tax calc) need multiple exchanges</span>
-                </li>
-                <li>
-                  <span class="rec-item-title">No Tool Composition</span>
-                  <span class="rec-item-desc">Calculator, Retrieval, Trade, General are hardcoded destinations, not selectable capabilities</span>
-                </li>
-                <li>
-                  <span class="rec-item-title">Validation Without Deliberation</span>
-                  <span class="rec-item-desc">Guards reject bad output but can't reason about why it failed</span>
-                </li>
-                <li>
-                  <span class="rec-item-title">Procedural Clarification</span>
-                  <span class="rec-item-desc">Fixed slot sequence is a state machine, not a reasoned decision</span>
-                </li>
-              </ul>
-            </div>
-            <!-- Recommendation Card -->
-            <div class="rec-card rec-card--recommendation">
-              <h3 class="rec-card-title rec-card-title--recommendation">Recommendation: Agentic Architecture</h3>
-              <ul class="rec-list">
-                <li>
-                  <span class="rec-item-title">Sub-Agent Services</span>
-                  <span class="rec-item-desc">Each service can call other tools when it needs info it doesn't have</span>
-                </li>
-                <li>
-                  <span class="rec-item-title">MCP Discovery</span>
-                  <span class="rec-item-desc">Discover tools via MCP instead of hardcoded routes in coordinator.py</span>
-                </li>
-                <li>
-                  <span class="rec-item-title">Orchestrator-Worker Model</span>
-                  <span class="rec-item-desc">Hard recursion cap (~3 nested levels)</span>
-                </li>
-                <li>
-                  <span class="rec-item-title">Reason → Act → Observe</span>
-                  <span class="rec-item-desc">Self-verify output before finalizing</span>
-                </li>
-                <li>
-                  <span class="rec-item-title">Auditable Call Trees</span>
-                  <span class="rec-item-desc">parent_call_id extending service_calls telemetry</span>
-                </li>
-              </ul>
-            </div>
-
+              <!-- Limitation Card -->
+              <div class="rec-card rec-card--limitation">
+                <h3 class="rec-card-title rec-card-title--limitation">
+                  Current Limitation
+                </h3>
+                <ul class="rec-list">
+                  <li>
+                    <span class="rec-item-title">One Intent Per Turn</span>
+                    <span class="rec-item-desc"
+                      >Compound requests (e.g. HS lookup + tax calc) need
+                      multiple exchanges</span
+                    >
+                  </li>
+                  <li>
+                    <span class="rec-item-title">No Tool Composition</span>
+                    <span class="rec-item-desc"
+                      >Calculator, Retrieval, Trade, General are hardcoded
+                      destinations, not selectable capabilities</span
+                    >
+                  </li>
+                  <li>
+                    <span class="rec-item-title"
+                      >Validation Without Deliberation</span
+                    >
+                    <span class="rec-item-desc"
+                      >Guards reject bad output but can't reason about why it
+                      failed</span
+                    >
+                  </li>
+                  <li>
+                    <span class="rec-item-title">Procedural Clarification</span>
+                    <span class="rec-item-desc"
+                      >Fixed slot sequence is a state machine, not a reasoned
+                      decision</span
+                    >
+                  </li>
+                </ul>
+              </div>
+              <!-- Recommendation Card -->
+              <div class="rec-card rec-card--recommendation">
+                <h3 class="rec-card-title rec-card-title--recommendation">
+                  Recommendation: Agentic Architecture
+                </h3>
+                <ul class="rec-list">
+                  <li>
+                    <span class="rec-item-title">Sub-Agent Services</span>
+                    <span class="rec-item-desc"
+                      >Each service can call other tools when it needs info it
+                      doesn't have</span
+                    >
+                  </li>
+                  <li>
+                    <span class="rec-item-title">MCP Discovery</span>
+                    <span class="rec-item-desc"
+                      >Discover tools via MCP instead of hardcoded routes in
+                      coordinator.py</span
+                    >
+                  </li>
+                  <li>
+                    <span class="rec-item-title"
+                      >Orchestrator-Worker Model</span
+                    >
+                    <span class="rec-item-desc"
+                      >Hard recursion cap (~3 nested levels)</span
+                    >
+                  </li>
+                  <li>
+                    <span class="rec-item-title">Reason → Act → Observe</span>
+                    <span class="rec-item-desc"
+                      >Self-verify output before finalizing</span
+                    >
+                  </li>
+                  <li>
+                    <span class="rec-item-title">Auditable Call Trees</span>
+                    <span class="rec-item-desc"
+                      >parent_call_id extending service_calls telemetry</span
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
 
             <!-- Bottom Card: Migration Path -->
             <div class="rec-migration-card">
               <h4 class="rec-migration-title">Migration Path</h4>
               <p class="rec-migration-text">
-                Wrap existing services as MCP servers &rarr; single-level delegation first &rarr; add nested calling behind a depth cap (Retrieval &rarr; Calculator) &rarr; shadow mode &rarr; selective cutover for compound/ambiguous queries.
+                Wrap existing services as MCP servers &rarr; single-level
+                delegation first &rarr; add nested calling behind a depth cap
+                (Retrieval &rarr; Calculator) &rarr; shadow mode &rarr;
+                selective cutover for compound/ambiguous queries.
               </p>
             </div>
-
           </div>
         </div>
         <footer class="slide-footer">
@@ -1409,8 +2712,8 @@
           <h1>Thank You</h1>
           <p class="title-slide__sub">Questions?</p>
           <p class="title-slide__org">
-            Multi-domain Customs Artificial Intelligent Assistant · General Department of
-            Customs and Excise of Cambodia
+            Multi-domain Customs Artificial Intelligent Assistant · General
+            Department of Customs and Excise of Cambodia
           </p>
         </div>
         <div class="page-number">16</div>
@@ -1425,13 +2728,15 @@
       <button
         class="presenter__nav presenter__nav--prev"
         id="presenterPrev"
-        title="Previous (←)">
+        title="Previous (←)"
+      >
         ‹
       </button>
       <button
         class="presenter__nav presenter__nav--next"
         id="presenterNext"
-        title="Next (→)">
+        title="Next (→)"
+      >
         ›
       </button>
       <div class="presenter__counter" id="presenterCounter">1 / 54</div>
