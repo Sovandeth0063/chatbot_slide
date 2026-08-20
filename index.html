@@ -852,16 +852,16 @@
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
                     <span class="chat-bubble__label">User Request</span>
-                    <p class="chat-bubble__text">"what is the hs code for rice?"</p>
+                    <p class="chat-bubble__text">"hs code of car?"</p>
                   </div>
                   <ul class="action-list">
-                    <li><strong>Intent:</strong> <code>hs_code_lookup</code>, <code>entity="rice"</code></li>
+                    <li><strong>Intent:</strong> <code>hs_code_lookup</code>, <code>entity="car"</code></li>
                     <li><strong>Retrieval:</strong> Orchestrator calls Retrieval Service (Port 8003)</li>
                     <li><strong>Vector Search:</strong> Embeds query &rarr; searches Qdrant <code>:6333</code> (<code>gdce_hs_code</code>)</li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">Returns Chapter 10 candidates: 1006.10, 1006.20, 1006.30, 1006.40</p>
+                    <p class="chat-bubble__text">returns candidates in 8703.xx.xx, entity = car</p>
                   </div>
                 </div>
               </div>
@@ -875,17 +875,17 @@
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
                     <span class="chat-bubble__label">User Request</span>
-                    <p class="chat-bubble__text">"what about broken rice specifically?"</p>
+                    <p class="chat-bubble__text">"its fully assembled"</p>
                   </div>
                   <ul class="action-list">
-                    <li><strong>Query Rewriter:</strong> Detects follow-up &amp; enriches with <code>rice</code> context</li>
-                    <li><strong>Rewritten:</strong> "hs code for broken rice"</li>
-                    <li><strong>Re-ranking:</strong> Retrieval Service narrows results to <code>1006.40.00</code></li>
-                    <li><strong>Session Cache:</strong> Saves <code>last_entity="broken rice"</code>, <code>candidate_codes=["1006.40.00"]</code></li>
+                    <li><strong>Query Rewriter:</strong> Detects follow-up &amp; enriches with <code>car</code> context</li>
+                    <li><strong>Rewritten:</strong> "hs code for assembled car"</li>
+                    <li><strong>Re-ranking:</strong> Retrieval Service narrows results to <code>8703.xx.xx</code></li>
+                    <li><strong>Session Cache:</strong> Saves <code>last_entity="fully assembled car"</code>, <code>candidate_codes=["8703.xx.xx"]</code></li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">Returns narrowed candidate: 1006.40.00 (broken rice)</p>
+                    <p class="chat-bubble__text">Returns narrowed candidate: The hs list narrows to other-than-CKD</p>
                   </div>
                 </div>
               </div>
@@ -899,16 +899,16 @@
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
                     <span class="chat-bubble__label">User Request</span>
-                    <p class="chat-bubble__text">"is there a more specific subheading under that?"</p>
+                    <p class="chat-bubble__text">"Is there a more specific subheading under that?"</p>
                   </div>
                   <ul class="action-list">
-                    <li><strong>Co-reference:</strong> Resolves pronoun <code>"that"</code> &rarr; <code>"1006.40.00 broken rice"</code></li>
-                    <li><strong>Rewritten:</strong> "subheadings under 1006.40.00 broken rice"</li>
-                    <li><strong>Bilateral Check:</strong> Searches 8-digit AHTN extensions under <code>1006.40</code></li>
+                    <li><strong>Co-reference:</strong> Resolves pronoun <code>"that"</code> &rarr; <code>"fully assembled car"</code></li>
+                    <li><strong>Rewritten:</strong> "fully assembled car subheadings HS code"</li>
+                    <li><strong>Bilateral Check:</strong> Searches 8-digit AHTN extensions under <code>8703.23.xx</code></li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">Returns 1006.40.10 (feed) &amp; 1006.40.90 (other) with duty rates</p>
+                    <p class="chat-bubble__text">Returns 8703.23.xx subheading </p>
                   </div>
                 </div>
               </div>
