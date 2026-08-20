@@ -608,7 +608,7 @@
         <div class="gold-rule"></div>
         <div class="slide-body" style="padding-top: 15px; padding-bottom: 15px;">
           <div class="slide-content">
-            <p class="slide-intro-text" style="font-size: 16px; color: var(--blue-muted); margin: 0 0 15px 0;">
+            <p class="slide-intro-text" style="font-size: 20px; color: var(--blue-muted); margin: 0 0 15px 0;">
               Execution sequence of the <strong>Unified Sequential Slot-Collection Gate</strong> inside the Calculator handler resolving missing slots dynamically.
             </p>
             <div class="askback-timeline">
@@ -622,7 +622,7 @@
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
                     <span class="chat-bubble__label">User Request</span>
-                    <p class="chat-bubble__text">"what is the hs code of iphone"</p>
+                    <p class="chat-bubble__text">"hs code of iphone?"</p>
                   </div>
                   <ul class="action-list">
                     <li><strong>Intent:</strong> Extract entity &amp; lock type</li>
@@ -656,7 +656,7 @@
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Ask-Back Response</span>
-                    <p class="chat-bubble__text">"I still need the HS code for iphone. Please confirm."</p>
+                    <p class="chat-bubble__text">"Ask user to confirm one of the following HS code options, and the price user spend"</p>
                   </div>
                 </div>
               </div>
@@ -679,7 +679,7 @@
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Ask-Back Response</span>
-                    <p class="chat-bubble__text">"What is the CIF value of the iphone?"</p>
+                    <p class="chat-bubble__text">"What is the price that user paid"</p>
                   </div>
                 </div>
               </div>
@@ -697,13 +697,13 @@
                   </div>
                   <ul class="action-list">
                     <li><strong>Slot Lock:</strong> Parse price &rarr; <code>cif_value=1000</code></li>
-                    <li><strong>DB Fetch:</strong> Get duty rates (CD=15%, ST=0%, VAT=10%)</li>
+                    <li><strong>DB Fetch:</strong> Get duty rates (CD=0%, ST=5%, VAT=10%)</li>
                     <li><strong>Formula:</strong> Execute ceiling rounding math</li>
                     <li><strong>Persist:</strong> Save conversation + telemetry to DB</li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Final Response</span>
-                    <p class="chat-bubble__text">SSE streams itemized tax breakdown</p>
+                    <p class="chat-bubble__text">SSE streams iphone's tax breakdown</p>
                   </div>
                 </div>
               </div>
@@ -716,6 +716,312 @@
             Multi-domain Customs Artificial Intelligent Assistant · GDCE
           </div>
           <div class="page-number">10</div>
+        </footer>
+      </section>
+
+      <!-- =========================================================
+         SLIDE 11 · MULTI-TURN CONTEXT (TRADE QUERY)
+         ========================================================= -->
+      <section class="slide slide--content" data-slide="content">
+        <header class="slide-header">
+          <div class="brand-mark">
+            <div class="brand-mark__icon">▤</div>
+            <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
+          </div>
+          <div class="slide-title">
+            <span class="slide-title__en">Real Testing: Multi-Turn Context (Trade Query)</span>
+          </div>
+          <div class="org-mark">GDCE</div>
+        </header>
+        <div class="gold-rule"></div>
+        <div class="slide-body" style="padding-top: 15px; padding-bottom: 15px;">
+          <div class="slide-content">
+            <p class="slide-intro-text" style="font-size: 20px; color: var(--blue-muted); margin: 0 0 15px 0;">
+              Session context automatically fills in prior slots, enabling query re-writing to merge multi-turn conversational deltas.
+            </p>
+            <div class="askback-timeline" style="grid-template-columns: repeat(3, 1fr);">
+              
+              <!-- Turn 1 -->
+              <div class="askback-card" style="--accent-color: #1b73e8; --chat-bg: rgba(27, 115, 232, 0.08);">
+                <div class="askback-card__header">
+                  <span class="askback-card__turn">Turn 01</span>
+                  <h3 class="askback-card__title">Initial Query Extraction</h3>
+                </div>
+                <div class="askback-card__body">
+                  <div class="chat-bubble chat-bubble--user">
+                    <span class="chat-bubble__label">User Request</span>
+                    <p class="chat-bubble__text">"Show me Cambodia rice exports in 2024"</p>
+                  </div>
+                  <ul class="action-list">
+                    <li><strong>Intent:</strong> <code>trade_query</code></li>
+                    <li><strong>NLU Resolution:</strong> Extract slots: <code>product="rice"</code>, <code>direction="export"</code>, <code>year="2023"</code></li>
+                    <li><strong>Pipeline Execution:</strong> Trade service runs its 7-stage processing pipeline</li>
+                  </ul>
+                  <div class="chat-bubble chat-bubble--system">
+                    <span class="chat-bubble__label">Response</span>
+                    <p class="chat-bubble__text">Returns interactive trade chart</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Turn 2 -->
+              <div class="askback-card" style="--accent-color: #6f308a; --chat-bg: rgba(111, 48, 138, 0.08);">
+                <div class="askback-card__header">
+                  <span class="askback-card__turn">Turn 02</span>
+                  <h3 class="askback-card__title">Relative Reference Resolution</h3>
+                </div>
+                <div class="askback-card__body">
+                  <div class="chat-bubble chat-bubble--user">
+                    <span class="chat-bubble__label">User Request</span>
+                    <p class="chat-bubble__text">"What about 2025?"</p>
+                  </div>
+                  <ul class="action-list">
+                    <li><strong>Query Rewriter:</strong> Detects relative temporal reference</li>
+                    <li><strong>Context Carry-over:</strong> Enrich query with <code>product="rice"</code>, <code>direction="export"</code> from session</li>
+                    <li><strong>Execution:</strong> Trade service re-runs query for <code>year="2024"</code></li>
+                  </ul>
+                  <div class="chat-bubble chat-bubble--system">
+                    <span class="chat-bubble__label">Response</span>
+                    <p class="chat-bubble__text">Returns updated chart for 2024 exports</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Turn 3 -->
+              <div class="askback-card" style="--accent-color: #ec9a29; --chat-bg: rgba(236, 154, 41, 0.08);">
+                <div class="askback-card__header">
+                  <span class="askback-card__turn">Turn 03</span>
+                  <h3 class="askback-card__title">Bilateral Query Merging</h3>
+                </div>
+                <div class="askback-card__body">
+                  <div class="chat-bubble chat-bubble--user">
+                    <span class="chat-bubble__label">User Request</span>
+                    <p class="chat-bubble__text">"And for Vietnam?"</p>
+                  </div>
+                  <ul class="action-list">
+                    <li><strong>Query Rewriter:</strong> Detects partner country change</li>
+                    <li><strong>Context Merging:</strong> Merge <code>partner_country="Vietnam"</code> onto existing <code>rice</code> / <code>export</code> / <code>2024</code> context</li>
+                    <li><strong>Execution:</strong> Queries bilateral Cambodia-Vietnam rice export statistics</li>
+                  </ul>
+                  <div class="chat-bubble chat-bubble--system">
+                    <span class="chat-bubble__label">Response</span>
+                    <p class="chat-bubble__text">Returns updated trade related to Cambodia–Vietnam rice exports</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <footer class="slide-footer">
+          <div class="footer-left">
+            Multi-domain Customs Artificial Intelligent Assistant · GDCE
+          </div>
+          <div class="page-number">11</div>
+        </footer>
+      </section>
+
+      <!-- =========================================================
+         SLIDE 12 · MULTI-TURN CONTEXT (HS CODE RETRIEVAL)
+         ========================================================= -->
+      <section class="slide slide--content" data-slide="content">
+        <header class="slide-header">
+          <div class="brand-mark">
+            <div class="brand-mark__icon">▤</div>
+            <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
+          </div>
+          <div class="slide-title">
+            <span class="slide-title__en">Real Testing: Multi-Turn Context (HS Code Retrieval)</span>
+          </div>
+          <div class="org-mark">GDCE</div>
+        </header>
+        <div class="gold-rule"></div>
+        <div class="slide-body" style="padding-top: 15px; padding-bottom: 15px;">
+          <div class="slide-content">
+            <p class="slide-intro-text" style="font-size: 20px; color: var(--blue-muted); margin: 0 0 15px 0;">
+              Search queries are progressively narrowed down by using only the delta, while the session automatically maintains the product context.
+            </p>
+            <div class="askback-timeline" style="grid-template-columns: repeat(3, 1fr);">
+              
+              <!-- Turn 1 -->
+              <div class="askback-card" style="--accent-color: #1b73e8; --chat-bg: rgba(27, 115, 232, 0.08);">
+                <div class="askback-card__header">
+                  <span class="askback-card__turn">Turn 01</span>
+                  <h3 class="askback-card__title">Candidate Retrieval</h3>
+                </div>
+                <div class="askback-card__body">
+                  <div class="chat-bubble chat-bubble--user">
+                    <span class="chat-bubble__label">User Request</span>
+                    <p class="chat-bubble__text">"what is the hs code for rice?"</p>
+                  </div>
+                  <ul class="action-list">
+                    <li><strong>Intent:</strong> <code>hs_code_lookup</code>, <code>entity="rice"</code></li>
+                    <li><strong>Retrieval:</strong> Orchestrator calls Retrieval Service (Port 8003)</li>
+                    <li><strong>Vector Search:</strong> Embeds query &rarr; searches Qdrant <code>:6333</code> (<code>gdce_hs_code</code>)</li>
+                  </ul>
+                  <div class="chat-bubble chat-bubble--system">
+                    <span class="chat-bubble__label">Response</span>
+                    <p class="chat-bubble__text">Returns Chapter 10 candidates: 1006.10, 1006.20, 1006.30, 1006.40</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Turn 2 -->
+              <div class="askback-card" style="--accent-color: #6f308a; --chat-bg: rgba(111, 48, 138, 0.08);">
+                <div class="askback-card__header">
+                  <span class="askback-card__turn">Turn 02</span>
+                  <h3 class="askback-card__title">Context Refinement &amp; Re-ranking</h3>
+                </div>
+                <div class="askback-card__body">
+                  <div class="chat-bubble chat-bubble--user">
+                    <span class="chat-bubble__label">User Request</span>
+                    <p class="chat-bubble__text">"what about broken rice specifically?"</p>
+                  </div>
+                  <ul class="action-list">
+                    <li><strong>Query Rewriter:</strong> Detects follow-up &amp; enriches with <code>rice</code> context</li>
+                    <li><strong>Rewritten:</strong> "hs code for broken rice"</li>
+                    <li><strong>Re-ranking:</strong> Retrieval Service narrows results to <code>1006.40.00</code></li>
+                    <li><strong>Session Cache:</strong> Saves <code>last_entity="broken rice"</code>, <code>candidate_codes=["1006.40.00"]</code></li>
+                  </ul>
+                  <div class="chat-bubble chat-bubble--system">
+                    <span class="chat-bubble__label">Response</span>
+                    <p class="chat-bubble__text">Returns narrowed candidate: 1006.40.00 (broken rice)</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Turn 3 -->
+              <div class="askback-card" style="--accent-color: #ec9a29; --chat-bg: rgba(236, 154, 41, 0.08);">
+                <div class="askback-card__header">
+                  <span class="askback-card__turn">Turn 03</span>
+                  <h3 class="askback-card__title">Specific Subheading Lookup</h3>
+                </div>
+                <div class="askback-card__body">
+                  <div class="chat-bubble chat-bubble--user">
+                    <span class="chat-bubble__label">User Request</span>
+                    <p class="chat-bubble__text">"is there a more specific subheading under that?"</p>
+                  </div>
+                  <ul class="action-list">
+                    <li><strong>Co-reference:</strong> Resolves pronoun <code>"that"</code> &rarr; <code>"1006.40.00 broken rice"</code></li>
+                    <li><strong>Rewritten:</strong> "subheadings under 1006.40.00 broken rice"</li>
+                    <li><strong>Bilateral Check:</strong> Searches 8-digit AHTN extensions under <code>1006.40</code></li>
+                  </ul>
+                  <div class="chat-bubble chat-bubble--system">
+                    <span class="chat-bubble__label">Response</span>
+                    <p class="chat-bubble__text">Returns 1006.40.10 (feed) &amp; 1006.40.90 (other) with duty rates</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <footer class="slide-footer">
+          <div class="footer-left">
+            Multi-domain Customs Artificial Intelligent Assistant · GDCE
+          </div>
+          <div class="page-number">12</div>
+        </footer>
+      </section>
+
+      <!-- =========================================================
+         SLIDE 13 · MULTI-TURN CONTEXT (GENERAL FAQ)
+         ========================================================= -->
+      <section class="slide slide--content" data-slide="content">
+        <header class="slide-header">
+          <div class="brand-mark">
+            <div class="brand-mark__icon">▤</div>
+            <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
+          </div>
+          <div class="slide-title">
+            <span class="slide-title__en">Real Testing: Multi-Turn Context (General FAQ)</span>
+          </div>
+          <div class="org-mark">GDCE</div>
+        </header>
+        <div class="gold-rule"></div>
+        <div class="slide-body" style="padding-top: 15px; padding-bottom: 15px;">
+          <div class="slide-content">
+            <p class="slide-intro-text" style="font-size: 20px; color: var(--blue-muted); margin: 0 0 15px 0;">
+              Conversational QA resolving domain-specific inquiries with topic narrowing and grounded answers with legal citations.
+            </p>
+            <div class="askback-timeline" style="grid-template-columns: repeat(3, 1fr);">
+              
+              <!-- Turn 1 -->
+              <div class="askback-card" style="--accent-color: #1b73e8; --chat-bg: rgba(27, 115, 232, 0.08);">
+                <div class="askback-card__header">
+                  <span class="askback-card__turn">Turn 01</span>
+                  <h3 class="askback-card__title">General Inquiry RAG</h3>
+                </div>
+                <div class="askback-card__body">
+                  <div class="chat-bubble chat-bubble--user">
+                    <span class="chat-bubble__label">User Request</span>
+                    <p class="chat-bubble__text">"what documents do I need to import goods into Cambodia?"</p>
+                  </div>
+                  <ul class="action-list">
+                    <li><strong>Intent:</strong> <code>general</code></li>
+                    <li><strong>Retrieval:</strong> General Service (Port 8005) pulls chunks from Qdrant <code>:6334</code> (<code>gdce_docs</code>)</li>
+                    <li><strong>Synthesis:</strong> Gemini synthesizes a grounded answer with citations from the customs law</li>
+                  </ul>
+                  <div class="chat-bubble chat-bubble--system">
+                    <span class="chat-bubble__label">Response</span>
+                    <p class="chat-bubble__text">Returns required document list with citations to Customs Law</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Turn 2 -->
+              <div class="askback-card" style="--accent-color: #6f308a; --chat-bg: rgba(111, 48, 138, 0.08);">
+                <div class="askback-card__header">
+                  <span class="askback-card__turn">Turn 02</span>
+                  <h3 class="askback-card__title">Topic Narrowing</h3>
+                </div>
+                <div class="askback-card__body">
+                  <div class="chat-bubble chat-bubble--user">
+                    <span class="chat-bubble__label">User Request</span>
+                    <p class="chat-bubble__text">"what about for agricultural products specifically?"</p>
+                  </div>
+                  <ul class="action-list">
+                    <li><strong>Query Rewriter:</strong> Detects topic narrowing, carrying forward <code>"importing into Cambodia"</code></li>
+                    <li><strong>Retrieval:</strong> Fetches chunks filtered specifically to agricultural import procedures</li>
+                  </ul>
+                  <div class="chat-bubble chat-bubble--system">
+                    <span class="chat-bubble__label">Response</span>
+                    <p class="chat-bubble__text">Returns updated procedure list with agricultural regulation citations</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Turn 3 -->
+              <div class="askback-card" style="--accent-color: #ec9a29; --chat-bg: rgba(236, 154, 41, 0.08);">
+                <div class="askback-card__header">
+                  <span class="askback-card__turn">Turn 03</span>
+                  <h3 class="askback-card__title">Specific Product Resolution</h3>
+                </div>
+                <div class="askback-card__body">
+                  <div class="chat-bubble chat-bubble--user">
+                    <span class="chat-bubble__label">User Request</span>
+                    <p class="chat-bubble__text">"does this apply to rice too?"</p>
+                  </div>
+                  <ul class="action-list">
+                    <li><strong>Query Rewriter:</strong> Resolves <code>"this"</code> &rarr; <code>"agricultural import procedures"</code></li>
+                    <li><strong>Retrieval:</strong> General Service retrieves rice-specific customs requirements</li>
+                    <li><strong>Grounded Answer:</strong> References the exact legal article (e.g. Prakas on Agricultural Imports)</li>
+                  </ul>
+                  <div class="chat-bubble chat-bubble--system">
+                    <span class="chat-bubble__label">Response</span>
+                    <p class="chat-bubble__text">Returns answers referencing the specific Prakas on Agricultural Imports</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <footer class="slide-footer">
+          <div class="footer-left">
+            Multi-domain Customs Artificial Intelligent Assistant · GDCE
+          </div>
+          <div class="page-number">13</div>
         </footer>
       </section>
 
