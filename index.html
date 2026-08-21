@@ -434,20 +434,16 @@
             </table>
 
             <div class="goal-panel-horizontal embedding-callout">
-              <div class="goal-panel-horizontal__label">Why BGE-M3</div>
+              <div class="goal-panel-horizontal__label">
+                Why Embeddings Are Needed
+              </div>
               <p class="goal-panel-horizontal__text">
-                BGE-M3 is not the top performer on general multilingual
-                benchmarks &mdash; but it is the best-performing model
-                specifically for Khmer retrieval. At k=3, it achieves more than
-                double the Hit Rate of Jina v3 (0.285 vs. 0.135) and outperforms
-                Qwen3-Embedding by 63% (0.285 vs. 0.175). At the file level, it
-                retrieves the correct source file 70% of the time, vs. 52.5%
-                (Qwen3-Embedding) and 48.5% (Jina v3). Notably, Jina v3 scored
-                highest on raw top-1 cosine similarity (0.759) yet had the worst
-                retrieval accuracy &mdash; a reminder that similarity score is
-                not the same as retrieval correctness. Selection criterion: best
-                performance for Khmer specifically, not overall leaderboard
-                rank.
+                Embeddings convert Khmer/English queries and document passages
+                into numerical vectors that capture semantic meaning. This
+                enables the system to retrieve relevant customs information even
+                when the user’s wording differs from the document, improving
+                cross-lingual search, semantic matching, and RAG answer
+                accuracy.
               </p>
             </div>
 
@@ -2351,7 +2347,7 @@
       </section>
 
       <!-- =========================================================
-         SLIDE 11 · MULTI-TURN CONTEXT (TRADE QUERY)
+         SLIDE 11 · TRADE QUERY SERVICE PIPELINE
          ========================================================= -->
       <section class="slide slide--content" data-slide="content">
         <header class="slide-header">
@@ -2361,153 +2357,207 @@
           </div>
           <div class="slide-title">
             <span class="slide-title__en"
-              >Real Testing: Multi-Turn Context (Trade Query)</span
+              >GDCE Trade Query Service &mdash; NL-to-Analytics Pipeline</span
             >
           </div>
           <div class="org-mark">GDCE</div>
         </header>
         <div class="gold-rule"></div>
-        <div class="slide-body" style="padding-top: 15px; padding-bottom: 15px">
-          <div class="slide-content">
-            <p
-              class="slide-intro-text"
-              style="
-                font-size: 20px;
-                color: var(--blue-muted);
-                margin: 0 0 15px 0;
-              "
-            >
-              Session context automatically fills in prior slots, enabling query
-              re-writing to merge multi-turn conversational deltas.
-            </p>
-            <div
-              class="askback-timeline"
-              style="grid-template-columns: repeat(3, 1fr)"
-            >
-              <!-- Turn 1 -->
-              <div
-                class="askback-card"
-                style="
-                  --accent-color: #1b73e8;
-                  --chat-bg: rgba(27, 115, 232, 0.08);
-                "
-              >
-                <div class="askback-card__header">
-                  <span class="askback-card__turn">Turn 01</span>
-                  <h3 class="askback-card__title">Initial Query Extraction</h3>
+        <div class="slide-body">
+          <div class="slide-content trade-pipeline-slide">
+            <div class="trade-pipeline-header">
+              <h2>Natural Language to Structured Trade Analytics</h2>
+              <p class="trade-pipeline-subtitle">
+                End-to-end pipeline from user question to actionable trade
+                insights
+              </p>
+              <div class="trade-flow-diagram" aria-label="Trade query pipeline flow">
+                <div class="trade-flow-node trade-flow-node--question">
+                  <span class="trade-flow-node__icon">
+                    <svg class="arch-svg"><use href="#arch-icon-message" /></svg>
+                  </span>
+                  <span class="trade-flow-node__body">
+                    <strong>Question</strong>
+                  </span>
                 </div>
-                <div class="askback-card__body">
-                  <div class="chat-bubble chat-bubble--user">
-                    <span class="chat-bubble__label">User Request</span>
-                    <p class="chat-bubble__text">
-                      "Show me Cambodia rice exports in 2024"
-                    </p>
-                  </div>
-                  <ul class="action-list">
-                    <li><strong>Intent:</strong> <code>trade_query</code></li>
-                    <li>
-                      <strong>NLU Resolution:</strong> Extract slots:
-                      <code>product="rice"</code>,
-                      <code>direction="export"</code>, <code>year="2023"</code>
-                    </li>
-                    <li>
-                      <strong>Pipeline Execution:</strong> Trade service runs
-                      its 7-stage processing pipeline
-                    </li>
-                  </ul>
-                  <div class="chat-bubble chat-bubble--system">
-                    <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">
-                      Returns interactive trade chart
-                    </p>
-                  </div>
+                <span class="trade-flow-link" aria-hidden="true"></span>
+                <div class="trade-flow-node trade-flow-node--extract">
+                  <span class="trade-flow-node__icon">
+                    <svg class="arch-svg"><use href="#arch-icon-spark" /></svg>
+                  </span>
+                  <span class="trade-flow-node__body">
+                    <strong>LLM Extraction</strong>
+                  </span>
+                </div>
+                <span class="trade-flow-link" aria-hidden="true"></span>
+                <div class="trade-flow-node trade-flow-node--semantic">
+                  <span class="trade-flow-node__icon">
+                    <svg class="arch-svg"><use href="#arch-icon-tag" /></svg>
+                  </span>
+                  <span class="trade-flow-node__body">
+                    <strong>Semantic Enrichment</strong>
+                  </span>
+                </div>
+                <span class="trade-flow-link" aria-hidden="true"></span>
+                <div class="trade-flow-node trade-flow-node--intent">
+                  <span class="trade-flow-node__icon">
+                    <svg class="arch-svg"><use href="#arch-icon-search" /></svg>
+                  </span>
+                  <span class="trade-flow-node__body">
+                    <strong>Intent Scoping</strong>
+                  </span>
+                </div>
+                <span class="trade-flow-link" aria-hidden="true"></span>
+                <div class="trade-flow-node trade-flow-node--orchestration">
+                  <span class="trade-flow-node__icon">
+                    <svg class="arch-svg"><use href="#arch-icon-bot" /></svg>
+                  </span>
+                  <span class="trade-flow-node__body">
+                    <strong>Query Orchestration</strong>
+                  </span>
+                </div>
+                <svg
+                  class="trade-flow-turn"
+                  viewBox="0 0 82 116"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <marker
+                      id="trade-turn-arrow"
+                      viewBox="0 0 10 10"
+                      refX="9"
+                      refY="5"
+                      markerWidth="4"
+                      markerHeight="4"
+                      orient="auto"
+                    >
+                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0b55c7" />
+                    </marker>
+                  </defs>
+                  <path
+                    class="trade-flow-turn__path"
+                    d="M0 32 H52 Q68 32 68 48 V78 Q68 94 52 94 H12"
+                  />
+                </svg>
+                <div class="trade-flow-node trade-flow-node--dal">
+                  <span class="trade-flow-node__icon">
+                    <svg class="arch-svg"><use href="#arch-icon-database" /></svg>
+                  </span>
+                  <span class="trade-flow-node__body">
+                    <strong>DAL Execution</strong>
+                  </span>
+                </div>
+                <span class="trade-flow-link trade-flow-link--reverse" aria-hidden="true"></span>
+                <div class="trade-flow-node trade-flow-node--normalisation">
+                  <span class="trade-flow-node__icon">
+                    <svg class="arch-svg"><use href="#arch-icon-chart" /></svg>
+                  </span>
+                  <span class="trade-flow-node__body">
+                    <strong>Normalisation</strong>
+                  </span>
+                </div>
+                <span class="trade-flow-link trade-flow-link--reverse" aria-hidden="true"></span>
+                <div class="trade-flow-node trade-flow-node--nlg">
+                  <span class="trade-flow-node__icon">
+                    <svg class="arch-svg"><use href="#arch-icon-document" /></svg>
+                  </span>
+                  <span class="trade-flow-node__body">
+                    <strong>NLG Generation</strong>
+                  </span>
+                </div>
+                <span class="trade-flow-link trade-flow-link--reverse" aria-hidden="true"></span>
+                <div class="trade-flow-node trade-flow-node--response">
+                  <span class="trade-flow-node__icon">
+                    <svg class="arch-svg"><use href="#arch-icon-message" /></svg>
+                  </span>
+                  <span class="trade-flow-node__body">
+                    <strong>Response</strong>
+                  </span>
                 </div>
               </div>
+            </div>
 
-              <!-- Turn 2 -->
-              <div
-                class="askback-card"
-                style="
-                  --accent-color: #6f308a;
-                  --chat-bg: rgba(111, 48, 138, 0.08);
-                "
-              >
-                <div class="askback-card__header">
-                  <span class="askback-card__turn">Turn 02</span>
-                  <h3 class="askback-card__title">
-                    Relative Reference Resolution
-                  </h3>
-                </div>
-                <div class="askback-card__body">
-                  <div class="chat-bubble chat-bubble--user">
-                    <span class="chat-bubble__label">User Request</span>
-                    <p class="chat-bubble__text">"What about 2025?"</p>
-                  </div>
-                  <ul class="action-list">
-                    <li>
-                      <strong>Query Rewriter:</strong> Detects relative temporal
-                      reference
-                    </li>
-                    <li>
-                      <strong>Context Carry-over:</strong> Enrich query with
-                      <code>product="rice"</code>,
-                      <code>direction="export"</code> from session
-                    </li>
-                    <li>
-                      <strong>Execution:</strong> Trade service re-runs query
-                      for <code>year="2024"</code>
-                    </li>
-                  </ul>
-                  <div class="chat-bubble chat-bubble--system">
-                    <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">
-                      Returns updated chart for 2024 exports
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Turn 3 -->
-              <div
-                class="askback-card"
-                style="
-                  --accent-color: #ec9a29;
-                  --chat-bg: rgba(236, 154, 41, 0.08);
-                "
-              >
-                <div class="askback-card__header">
-                  <span class="askback-card__turn">Turn 03</span>
-                  <h3 class="askback-card__title">Bilateral Query Merging</h3>
-                </div>
-                <div class="askback-card__body">
-                  <div class="chat-bubble chat-bubble--user">
-                    <span class="chat-bubble__label">User Request</span>
-                    <p class="chat-bubble__text">"And for Vietnam?"</p>
-                  </div>
-                  <ul class="action-list">
-                    <li>
-                      <strong>Query Rewriter:</strong> Detects partner country
-                      change
-                    </li>
-                    <li>
-                      <strong>Context Merging:</strong> Merge
-                      <code>partner_country="Vietnam"</code> onto existing
-                      <code>rice</code> / <code>export</code> /
-                      <code>2024</code> context
-                    </li>
-                    <li>
-                      <strong>Execution:</strong> Queries bilateral
-                      Cambodia-Vietnam rice export statistics
-                    </li>
-                  </ul>
-                  <div class="chat-bubble chat-bubble--system">
-                    <span class="chat-bubble__label">Response</span>
-                    <p class="chat-bubble__text">
-                      Returns updated trade related to Cambodia–Vietnam rice
-                      exports
-                    </p>
-                  </div>
-                </div>
+            <div class="trade-pipeline-grid">
+              <article class="trade-pipeline-card">
+                <span class="trade-pipeline-card__icon">
+                  <svg class="arch-svg"><use href="#arch-icon-document" /></svg>
+                </span>
+                <h3>LLM Parameter Extraction</h3>
+                <p>
+                  Gemini parses NL into structured params (intent, flow,
+                  country, period, product); validation-error retry loop feeds
+                  corrections back to the model.
+                </p>
+              </article>
+              <article class="trade-pipeline-card">
+                <span class="trade-pipeline-card__icon">
+                  <svg class="arch-svg"><use href="#arch-icon-database" /></svg>
+                </span>
+                <h3>Semantic Enrichment</h3>
+                <p>
+                  Country/product/dimension resolution via a centralized synonym
+                  registry; dynamic HS-code mapping from live metadata.
+                </p>
+              </article>
+              <article class="trade-pipeline-card">
+                <span class="trade-pipeline-card__icon">
+                  <svg class="arch-svg"><use href="#arch-icon-search" /></svg>
+                </span>
+                <h3>Intent Scoping</h3>
+                <p>
+                  7 query intents (summary, ranking, trend, comparison,
+                  breakdown, growth, trade balance), each with defaulted
+                  dimensions/metrics/sort.
+                </p>
+              </article>
+              <article class="trade-pipeline-card">
+                <span class="trade-pipeline-card__icon">
+                  <svg class="arch-svg"><use href="#arch-icon-bot" /></svg>
+                </span>
+                <h3>Query Orchestration</h3>
+                <p>
+                  Cambodia-centric flow normalization, smart period resolution
+                  (relative years, YoY ranges), validated query plan.
+                </p>
+              </article>
+              <article class="trade-pipeline-card">
+                <span class="trade-pipeline-card__icon">
+                  <svg class="arch-svg"><use href="#arch-icon-database" /></svg>
+                </span>
+                <h3>DAL Execution</h3>
+                <p>
+                  Cache-busting + bug workarounds, retry with backoff,
+                  client-side post-filtering for accuracy.
+                </p>
+              </article>
+              <article class="trade-pipeline-card">
+                <span class="trade-pipeline-card__icon">
+                  <svg class="arch-svg"><use href="#arch-icon-chart" /></svg>
+                </span>
+                <h3>Normalisation &amp; Visualization</h3>
+                <p>
+                  Growth-rate computation, trade-bloc aggregation, auto-selected
+                  chart type (bar/line/pie/KPI), data-quality flags (YTD,
+                  truncation, coverage gaps).
+                </p>
+              </article>
+              <article class="trade-pipeline-card trade-pipeline-card--wide">
+                <span class="trade-pipeline-card__icon">
+                  <svg class="arch-svg"><use href="#arch-icon-message" /></svg>
+                </span>
+                <h3>NLG Generation</h3>
+                <p>
+                  Gemini-based conversational summaries with hallucination
+                  guardrails, deterministic fallback templates, contextual
+                  follow-up suggestions.
+                </p>
+              </article>
+              <div class="trade-pipeline-note">
+                <span class="trade-pipeline-note__icon">
+                  <svg class="arch-svg"><use href="#arch-icon-fallback" /></svg>
+                </span>
+                Redis-cached, FastAPI microservice, fail-open reliability
+                throughout.
               </div>
             </div>
           </div>
