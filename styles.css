@@ -596,6 +596,8 @@ code {
   stroke-width: 2.4;
   stroke-linecap: round;
   stroke-linejoin: round;
+  stroke-dasharray: 8 8;
+  animation: arch-dash-flow 1.4s linear infinite;
   marker-end: url("#arch-arrow-primary");
 }
 
@@ -609,6 +611,8 @@ code {
   color: #135fca;
   stroke: currentColor;
   stroke-width: 2.1;
+  opacity: 0.78;
+  animation-duration: 1.8s;
   marker-end: url("#arch-arrow-support");
 }
 
@@ -616,6 +620,8 @@ code {
   color: #087f95;
   stroke: currentColor;
   stroke-width: 2.1;
+  opacity: 0.86;
+  animation-duration: 1.65s;
   marker-end: url("#arch-arrow-data");
 }
 
@@ -633,6 +639,18 @@ code {
 
 .arch-line--no-arrow {
   marker-end: none;
+}
+
+@keyframes arch-dash-flow {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arch-line {
+    animation: none;
+  }
 }
 
 .arch-node,
