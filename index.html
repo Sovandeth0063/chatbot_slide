@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Intelligent Document Processing System · GDCE</title>
-    <link rel="stylesheet" href="styles.css?v=21" />
+    <link rel="stylesheet" href="styles.css?v=22" />
   </head>
 
   <body>
@@ -888,7 +888,336 @@
       </section>
 
       <!-- =========================================================
-         SLIDE 6B · ARCHITECTURE & TECH STACK OVERVIEW
+         SLIDE 6B · ARCHITECTURE HIGH-LEVEL VISUAL
+         ========================================================= -->
+      <section
+        id="general-retrieval-architecture"
+        class="slide slide--content slide--architecture-visual"
+        data-slide="content"
+      >
+        <header class="slide-header">
+          <div class="brand-mark">
+            <div class="brand-mark__icon">▤</div>
+            <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
+          </div>
+          <div class="slide-title">
+            <span class="slide-title__en">Architecture (high-level, visual)</span>
+          </div>
+          <div class="org-mark">GDCE</div>
+        </header>
+        <div class="gold-rule"></div>
+        <div class="slide-body slide-body--architecture-visual">
+          <div class="slide-content architecture-visual retrieval-architecture">
+            <figure class="retrieval-architecture-diagram" aria-label="General Retrieval Service system architecture diagram">
+              <h2 class="retrieval-architecture__title">General Retrieval Service — System Architecture</h2>
+              <svg class="architecture-connectors" viewBox="0 0 1500 688" aria-hidden="true">
+                <path class="arch-line arch-line--primary" d="M750 170 V206"></path>
+                <path class="arch-line arch-line--primary arch-line--no-arrow" d="M750 324 V344"></path>
+                <path class="arch-line arch-line--primary arch-line--no-arrow" d="M385 344 H1115"></path>
+                <path class="arch-line arch-line--primary" d="M385 344 V376"></path>
+                <path class="arch-line arch-line--primary" d="M750 344 V376"></path>
+                <path class="arch-line arch-line--primary" d="M1115 344 V376"></path>
+              </svg>
+
+              <div class="retrieval-architecture__node">
+                <div class="arch-data-card__icon" aria-hidden="true"><svg class="arch-svg"><use href="#arch-icon-bot" /></svg></div>
+                <div><h3>Orchestrator</h3></div>
+              </div>
+
+              <section class="retrieval-architecture__service-layer">
+                <h2>General Retrieval Service</h2>
+                <div class="retrieval-architecture__service-card">
+                  <div class="arch-data-card__icon" aria-hidden="true"><svg class="arch-svg"><use href="#arch-icon-message" /></svg></div>
+                  <div><h3>General Retrieval Service</h3><p>FastAPI · Port 8005</p></div>
+                </div>
+              </section>
+
+              <div class="retrieval-architecture__dependency retrieval-architecture__dependency--qdrant">
+                <div class="arch-data-card__icon" aria-hidden="true"><svg class="arch-svg"><use href="#arch-icon-search" /></svg></div>
+                <div><h3>Qdrant</h3><p>Vector Store</p></div>
+              </div>
+              <div class="retrieval-architecture__dependency retrieval-architecture__dependency--llm">
+                <div class="arch-data-card__icon" aria-hidden="true"><svg class="arch-svg"><use href="#arch-icon-spark" /></svg></div>
+                <div><h3>Gemini / vLLM</h3><p>LLM Answer</p></div>
+              </div>
+              <div class="retrieval-architecture__dependency retrieval-architecture__dependency--redis">
+                <div class="arch-data-card__icon" aria-hidden="true"><svg class="arch-svg"><use href="#arch-icon-cache" /></svg></div>
+                <div><h3>Redis</h3><p>Answer Cache</p></div>
+              </div>
+
+              <div class="retrieval-architecture__details">
+                <div><span><strong>Framework:</strong> FastAPI microservice, isolated from the sibling HS-code service (separate port, separate vector collection)</span></div>
+                <div><span><strong>Vector store:</strong> dedicated Qdrant instance for semantic search</span></div>
+                <div><span><strong>LLM layer:</strong> cascading generation (primary → self-hosted fallback → extractive fallback)</span></div>
+                <div><span><strong>Cache layer:</strong> Redis, fail-open (never blocks on cache failure)</span></div>
+                <div><span><strong>Deployment:</strong> Dockerized, one-command orchestration (Docker Compose: vector store + cache + app)</span></div>
+              </div>
+            </figure>
+          </div>
+        </div>
+        <footer class="slide-footer">
+          <div class="footer-left">
+            Multi-domain Customs Artificial Intelligent Assistant &middot; GDCE
+          </div>
+          <div class="page-number">6B</div>
+        </footer>
+      </section>
+
+      <!-- =========================================================
+         SLIDE 6C · FULL PIPELINE & SYSTEM DETAIL
+         ========================================================= -->
+      <section
+        class="slide slide--content slide--system-pipeline"
+        data-slide="content"
+      >
+        <header class="slide-header">
+          <div class="brand-mark">
+            <div class="brand-mark__icon">▤</div>
+            <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
+          </div>
+          <div class="slide-title">
+            <span class="slide-title__en">End-to-End Pipeline, API &amp; Reliability</span>
+          </div>
+          <div class="org-mark">GDCE</div>
+        </header>
+        <div class="gold-rule"></div>
+        <div class="slide-body slide-body--system-pipeline">
+          <div class="slide-content end-to-end-pipeline">
+            <div class="end-to-end-pipeline__grid">
+              <article class="end-to-end-pipeline__card">
+                <span class="end-to-end-pipeline__number">01</span>
+                <h3>Data Ingestion &amp; Embedding</h3>
+                <ul>
+                  <li>Multi-format document parsing (PDF page-aware extraction, Markdown)</li>
+                  <li>Section/header-boundary chunking with sentence-level fallback for oversized text, configurable overlap</li>
+                  <li>Batched embedding generation (BAAI/bge-m3, 1024-dim), memory-safe grouped processing (avoids OOM)</li>
+                  <li>Incremental, checkpointed vector-store upload (crash-safe resume)</li>
+                </ul>
+              </article>
+              <article class="end-to-end-pipeline__card">
+                <span class="end-to-end-pipeline__number">02</span>
+                <h3>Query Understanding</h3>
+                <ul>
+                  <li>Unicode-based language detection (Khmer/English)</li>
+                  <li>Domain abbreviation expansion (CIF, VAT, ATIGA, HS code, etc.)</li>
+                  <li>Cross-lingual term mapping for embedding search</li>
+                  <li>Regex-based intent gating — detects trade-analytics queries missing a time period, triggers clarification instead of guessing</li>
+                </ul>
+              </article>
+              <article class="end-to-end-pipeline__card">
+                <span class="end-to-end-pipeline__number">03</span>
+                <h3>Retrieval &amp; Reranking</h3>
+                <ul>
+                  <li>Cosine-similarity ANN search, hybrid semantic + structured/keyword fusion, deduplication</li>
+                  <li>Custom multi-signal reranker: token-overlap ratio, exact-phrase boost, exact-question boost, domain dispute-term boosts, metadata-chunk penalty; scores normalized and re-sorted</li>
+                </ul>
+              </article>
+              <article class="end-to-end-pipeline__card">
+                <span class="end-to-end-pipeline__number">04</span>
+                <h3>Answer Generation</h3>
+                <ul>
+                  <li>3-stage LLM cascade: primary LLM (auto-retry on empty response with reduced context) → self-hosted fallback → extractive snippet fallback</li>
+                  <li>Prompt design splits "must-cite-context" (regulatory facts) vs. "general-knowledge-allowed" (conceptual) answering to reduce hallucination</li>
+                  <li>Redis-cached responses (keyed on query + doc IDs) to skip redundant LLM calls</li>
+                </ul>
+              </article>
+              <article class="end-to-end-pipeline__card">
+                <span class="end-to-end-pipeline__number">05</span>
+                <h3>API &amp; Reliability</h3>
+                <ul>
+                  <li>REST endpoints: retrieval, health check, service info — Pydantic-validated requests/responses</li>
+                  <li>Domain exception hierarchy mapped to proper HTTP status codes (validation, rate limit, service unavailable, etc.)</li>
+                  <li>Configurable via ~30 environment variables (timeouts, thresholds, model selection, rate limits, CORS)</li>
+                  <li>Session-ID passthrough for request tracing</li>
+                </ul>
+              </article>
+              <article class="end-to-end-pipeline__card">
+                <span class="end-to-end-pipeline__number">06</span>
+                <h3>Evaluation &amp; Load Testing</h3>
+                <ul>
+                  <li>39 automated tests (unit + API integration, fully mocked backends)</li>
+                  <li>Two load-testing tools (async ramp tester + Locust) tracking p50/p95/p99 latency and failure-rate to find concurrency ceiling</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-footer">
+          <div class="footer-left">
+            Multi-domain Customs Artificial Intelligent Assistant &middot; GDCE
+          </div>
+          <div class="page-number">6C</div>
+        </footer>
+      </section>
+
+      <!-- =========================================================
+         SLIDE 6C1 · HS CODE RETRIEVAL SERVICE ARCHITECTURE
+         ========================================================= -->
+      <section
+        id="hs-code-retrieval-architecture"
+        class="slide slide--content slide--architecture-visual"
+        data-slide="content"
+      >
+        <header class="slide-header">
+          <div class="brand-mark">
+            <div class="brand-mark__icon">▤</div>
+            <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
+          </div>
+          <div class="slide-title">
+            <span class="slide-title__en">Architecture (HS Code Retrieval)</span>
+          </div>
+          <div class="org-mark">GDCE</div>
+        </header>
+        <div class="gold-rule"></div>
+        <div class="slide-body slide-body--architecture-visual">
+          <div class="slide-content architecture-visual retrieval-architecture hs-retrieval-architecture">
+            <figure class="retrieval-architecture-diagram" aria-label="HS Code Retrieval Service system architecture diagram">
+              <h2 class="retrieval-architecture__title">HS Code Retrieval Service — System Architecture</h2>
+              <svg class="architecture-connectors" viewBox="0 0 1500 688" aria-hidden="true">
+                <defs>
+                  <marker id="hs-arch-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#6f308a"></path>
+                  </marker>
+                </defs>
+                <path class="arch-line arch-line--primary" d="M750 182 V238"></path>
+                <path class="arch-line arch-line--primary arch-line--no-arrow" d="M750 360 V384"></path>
+                <path class="arch-line arch-line--primary arch-line--no-arrow" d="M385 384 H1115"></path>
+                <path class="arch-line arch-line--primary" d="M385 384 V412"></path>
+                <path class="arch-line arch-line--primary" d="M750 384 V412"></path>
+                <path class="arch-line arch-line--primary" d="M1115 384 V412"></path>
+              </svg>
+
+              <div class="retrieval-architecture__node">
+                <div class="arch-data-card__icon" aria-hidden="true"><svg class="arch-svg"><use href="#arch-icon-bot" /></svg></div>
+                <div><h3>Orchestrator</h3></div>
+              </div>
+              <div class="hs-retrieval-architecture__request-label">HS_CODE_LOOKUP request</div>
+
+              <section class="retrieval-architecture__service-layer">
+                <h2>HS Code Retrieval Service</h2>
+                <div class="retrieval-architecture__service-card">
+                  <div class="arch-data-card__icon" aria-hidden="true"><svg class="arch-svg"><use href="#arch-icon-tag" /></svg></div>
+                  <div><h3>Retrieval Service v2</h3><p>FastAPI · Port 8003</p></div>
+                </div>
+              </section>
+
+              <div class="retrieval-architecture__dependency retrieval-architecture__dependency--qdrant">
+                <div class="arch-data-card__icon" aria-hidden="true"><svg class="arch-svg"><use href="#arch-icon-search" /></svg></div>
+                <div><h3>Qdrant</h3><p>HS-code Vector Search</p></div>
+              </div>
+              <div class="retrieval-architecture__dependency retrieval-architecture__dependency--llm">
+                <div class="arch-data-card__icon" aria-hidden="true"><svg class="arch-svg"><use href="#arch-icon-spark" /></svg></div>
+                <div><h3>Gemini</h3><p>Prefix Extraction + Ranking</p></div>
+              </div>
+              <div class="retrieval-architecture__dependency retrieval-architecture__dependency--redis">
+                <div class="arch-data-card__icon" aria-hidden="true"><svg class="arch-svg"><use href="#arch-icon-database" /></svg></div>
+                <div><h3>In-Memory</h3><p>Structured Prefix Scan (HS Corpus)</p></div>
+              </div>
+
+              <div class="retrieval-architecture__details">
+                <div><span><strong>Scope:</strong> HS tariff code classification only — product descriptions + vehicle classification (fuel, engine size, body type, drive type, assembly); separate from the general/FAQ service on port 8005</span></div>
+                <div><span><strong>Vector store:</strong> dedicated Qdrant collection (<code>gdce_hs_code</code>), all-MiniLM-L6-v2 embeddings (384-dim)</span></div>
+                <div><span><strong>LLM layer:</strong> Gemini for HS-prefix extraction + ranked answer generation, with extractive fallback</span></div>
+                <div><span><strong>Structured lookup:</strong> full HS corpus held in memory for fast prefix scanning, backed by persistent caching to avoid reload cost across workers</span></div>
+                <div><span><strong>Deployment:</strong> Dockerized, Python 3.13, CPU-only PyTorch, Docker Compose stack (Qdrant + cache + app)</span></div>
+                <div><span><strong>Graceful degradation:</strong> starts and serves even when Gemini/cache/embedding model are unavailable</span></div>
+              </div>
+            </figure>
+          </div>
+        </div>
+        <footer class="slide-footer">
+          <div class="footer-left">
+            Multi-domain Customs Artificial Intelligent Assistant &middot; GDCE
+          </div>
+          <div class="page-number">6C1</div>
+        </footer>
+      </section>
+
+      <!-- =========================================================
+         SLIDE 6C2 · HS CODE END-TO-END PIPELINE
+         ========================================================= -->
+      <section
+        class="slide slide--content slide--system-pipeline slide--hs-code-pipeline"
+        data-slide="content"
+      >
+        <header class="slide-header">
+          <div class="brand-mark">
+            <div class="brand-mark__icon">▤</div>
+            <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
+          </div>
+          <div class="slide-title">
+            <span class="slide-title__en">End-to-End Pipeline, API &amp; Reliability</span>
+          </div>
+          <div class="org-mark">GDCE</div>
+        </header>
+        <div class="gold-rule"></div>
+        <div class="slide-body slide-body--system-pipeline">
+          <div class="slide-content end-to-end-pipeline hs-code-pipeline">
+            <div class="end-to-end-pipeline__grid">
+              <article class="end-to-end-pipeline__card">
+                <span class="end-to-end-pipeline__number">01</span>
+                <h3>Classification Flow</h3>
+                <ul>
+                  <li>Parallel execution: Gemini HS-prefix extraction (6-digit family) + semantic vector search — reduces latency</li>
+                  <li>Structured prefix lookup scans in-memory corpus for matching codes; falls back to semantic search if prefix extraction fails</li>
+                </ul>
+              </article>
+              <article class="end-to-end-pipeline__card">
+                <span class="end-to-end-pipeline__number">02</span>
+                <h3>Scoring &amp; Domain Filters</h3>
+                <ul>
+                  <li>Lexical reranking: token overlap, 4-digit heading match, exact domain terminology ("spark-ignition," "marine," "diesel-electric")</li>
+                  <li>Vehicle constraint inference: fuel type, body type, engine displacement, drive type, CBU/CKD assembly — strict filtering with automatic relaxation fallback</li>
+                  <li>Semantic results merged in when structured results are sparse (&lt;3 candidates), deduplicated</li>
+                </ul>
+              </article>
+              <article class="end-to-end-pipeline__card">
+                <span class="end-to-end-pipeline__number">03</span>
+                <h3>Answer Generation</h3>
+                <ul>
+                  <li>Gemini produces ranked HS codes, explanation, generic-query warnings, clarifying questions, official tariff reference URL</li>
+                  <li>Returned codes validated against actual retrieved candidates (guards against hallucination)</li>
+                  <li>Runs in worker thread (sync SDK); falls back to extractive ranking if Gemini fails/disabled</li>
+                </ul>
+              </article>
+              <article class="end-to-end-pipeline__card">
+                <span class="end-to-end-pipeline__number">04</span>
+                <h3>Embeddings &amp; Caching</h3>
+                <ul>
+                  <li>Lazy-loaded, process-cached sentence-transformer model, deterministic hash-based fallback if model fails to load</li>
+                  <li>Three-tier corpus cache: in-process memory → persistent cache → full Qdrant scroll</li>
+                  <li>Batch upload pipeline (256-point batches) for populating Qdrant</li>
+                </ul>
+              </article>
+              <article class="end-to-end-pipeline__card">
+                <span class="end-to-end-pipeline__number">05</span>
+                <h3>API &amp; Reliability</h3>
+                <ul>
+                  <li><code>POST /hs-code-candidates</code> (full results), <code>POST /hs-code-ranked</code> (compact answer), <code>GET /health</code>, <code>GET /</code></li>
+                  <li>Fail-open caching, <code>session_id</code> echo-only (no conversation memory), health endpoint doesn't live-check dependencies</li>
+                  <li>Output framed as decision support — verify against official GDCE tariff or a specialist</li>
+                </ul>
+              </article>
+              <article class="end-to-end-pipeline__card">
+                <span class="end-to-end-pipeline__number">06</span>
+                <h3>Evaluation</h3>
+                <ul>
+                  <li>Automated test suite (helpers + API, mocked backends); async ramp tester + Locust load testing, latency percentiles tracked</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-footer">
+          <div class="footer-left">
+            Multi-domain Customs Artificial Intelligent Assistant &middot; GDCE
+          </div>
+          <div class="page-number">6C2</div>
+        </footer>
+      </section>
+
+      <!-- =========================================================
+         SLIDE 6D · ARCHITECTURE & TECH STACK OVERVIEW
          ========================================================= -->
       <section
         class="slide slide--content slide--stack-overview"
@@ -966,7 +1295,7 @@
           <div class="footer-left">
             Multi-domain Customs Artificial Intelligent Assistant &middot; GDCE
           </div>
-          <div class="page-number">6B</div>
+          <div class="page-number">6D</div>
         </footer>
       </section>
 
