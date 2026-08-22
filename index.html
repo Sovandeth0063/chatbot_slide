@@ -2988,7 +2988,177 @@
       </section>
 
       <!-- =========================================================
-         SLIDE 19 · MULTI-TURN CONTEXT (HS CODE RETRIEVAL)
+         SLIDE 19 · MULTI-TURN CONTEXT (TRADE QUERY)
+         ========================================================= -->
+      <section class="slide slide--content" data-slide="content">
+        <header class="slide-header">
+          <div class="brand-mark">
+            <div class="brand-mark__icon">▤</div>
+            <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
+          </div>
+          <div class="slide-title">
+            <span class="slide-title__en"
+              >Real Testing: Multi-Turn Context (Trade Query)</span
+            >
+          </div>
+          <div class="org-mark">GDCE</div>
+        </header>
+        <div class="gold-rule"></div>
+        <div class="slide-body" style="padding-top: 15px; padding-bottom: 15px">
+          <div class="slide-content">
+            <p
+              class="slide-intro-text"
+              style="
+                font-size: 20px;
+                color: var(--blue-muted);
+                margin: 0 0 15px 0;
+              "
+            >
+              Trade queries are progressively enriched by using only the delta, while the session context automatically fills in all prior slots.
+            </p>
+            <div
+              class="askback-timeline"
+              style="grid-template-columns: repeat(3, 1fr)"
+            >
+              <!-- Turn 1 -->
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #1b73e8;
+                  --chat-bg: rgba(27, 115, 232, 0.08);
+                "
+              >
+                <div class="askback-card__header">
+                  <span class="askback-card__turn">Turn 01</span>
+                  <h3 class="askback-card__title">Initial Query &amp; Pipeline Run</h3>
+                </div>
+                <div class="askback-card__body">
+                  <div class="chat-bubble chat-bubble--user">
+                    <span class="chat-bubble__label">User Request</span>
+                    <p class="chat-bubble__text">"Show me Cambodia rice exports in 2023"</p>
+                  </div>
+                  <ul class="action-list">
+                    <li>
+                      <strong>Intent:</strong> <code>trade_query</code>
+                    </li>
+                    <li>
+                      <strong>Extraction:</strong>
+                      <code>product="rice"</code>, <code>direction="export"</code>, <code>year="2023"</code>
+                    </li>
+                    <li>
+                      <strong>Pipeline:</strong> Trade service runs its 7-stage pipeline
+                    </li>
+                    <li>
+                      <strong>Session:</strong> Saves extracted slots to Redis context
+                    </li>
+                  </ul>
+                  <div class="chat-bubble chat-bubble--system">
+                    <span class="chat-bubble__label">Response</span>
+                    <p class="chat-bubble__text">
+                      Returns rice exports chart + NLG narrative
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Turn 2 -->
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #6f308a;
+                  --chat-bg: rgba(111, 48, 138, 0.08);
+                "
+              >
+                <div class="askback-card__header">
+                  <span class="askback-card__turn">Turn 02</span>
+                  <h3 class="askback-card__title">
+                    Relative Reference &amp; Rewriting
+                  </h3>
+                </div>
+                <div class="askback-card__body">
+                  <div class="chat-bubble chat-bubble--user">
+                    <span class="chat-bubble__label">User Request</span>
+                    <p class="chat-bubble__text">"What about 2024?"</p>
+                  </div>
+                  <ul class="action-list">
+                    <li>
+                      <strong>Query Rewriter:</strong> Detects relative temporal reference
+                    </li>
+                    <li>
+                      <strong>Context Merge:</strong> Enriches with <code>product="rice"</code>, <code>direction="export"</code> from session
+                    </li>
+                    <li>
+                      <strong>Rewritten:</strong> "Show me Cambodia rice exports in 2024"
+                    </li>
+                    <li>
+                      <strong>Execution:</strong> Re-runs trade service pipeline with <code>year="2024"</code>
+                    </li>
+                  </ul>
+                  <div class="chat-bubble chat-bubble--system">
+                    <span class="chat-bubble__label">Response</span>
+                    <p class="chat-bubble__text">
+                      Returns updated 2024 export chart
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Turn 3 -->
+              <div
+                class="askback-card"
+                style="
+                  --accent-color: #ec9a29;
+                  --chat-bg: rgba(236, 154, 41, 0.08);
+                "
+              >
+                <div class="askback-card__header">
+                  <span class="askback-card__turn">Turn 03</span>
+                  <h3 class="askback-card__title">
+                    Bilateral Context Enrichment
+                  </h3>
+                </div>
+                <div class="askback-card__body">
+                  <div class="chat-bubble chat-bubble--user">
+                    <span class="chat-bubble__label">User Request</span>
+                    <p class="chat-bubble__text">
+                      "And for Vietnam?"
+                    </p>
+                  </div>
+                  <ul class="action-list">
+                    <li>
+                      <strong>Query Rewriter:</strong> Merges <code>partner_country="Vietnam"</code> onto session context
+                    </li>
+                    <li>
+                      <strong>Context Merge:</strong> Merged context: <code>rice / export / 2024</code>
+                    </li>
+                    <li>
+                      <strong>Rewritten:</strong> "Show me Cambodia rice exports to Vietnam in 2024"
+                    </li>
+                    <li>
+                      <strong>DB Query:</strong> Queries bilateral Cambodia–Vietnam rice export statistics
+                    </li>
+                  </ul>
+                  <div class="chat-bubble chat-bubble--system">
+                    <span class="chat-bubble__label">Response</span>
+                    <p class="chat-bubble__text">
+                      Returns bilateral Cambodia-Vietnam stats
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-footer">
+          <div class="footer-left">
+            Multi-domain Customs Artificial Intelligent Assistant · GDCE
+          </div>
+          <div class="page-number">19</div>
+        </footer>
+      </section>
+
+      <!-- =========================================================
+         SLIDE 20 · MULTI-TURN CONTEXT (HS CODE RETRIEVAL)
          ========================================================= -->
       <section class="slide slide--content" data-slide="content">
         <header class="slide-header">
@@ -3037,12 +3207,12 @@
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
                     <span class="chat-bubble__label">User Request</span>
-                    <p class="chat-bubble__text">"hs code of car?"</p>
+                    <p class="chat-bubble__text">"hs code of bmw m8 competition?"</p>
                   </div>
                   <ul class="action-list">
                     <li>
                       <strong>Intent:</strong> <code>hs_code_lookup</code>,
-                      <code>entity="car"</code>
+                      <code>entity="bmw m8 competition?"</code>
                     </li>
                     <li>
                       <strong>Retrieval:</strong> Orchestrator calls Retrieval
@@ -3057,7 +3227,7 @@
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
                     <p class="chat-bubble__text">
-                      returns candidates in 8703.xx.xx, entity = car
+                      returns candidates in 8703.xx.xx, entity = bmw m8 competition
                     </p>
                   </div>
                 </div>
@@ -3080,31 +3250,31 @@
                 <div class="askback-card__body">
                   <div class="chat-bubble chat-bubble--user">
                     <span class="chat-bubble__label">User Request</span>
-                    <p class="chat-bubble__text">"its fully assembled"</p>
+                    <p class="chat-bubble__text">"It's a sport car"</p>
                   </div>
                   <ul class="action-list">
                     <li>
                       <strong>Query Rewriter:</strong> Detects follow-up &amp;
-                      enriches with <code>car</code> context
+                      enriches with <code>bmw m8 competition</code> context
                     </li>
                     <li>
-                      <strong>Rewritten:</strong> "hs code for assembled car"
+                      <strong>Rewritten:</strong> "bmw m8 competition sports car"
                     </li>
                     <li>
                       <strong>Re-ranking:</strong> Retrieval Service narrows
-                      results to <code>8703.xx.xx</code>
+                      results to <code>8703.24.xx</code>
                     </li>
                     <li>
                       <strong>Session Cache:</strong> Saves
-                      <code>last_entity="fully assembled car"</code>,
-                      <code>candidate_codes=["8703.xx.xx"]</code>
+                      <code>last_entity="bmw m8 competition sports car"</code>,
+                      <code>candidate_codes=["8703.24.xx"]</code>
                     </li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
                     <p class="chat-bubble__text">
                       Returns narrowed candidate: The hs list narrows to
-                      other-than-CKD
+                      sport car (fully assembled or completely knocked down)
                     </p>
                   </div>
                 </div>
@@ -3128,28 +3298,26 @@
                   <div class="chat-bubble chat-bubble--user">
                     <span class="chat-bubble__label">User Request</span>
                     <p class="chat-bubble__text">
-                      "Is there a more specific subheading under that?"
+                      "It is fully assembled"
                     </p>
                   </div>
                   <ul class="action-list">
                     <li>
                       <strong>Co-reference:</strong> Resolves pronoun
-                      <code>"that"</code> &rarr;
-                      <code>"fully assembled car"</code>
+                      <code>"It"</code> &rarr;
+                      <code>"bmw m8 competition sports car"</code>
                     </li>
                     <li>
-                      <strong>Rewritten:</strong> "fully assembled car
-                      subheadings HS code"
+                      <strong>Rewritten:</strong> "bmw m8 competition sports car fully assembled"
                     </li>
                     <li>
-                      <strong>Bilateral Check:</strong> Searches 8-digit AHTN
-                      extensions under <code>8703.23.xx</code>
+                      <strong>Bilateral Check:</strong> Retrieves HS Codes from <code>8703.23.5x</code>
                     </li>
                   </ul>
                   <div class="chat-bubble chat-bubble--system">
                     <span class="chat-bubble__label">Response</span>
                     <p class="chat-bubble__text">
-                      Returns 8703.23.xx subheading
+                      Returns list of hs code: "8703.23.51" and "8703.23.59"
                     </p>
                   </div>
                 </div>
@@ -3161,12 +3329,12 @@
           <div class="footer-left">
             Multi-domain Customs Artificial Intelligent Assistant · GDCE
           </div>
-          <div class="page-number">19</div>
+          <div class="page-number">20</div>
         </footer>
       </section>
 
       <!-- =========================================================
-         SLIDE 20 · MULTI-TURN CONTEXT (GENERAL FAQ)
+         SLIDE 21 · MULTI-TURN CONTEXT (GENERAL FAQ)
          ========================================================= -->
       <section class="slide slide--content" data-slide="content">
         <header class="slide-header">
@@ -3331,12 +3499,12 @@
           <div class="footer-left">
             Multi-domain Customs Artificial Intelligent Assistant · GDCE
           </div>
-          <div class="page-number">20</div>
+          <div class="page-number">21</div>
         </footer>
       </section>
 
       <!-- =========================================================
-         SLIDE 21 · OUTPUT EXPERIMENT
+         SLIDE 22 · OUTPUT EXPERIMENT
          ========================================================= -->
       <section
         class="slide slide--content slide--experiment-results"
@@ -3409,12 +3577,12 @@
           <div class="footer-left">
             Multi-domain Customs Artificial Intelligent Assistant · GDCE
           </div>
-          <div class="page-number">21</div>
+          <div class="page-number">22</div>
         </footer>
       </section>
 
       <!-- =========================================================
-         SLIDE 22 · SECTION 6
+         SLIDE 23 · SECTION 6
          ========================================================= -->
       <section class="slide slide--section" data-slide="section">
         <div class="section-slide-content">
@@ -3425,11 +3593,11 @@
           </p>
           <div class="section-slide__line"></div>
         </div>
-        <div class="page-number">22</div>
+        <div class="page-number">23</div>
       </section>
 
       <!-- =========================================================
-         SLIDE 16 · RECOMMENDATIONS & FUTURE IMPROVEMENT
+         SLIDE 24 · RECOMMENDATIONS & FUTURE IMPROVEMENT
          ========================================================= -->
       <section class="slide slide--content" data-slide="content">
         <header class="slide-header">
@@ -3555,12 +3723,12 @@
           <div class="footer-left">
             Multi-domain Customs Artificial Intelligent Assistant · GDCE
           </div>
-          <div class="page-number">23</div>
+          <div class="page-number">24</div>
         </footer>
       </section>
 
       <!-- =========================================================
-         SLIDE 17 · THANK YOU
+         SLIDE 25 · THANK YOU
          ========================================================= -->
       <section class="slide slide--title" data-slide="title">
         <div class="title-slide-content">
@@ -3572,7 +3740,7 @@
             Department of Customs and Excise of Cambodia
           </p>
         </div>
-        <div class="page-number">24</div>
+        <div class="page-number">25</div>
       </section>
     </main>
 
