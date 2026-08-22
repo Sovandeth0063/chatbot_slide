@@ -1519,6 +1519,146 @@ code {
   color: var(--blue-muted);
 }
 
+/* Frontend UI showcase */
+.frontend-ui-content {
+  position: relative;
+  height: 100%;
+  padding: 4px 12px 0;
+}
+
+.frontend-ui-intro {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  margin: 0 0 20px;
+  padding-left: 4px;
+  border-left: 5px solid var(--gold);
+}
+
+.frontend-ui-intro__eyebrow {
+  padding-left: 14px;
+  color: var(--navy);
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.frontend-ui-intro p {
+  color: var(--blue-muted);
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.frontend-ui-pair {
+  grid-template-columns: minmax(0, 1.55fr) minmax(270px, 0.75fr);
+  align-items: stretch;
+  gap: 28px;
+  margin: 0;
+}
+
+.frontend-ui-frame {
+  display: flex;
+  flex-direction: column;
+  min-height: 570px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(248, 250, 249, 0.9);
+  box-shadow: 0 12px 26px rgba(7, 61, 82, 0.1);
+}
+
+.frontend-ui-frame img {
+  display: block;
+  width: 100%;
+  height: 520px;
+  object-fit: contain;
+  border: 0;
+  background: #ffffff;
+}
+
+.frontend-ui-frame--mobile {
+  align-self: end;
+  min-height: 540px;
+  margin-bottom: 30px;
+}
+
+.frontend-ui-frame--mobile img {
+  height: 490px;
+}
+
+.frontend-ui-frame figcaption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 66px;
+  margin: 0;
+  padding: 11px 18px;
+  border-top: 1px solid var(--line-soft);
+  background: #ffffff;
+  text-align: left;
+}
+
+.frontend-ui-frame figcaption > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.frontend-ui-frame figcaption strong {
+  color: var(--navy);
+  font-size: 18px;
+}
+
+.frontend-ui-frame figcaption small {
+  color: var(--blue-muted);
+  font-size: 14px;
+}
+
+.frontend-ui-frame__index {
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.slide--demonstration {
+  background:
+    radial-gradient(
+      ellipse at 82% 12%,
+      rgba(198, 164, 74, 0.12) 0 2.5%,
+      transparent 2.7%
+    ),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    var(--navy);
+  background-size: auto, 40px 40px, auto;
+  color: #ffffff;
+}
+
+.demonstration-content {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.demonstration-content strong {
+  color: #ffffff;
+  font-family: var(--font-ui);
+  font-size: 76px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.slide--demonstration .page-number {
+  position: absolute;
+  right: 30px;
+  bottom: 26px;
+  background: var(--gold);
+  color: var(--navy);
+  border-color: rgba(255, 255, 255, 0.4);
+  outline-color: rgba(255, 255, 255, 0.5);
+}
+
 /* two-panel variant of .columns */
 .columns--two {
   grid-template-columns: 1fr 44px 1fr;
@@ -4709,6 +4849,79 @@ code {
   background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   font-size: 25px;
+}
+
+/* Calculator pipeline uses a single forward-flow row. */
+.calculator-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) repeat(6, 28px minmax(0, 1fr));
+  align-items: center;
+  gap: 8px;
+  min-height: 104px;
+  padding: 12px 18px;
+  border: 1.2px solid rgba(107, 157, 231, 0.62);
+  border-radius: 10px;
+  background:
+    linear-gradient(90deg, rgba(11, 85, 199, 0.04), transparent 18%, transparent 82%, rgba(8, 127, 149, 0.05)),
+    linear-gradient(180deg, rgba(249, 252, 255, 0.98), #ffffff),
+    #ffffff;
+  box-shadow: 0 8px 18px rgba(7, 61, 82, 0.06);
+}
+
+.calculator-flow__node {
+  min-height: 70px;
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.calculator-flow__node .trade-flow-node__icon {
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+}
+
+.calculator-flow__node .trade-flow-node__body strong {
+  font-size: 12.5px;
+}
+
+.calculator-flow__arrow {
+  position: relative;
+  height: 2.4px;
+  min-width: 24px;
+  background: repeating-linear-gradient(
+    90deg,
+    #0b55c7 0 4px,
+    transparent 4px 10px
+  );
+  color: #0b55c7;
+  animation: trade-link-flow 1.8s linear infinite;
+  font-size: 0;
+}
+
+.calculator-flow__arrow::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #0b55c7;
+  transform: translateY(-50%);
+}
+
+.calculator-pipeline-slide .trade-pipeline-header h2 {
+  font-size: 31px;
+}
+
+.calculator-pipeline-slide .trade-pipeline-grid {
+  gap: 7px 14px;
+}
+
+.calculator-pipeline-slide .trade-pipeline-card p {
+  font-size: 12.2px;
+  line-height: 1.22;
 }
 
 /* Zoomable evidence panels (xaringan scroll-box style) */

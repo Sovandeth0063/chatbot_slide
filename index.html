@@ -1137,6 +1137,7 @@
          SLIDE 13 · HS CODE END-TO-END PIPELINE
          ========================================================= -->
       <section
+        id="hs-code-end-to-end-pipeline"
         class="slide slide--content slide--system-pipeline slide--hs-code-pipeline"
         data-slide="content"
       >
@@ -1295,7 +1296,7 @@
           <div class="footer-left">
             Multi-domain Customs Artificial Intelligent Assistant &middot; GDCE
           </div>
-          <div class="page-number">14</div>
+          <div class="page-number">16</div>
         </footer>
       </section>
 
@@ -2505,7 +2506,7 @@
           <div class="footer-left">
             Multi-domain Customs Artificial Intelligent Assistant · GDCE
           </div>
-          <div class="page-number">15</div>
+          <div class="page-number">17</div>
         </footer>
       </section>
 
@@ -2521,7 +2522,7 @@
           </p>
           <div class="section-slide__line"></div>
         </div>
-        <div class="page-number">16</div>
+        <div class="page-number">18</div>
       </section>
 
       <!-- =========================================================
@@ -2739,14 +2740,18 @@
           <div class="footer-left">
             Multi-domain Customs Artificial Intelligent Assistant · GDCE
           </div>
-          <div class="page-number">17</div>
+          <div class="page-number">19</div>
         </footer>
       </section>
 
       <!-- =========================================================
          SLIDE 18 · TRADE QUERY SERVICE PIPELINE
          ========================================================= -->
-      <section class="slide slide--content" data-slide="content">
+      <section
+        id="trade-query-service-pipeline"
+        class="slide slide--content"
+        data-slide="content"
+      >
         <header class="slide-header">
           <div class="brand-mark">
             <div class="brand-mark__icon">▤</div>
@@ -2983,12 +2988,127 @@
           <div class="footer-left">
             Multi-domain Customs Artificial Intelligent Assistant · GDCE
           </div>
-          <div class="page-number">18</div>
+          <div class="page-number">14</div>
         </footer>
       </section>
 
       <!-- =========================================================
          SLIDE 19 · MULTI-TURN CONTEXT (TRADE QUERY)
+         ========================================================= -->
+      <section
+        id="calculator-service-pipeline"
+        class="slide slide--content"
+        data-slide="content"
+      >
+        <header class="slide-header">
+          <div class="brand-mark">
+            <div class="brand-mark__icon">▤</div>
+            <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
+          </div>
+          <div class="slide-title">
+            <span class="slide-title__en">GDCE Calculator Service — Tax Calculation Pipeline</span>
+          </div>
+          <div class="org-mark">GDCE</div>
+        </header>
+        <div class="gold-rule"></div>
+        <div class="slide-body">
+          <div class="slide-content trade-pipeline-slide calculator-pipeline-slide">
+            <div class="trade-pipeline-header">
+              <h2>Question to Compliant Tax Result</h2>
+              <p class="trade-pipeline-subtitle">
+                LLM-assisted intent extraction with deterministic calculation and auditability
+              </p>
+              <div class="calculator-flow" aria-label="Calculator service pipeline flow">
+                <div class="trade-flow-node calculator-flow__node">
+                  <span class="trade-flow-node__icon"><svg class="arch-svg"><use href="#arch-icon-message" /></svg></span>
+                  <span class="trade-flow-node__body"><strong>Question</strong></span>
+                </div>
+                <span class="calculator-flow__arrow" aria-hidden="true">→</span>
+                <div class="trade-flow-node calculator-flow__node">
+                  <span class="trade-flow-node__icon"><svg class="arch-svg"><use href="#arch-icon-spark" /></svg></span>
+                  <span class="trade-flow-node__body"><strong>Intent Extraction</strong></span>
+                </div>
+                <span class="calculator-flow__arrow" aria-hidden="true">→</span>
+                <div class="trade-flow-node calculator-flow__node">
+                  <span class="trade-flow-node__icon"><svg class="arch-svg"><use href="#arch-icon-search" /></svg></span>
+                  <span class="trade-flow-node__body"><strong>Validation &amp; Resolution</strong></span>
+                </div>
+                <span class="calculator-flow__arrow" aria-hidden="true">→</span>
+                <div class="trade-flow-node calculator-flow__node">
+                  <span class="trade-flow-node__icon"><svg class="arch-svg"><use href="#arch-icon-bot" /></svg></span>
+                  <span class="trade-flow-node__body"><strong>Query Orchestration</strong></span>
+                </div>
+                <span class="calculator-flow__arrow" aria-hidden="true">→</span>
+                <div class="trade-flow-node calculator-flow__node">
+                  <span class="trade-flow-node__icon"><svg class="arch-svg"><use href="#arch-icon-calculator" /></svg></span>
+                  <span class="trade-flow-node__body"><strong>Tax Calculation</strong></span>
+                </div>
+                <span class="calculator-flow__arrow" aria-hidden="true">→</span>
+                <div class="trade-flow-node calculator-flow__node">
+                  <span class="trade-flow-node__icon"><svg class="arch-svg"><use href="#arch-icon-tag" /></svg></span>
+                  <span class="trade-flow-node__body"><strong>Rounding &amp; Compliance</strong></span>
+                </div>
+                <span class="calculator-flow__arrow" aria-hidden="true">→</span>
+                <div class="trade-flow-node calculator-flow__node">
+                  <span class="trade-flow-node__icon"><svg class="arch-svg"><use href="#arch-icon-document" /></svg></span>
+                  <span class="trade-flow-node__body"><strong>NLG Response</strong></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="trade-pipeline-grid calculator-pipeline-grid">
+              <article class="trade-pipeline-card">
+                <span class="trade-pipeline-card__icon"><svg class="arch-svg"><use href="#arch-icon-spark" /></svg></span>
+                <h3>Input &amp; Intent Extraction</h3>
+                <p>Accepts structured <code>/calculate_import_taxes</code> or natural language <code>/query</code>; Ollama/Gemini extraction uses deterministic regex fallback.</p>
+              </article>
+              <article class="trade-pipeline-card">
+                <span class="trade-pipeline-card__icon"><svg class="arch-svg"><use href="#arch-icon-search" /></svg></span>
+                <h3>Validation &amp; Resolution</h3>
+                <p>Validates currency, resolves HS codes by exact/prefix/description matching, detects conflicts, and asks for clarification instead of guessing.</p>
+              </article>
+              <article class="trade-pipeline-card">
+                <span class="trade-pipeline-card__icon"><svg class="arch-svg"><use href="#arch-icon-bot" /></svg></span>
+                <h3>Query Orchestration</h3>
+                <p>Coordinates CurrencyHandler, HSCodeHandler, RulesProvider, and FormulaEngine for the correct flow and missing-input handling.</p>
+              </article>
+              <article class="trade-pipeline-card">
+                <span class="trade-pipeline-card__icon"><svg class="arch-svg"><use href="#arch-icon-calculator" /></svg></span>
+                <h3>Tax Calculation</h3>
+                <p>Supports Normal, Petroleum, Rubber Export, FTA/DV, and FTA/DV+DQ cases with duty, special tax, VAT, preferential rates, and deductions.</p>
+              </article>
+              <article class="trade-pipeline-card">
+                <span class="trade-pipeline-card__icon"><svg class="arch-svg"><use href="#arch-icon-database" /></svg></span>
+                <h3>Data &amp; Currency Layer</h3>
+                <p>PostgreSQL stores HS codes, rates, formulas, rules, and audit data; Redis provides exchange rates with database fallback.</p>
+              </article>
+              <article class="trade-pipeline-card">
+                <span class="trade-pipeline-card__icon"><svg class="arch-svg"><use href="#arch-icon-tag" /></svg></span>
+                <h3>Rounding &amp; Compliance</h3>
+                <p>Preserves exchange-rate precision and applies configurable rounding, exemption, policy, and cached dynamic-configuration rules.</p>
+              </article>
+              <article class="trade-pipeline-card trade-pipeline-card--wide">
+                <span class="trade-pipeline-card__icon"><svg class="arch-svg"><use href="#arch-icon-document" /></svg></span>
+                <h3>NLG Response</h3>
+                <p>Returns structured results, explanations, warnings, clarifications, and calculation breakdowns without relying on an LLM for final math.</p>
+              </article>
+              <div class="trade-pipeline-note">
+                <span class="trade-pipeline-note__icon"><svg class="arch-svg"><use href="#arch-icon-fallback" /></svg></span>
+                PostgreSQL + Redis-backed FastAPI microservice with deterministic calculations, graceful fallbacks, validation safeguards, and auditability throughout.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-footer">
+          <div class="footer-left">
+            Multi-domain Customs Artificial Intelligent Assistant · GDCE
+          </div>
+          <div class="page-number">15</div>
+        </footer>
+      </section>
+
+      <!-- =========================================================
+         SLIDE 20 · MULTI-TURN CONTEXT (TRADE QUERY)
          ========================================================= -->
       <section class="slide slide--content" data-slide="content">
         <header class="slide-header">
@@ -3153,7 +3273,7 @@
           <div class="footer-left">
             Multi-domain Customs Artificial Intelligent Assistant · GDCE
           </div>
-          <div class="page-number">19</div>
+          <div class="page-number">20</div>
         </footer>
       </section>
 
@@ -3329,7 +3449,7 @@
           <div class="footer-left">
             Multi-domain Customs Artificial Intelligent Assistant · GDCE
           </div>
-          <div class="page-number">20</div>
+          <div class="page-number">21</div>
         </footer>
       </section>
 
@@ -3499,7 +3619,7 @@
           <div class="footer-left">
             Multi-domain Customs Artificial Intelligent Assistant · GDCE
           </div>
-          <div class="page-number">21</div>
+          <div class="page-number">22</div>
         </footer>
       </section>
 
@@ -3567,7 +3687,7 @@
                 <tr>
                   <th scope="row">Calculation</th>
                   <td>LLM approximates the math</td>
-                  <td>Deterministic formula engine — always accurate</td>
+                  <td>Deterministic formula engine — always list references</td>
                 </tr>
               </tbody>
             </table>
@@ -3577,12 +3697,69 @@
           <div class="footer-left">
             Multi-domain Customs Artificial Intelligent Assistant · GDCE
           </div>
-          <div class="page-number">22</div>
+          <div class="page-number">23</div>
         </footer>
       </section>
 
       <!-- =========================================================
          SLIDE 23 · SECTION 6
+         ========================================================= -->
+      <section class="slide slide--content slide--frontend-ui" data-slide="content">
+        <header class="slide-header">
+          <div class="brand-mark">
+            <div class="brand-mark__icon">▤</div>
+            <div class="brand-mark__text">GDCE<br />CUSTOMS</div>
+          </div>
+          <div class="slide-title">
+            <span class="slide-title__en">Frontend UI</span>
+          </div>
+          <div class="org-mark">GDCE</div>
+        </header>
+        <div class="gold-rule"></div>
+        <div class="slide-body">
+          <div class="slide-content frontend-ui-content">
+            <div class="frontend-ui-intro">
+              <span class="frontend-ui-intro__eyebrow">One assistant, every screen</span>
+              <p>Responsive access to grounded customs guidance across desktop and mobile workflows.</p>
+            </div>
+            <div class="image-pair frontend-ui-pair">
+              <figure class="frontend-ui-frame frontend-ui-frame--desktop">
+                <img src="img/ui_desktop.png" alt="GDCE Customs Assistant desktop interface" />
+                <figcaption>
+                  <span class="frontend-ui-frame__index">01</span>
+                  <span><strong>Desktop workspace</strong><small>Full retrieval context and source panel</small></span>
+                </figcaption>
+              </figure>
+              <figure class="frontend-ui-frame frontend-ui-frame--mobile">
+                <img src="img/ur_mobile.png" alt="GDCE Customs Assistant mobile interface" />
+                <figcaption>
+                  <span class="frontend-ui-frame__index">02</span>
+                  <span><strong>Mobile experience</strong><small>Focused answers on the go</small></span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-footer">
+          <div class="footer-left">
+            Multi-domain Customs Artificial Intelligent Assistant · GDCE
+          </div>
+          <div class="page-number">24</div>
+        </footer>
+      </section>
+
+      <!-- =========================================================
+        SLIDE 24 · DEMONSTRATION
+        ========================================================= -->
+      <section class="slide slide--demonstration" data-slide="content">
+        <div class="demonstration-content">
+         <strong>DEMONSTRATION</strong>
+        </div>
+        <div class="page-number">25</div>
+      </section>
+
+      <!-- =========================================================
+        SLIDE 25 · SECTION 6
          ========================================================= -->
       <section class="slide slide--section" data-slide="section">
         <div class="section-slide-content">
@@ -3593,7 +3770,7 @@
           </p>
           <div class="section-slide__line"></div>
         </div>
-        <div class="page-number">23</div>
+          <div class="page-number">26</div>
       </section>
 
       <!-- =========================================================
@@ -3723,7 +3900,7 @@
           <div class="footer-left">
             Multi-domain Customs Artificial Intelligent Assistant · GDCE
           </div>
-          <div class="page-number">24</div>
+          <div class="page-number">27</div>
         </footer>
       </section>
 
@@ -3740,9 +3917,22 @@
             Department of Customs and Excise of Cambodia
           </p>
         </div>
-        <div class="page-number">25</div>
+        <div class="page-number">28</div>
       </section>
     </main>
+
+    <script>
+      (function () {
+        var deck = document.querySelector(".deck");
+        var hsCodeSlide = document.getElementById("hs-code-end-to-end-pipeline");
+        var tradeSlide = document.getElementById("trade-query-service-pipeline");
+        var calculatorSlide = document.getElementById("calculator-service-pipeline");
+        if (deck && hsCodeSlide && tradeSlide && calculatorSlide) {
+          deck.insertBefore(tradeSlide, hsCodeSlide.nextElementSibling);
+          deck.insertBefore(calculatorSlide, tradeSlide.nextElementSibling);
+        }
+      })();
+    </script>
 
     <!-- Presentation mode: one slide at a time, full screen (Ctrl+F) -->
     <div class="presenter" id="presenter" hidden>
@@ -3763,7 +3953,7 @@
       >
         ›
       </button>
-      <div class="presenter__counter" id="presenterCounter">1 / 54</div>
+      <div class="presenter__counter" id="presenterCounter">1 / 28</div>
       <button class="presenter__close" id="presenterClose" title="Exit (Esc)">
         ✕
       </button>
