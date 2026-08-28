@@ -918,18 +918,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function frontendAgenda() {
     var items = [
-      ["01", "Introduction & Problem Statement", "#073d52"],
-      ["02", "Project Objectives, Scope & Deliverables", "#0e7490"],
-      ["03", "Development Methodology & Technology Stack", "#2e7d5b"],
-      ["04", "System Architecture & Frontend Design", "#b08d57"],
-      ["05", "Core Modules, Backend Services & API Integration", "#7e57c2"],
-      ["06", "System Implementation, Security & Testing", "#c25e3a"],
-      ["07", "Results, Limitations & Evaluation", "#3b6fb6"],
-      ["08", "Conclusion & Future Roadmap", "#8f6b2e"],
+      ["01", "Introduction & Problem Statement", "#073d52", 3],
+      ["02", "Project Objectives, Scope & Deliverables", "#0e7490", 6],
+      ["03", "Development Methodology & Technology Stack", "#2e7d5b", 9],
+      ["04", "System Architecture & Frontend Design", "#b08d57", 14],
+      ["05", "Core Modules, Backend Services & API Integration", "#7e57c2", 17],
+      ["06", "System Implementation, Security & Testing", "#c25e3a", 23],
+      ["07", "Results, Limitations & Evaluation", "#3b6fb6", 26],
+      ["08", "Conclusion & Future Roadmap", "#8f6b2e", 29],
     ];
     return `<section class="slide slide--content slide--agenda frontend-agenda" data-slide="content"><header class="slide-header"><div class="brand-mark" aria-label="GDCE"><div class="brand-mark__icon">▤</div><div class="brand-mark__text">GDCE<br>CUSTOMS</div></div><div class="slide-title"><span class="slide-title__en">Customs Assistant System · Agenda</span></div><div class="org-mark" aria-label="GDCE logo">GDCE</div></header><div class="gold-rule"></div><div class="slide-body"><div class="slide-content"><div class="agenda-modern">${items
       .map(function (item) {
-        return `<article class="agenda-modern__item" style="--agenda-color: ${item[2]}"><span>${item[0]}</span><h2>${item[1]}</h2></article>`;
+        return `<article class="agenda-modern__item" style="--agenda-color: ${item[2]}"><span>${item[0]}</span><h2>${item[1]}</h2><small>SLIDE ${item[3]}</small></article>`;
       })
       .join(
         "",
@@ -1052,6 +1052,8 @@ document.addEventListener("DOMContentLoaded", function () {
   slides.push(frontendIntroduction());
   slides.push(frontendProblemStatement());
 
+  slides.push(section("02", "Project Objectives, Scope & Deliverables", 0));
+
   slides.push(
     objectiveCards(
       "Project Objectives",
@@ -1125,7 +1127,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ),
   );
 
-  slides.push(section("02", "Methodology & Technology Stack", 0));
+  slides.push(section("03", "Development Methodology & Technology Stack", 0));
 
   slides.push(
     methodology(
@@ -1296,7 +1298,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ),
   );
 
-  slides.push(section("04", "Frontend Architecture & Design", 0));
+  slides.push(section("04", "System Architecture & Frontend Design", 0));
 
   slides.push(
     frame(
@@ -1348,7 +1350,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   slides.push(frontendBestPractices());
 
-  slides.push(section("06", "System Implementation & Testing", 0));
+  slides.push(section("06", "System Implementation, Security & Testing", 0));
 
   slides.push(systemImplementation());
 
@@ -1369,11 +1371,14 @@ document.addEventListener("DOMContentLoaded", function () {
   slides.push(conclusion());
 
   slides.push(
+    `<section class="slide slide--title frontend-thank-you" data-slide="title"><div class="title-slide-content"><img class="title-slide__logo" src="img/web/gdce-logo.png" alt="GDCE logo"><h1>Thank You</h1><p class="title-slide__sub">Questions &amp; Discussion</p><p class="title-slide__org">General Department of Customs and Excise of Cambodia</p></div><div class="page-number">0</div></section>`,
+  );
+
+  slides.push(
     `<section class="slide slide--content demo-slide" data-slide="content"><header class="slide-header"><div class="brand-mark" aria-label="GDCE"><div class="brand-mark__icon">▤</div></div><div class="slide-title"><span class="slide-title__en">Demonstration</span></div><div class="org-mark" aria-label="GDCE logo">GDCE</div></header><div class="gold-rule"></div><div class="slide-body"><div class="slide-content demo-slide__content"><h2>GDCE AI Assistant Frontend Demo</h2><video controls playsinline preload="metadata" aria-label="GDCE AI Assistant Frontend demonstration video"><source src="video/web/customs-chatbot-demo-edited.mp4" type="video/mp4">Your browser does not support HTML video.</video></div></div><footer class="slide-footer"><div class="footer-left">General Department of Customs and Excise of Cambodia</div><div class="page-number">30</div></footer></section>`,
   );
 
-  var closingSlide = document.getElementById("closing-slide");
   var markup = slides.join("").replace(/src="img\/(?!web\/)/g, 'src="img/web/');
-  if (closingSlide) closingSlide.insertAdjacentHTML("beforebegin", markup);
-  else deck.insertAdjacentHTML("beforeend", markup);
+  deck.replaceChildren();
+  deck.insertAdjacentHTML("beforeend", markup);
 });
