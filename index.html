@@ -4504,18 +4504,18 @@
         var prevBtn = document.getElementById("presenterPrev");
         var nextBtn = document.getElementById("presenterNext");
         var closeBtn = document.getElementById("presenterClose");
-        var slides = Array.prototype.slice.call(
-          document.querySelectorAll(".deck .slide"),
-        );
+        var slides = [];
         var index = 0;
-        var built = false;
 
         function buildTrack() {
-          if (built || !track) return;
+          if (!track) return;
+          slides = Array.prototype.slice.call(
+            document.querySelectorAll(".deck .slide"),
+          );
+          track.replaceChildren();
           slides.forEach(function (slide) {
             track.appendChild(slide.cloneNode(true));
           });
-          built = true;
           if (window.initZoomPanels) window.initZoomPanels();
         }
 
