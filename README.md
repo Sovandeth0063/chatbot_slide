@@ -69,11 +69,39 @@ For PDF, use browser print-to-PDF with backgrounds enabled.
 
 For PNG, use a screenshot of each `.slide` element at 1600 × 900.
 
-## File structure
+## Workspace structure
 
 ```text
-technical_slide_template/
-├── index.html
-├── styles.css
-└── README.md
+gdce-chatbot/
+├── gdce-chatbot-slide/        # Active combined presentation
+│   ├── index.html             # Services deck + inserted frontend section
+│   ├── services-slides.css    # Shared GDCE/services design system
+│   ├── frontend-slides.css    # Original frontend slide layouts/components
+│   ├── frontend-slides.js     # Frontend cover, agenda, sections, and slides
+│   ├── img/
+│   │   ├── services/          # Services images and technology-stack logos
+│   │   └── web/               # Frontend images and technology-stack logos
+│   └── video/
+│       ├── services/          # Services demonstration media
+│       └── web/               # Frontend demonstration media
+└── chatbot_slide-main/        # Original frontend deck kept only as a reference
+```
+
+Only `gdce-chatbot-slide/index.html` is the delivered, combined presentation.
+`chatbot_slide-main` is not loaded or required when presenting the combined deck.
+
+## Active presentation structure
+
+```text
+gdce-chatbot-slide/
+├── index.html                 # Combined services + frontend presentation
+├── services-slides.css        # Shared GDCE/services presentation design
+├── frontend-slides.css        # Frontend-specific slide components
+├── frontend-slides.js         # Frontend section inserted before the closing slide
+├── img/
+│   ├── services/              # Services images and technology-stack logos
+│   └── web/                   # Frontend images and technology-stack logos
+└── video/
+    ├── services/              # Services demonstration media
+    └── web/                   # Frontend demonstration media
 ```
