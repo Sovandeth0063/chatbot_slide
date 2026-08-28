@@ -594,7 +594,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return `<article class="architecture-stage architecture-stage--${index + 1}"><figure class="architecture-stage__art" style="--x:${x}%; --y:${y}%"><img src="img/chat-interaction-flow-illustrations.png" alt="${item[0]} illustration"></figure><div class="architecture-stage__content"><span>${String(index + 1).padStart(2, "0")}</span><h3>${item[0]}</h3></div><p>${item[1]}</p></article>`;
       })
       .join("");
-    return `<section class="architecture-diagram" aria-label="Chat interaction flow roadmap">${route}${stages}</section>`;
+    return `<section class="frontend-architecture-diagram" aria-label="Chat interaction flow roadmap">${route}${stages}</section>`;
   }
 
   function benchmarkChart(rows) {
@@ -667,7 +667,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Renders final text, tables, charts, and references.",
       ],
     ];
-    return `<section class="architecture-diagram" aria-label="Frontend architecture roadmap"><svg class="architecture-roadmap__route" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true"><path class="architecture-roadmap__base" d="M150 135 H1080 Q1125 135 1125 180 V340 Q1125 385 1080 385 H150"></path><path class="architecture-roadmap__accent" d="M150 135 H1080 Q1125 135 1125 180 V340 Q1125 385 1080 385 H150"></path><g class="architecture-roadmap__arrows"><path d="M284 124 306 135 284 146 291 135Z"></path><path d="M584 124 606 135 584 146 591 135Z"></path><path d="M884 124 906 135 884 146 891 135Z"></path><path d="M1114 252 1125 274 1136 252 1125 259Z"></path><path d="M916 374 894 385 916 396 909 385Z"></path><path d="M616 374 594 385 616 396 609 385Z"></path><path d="M316 374 294 385 316 396 309 385Z"></path></g></svg>${stages
+    return `<section class="frontend-architecture-diagram" aria-label="Frontend architecture roadmap"><svg class="architecture-roadmap__route" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true"><path class="architecture-roadmap__base" d="M150 135 H1080 Q1125 135 1125 180 V340 Q1125 385 1080 385 H150"></path><path class="architecture-roadmap__accent" d="M150 135 H1080 Q1125 135 1125 180 V340 Q1125 385 1080 385 H150"></path><g class="architecture-roadmap__arrows"><path d="M284 124 306 135 284 146 291 135Z"></path><path d="M584 124 606 135 584 146 591 135Z"></path><path d="M884 124 906 135 884 146 891 135Z"></path><path d="M1114 252 1125 274 1136 252 1125 259Z"></path><path d="M916 374 894 385 916 396 909 385Z"></path><path d="M616 374 594 385 616 396 609 385Z"></path><path d="M316 374 294 385 316 396 909 385Z"></path></g></svg>${stages
       .map(function (stage, index) {
         var x = (index % 4) * -25;
         var y = index < 4 ? 0 : -50;
@@ -918,18 +918,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function frontendAgenda() {
     var items = [
-      ["01", "Introduction & Problem Statement", "#073d52", 3],
-      ["02", "Project Objectives, Scope & Deliverables", "#0e7490", 6],
-      ["03", "Development Methodology & Technology Stack", "#2e7d5b", 9],
-      ["04", "System Architecture & Frontend Design", "#b08d57", 14],
-      ["05", "Core Modules, Backend Services & API Integration", "#7e57c2", 17],
-      ["06", "System Implementation, Security & Testing", "#c25e3a", 23],
-      ["07", "Results, Limitations & Evaluation", "#3b6fb6", 26],
-      ["08", "Conclusion & Future Roadmap", "#8f6b2e", 29],
+      ["01", "Introduction & Problem Statement", "#073d52"],
+      ["02", "Project Objectives, Scope & Deliverables", "#0e7490"],
+      ["03", "Development Methodology & Technology Stack", "#2e7d5b"],
+      ["04", "System Architecture & Frontend Design", "#b08d57"],
+      ["05", "Core Modules, Backend Services & API Integration", "#7e57c2"],
+      ["06", "System Implementation, Security & Testing", "#c25e3a"],
+      ["07", "Results, Limitations & Evaluation", "#3b6fb6"],
+      ["08", "Conclusion & Future Roadmap", "#8f6b2e"],
     ];
     return `<section class="slide slide--content slide--agenda frontend-agenda" data-slide="content"><header class="slide-header"><div class="brand-mark" aria-label="GDCE"><div class="brand-mark__icon">▤</div><div class="brand-mark__text">GDCE<br>CUSTOMS</div></div><div class="slide-title"><span class="slide-title__en">Customs Assistant System · Agenda</span></div><div class="org-mark" aria-label="GDCE logo">GDCE</div></header><div class="gold-rule"></div><div class="slide-body"><div class="slide-content"><div class="agenda-modern">${items
       .map(function (item) {
-        return `<article class="agenda-modern__item" style="--agenda-color: ${item[2]}"><span>${item[0]}</span><h2>${item[1]}</h2><small>SLIDE ${item[3]}</small></article>`;
+        return `<article class="agenda-modern__item" style="--agenda-color: ${item[2]}"><span>${item[0]}</span><h2>${item[1]}</h2></article>`;
       })
       .join(
         "",
@@ -1378,7 +1378,10 @@ document.addEventListener("DOMContentLoaded", function () {
     `<section class="slide slide--content demo-slide" data-slide="content"><header class="slide-header"><div class="brand-mark" aria-label="GDCE"><div class="brand-mark__icon">▤</div></div><div class="slide-title"><span class="slide-title__en">Demonstration</span></div><div class="org-mark" aria-label="GDCE logo">GDCE</div></header><div class="gold-rule"></div><div class="slide-body"><div class="slide-content demo-slide__content"><h2>GDCE AI Assistant Frontend Demo</h2><video controls playsinline preload="metadata" aria-label="GDCE AI Assistant Frontend demonstration video"><source src="video/web/customs-chatbot-demo-edited.mp4" type="video/mp4">Your browser does not support HTML video.</video></div></div><footer class="slide-footer"><div class="footer-left">General Department of Customs and Excise of Cambodia</div><div class="page-number">30</div></footer></section>`,
   );
 
-  var markup = slides.join("").replace(/src="img\/(?!web\/)/g, 'src="img/web/');
-  deck.replaceChildren();
+  var markup = slides
+    .join("")
+    .replace(/src="img\/(?!web\/)/g, 'src="img/web/')
+    .replace("M316 374 294 385 316 396 909 385Z", "M316 374 294 385 316 396 309 385Z");
   deck.insertAdjacentHTML("beforeend", markup);
+
 });

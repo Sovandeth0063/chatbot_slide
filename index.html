@@ -1542,59 +1542,43 @@
         <div class="gold-rule"></div>
         <div class="slide-body">
           <div class="slide-content slide-content--stack-overview">
-            <table class="stack-overview-table">
-              <thead>
-                <tr>
-                  <th>Layer</th>
-                  <th>Technology</th>
-                  <th>Role</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Backend</td>
-                  <td>Python 3.11&ndash;3.13, FastAPI, Uvicorn, Pydantic</td>
-                  <td>API control plane, validation, orchestration</td>
-                </tr>
-                <tr>
-                  <td>AI / NLU</td>
-                  <td>Google Gemini, Sentence Transformers, PyTorch</td>
-                  <td>
-                    Language understanding, generation, embedding workflows
-                  </td>
-                </tr>
-                <tr>
-                  <td>RAG / Search</td>
-                  <td>Qdrant, dense embeddings, semantic retrieval</td>
-                  <td>Grounded search across official customs knowledge</td>
-                </tr>
-                <tr>
-                  <td>Data</td>
-                  <td>PostgreSQL + Alembic, Redis</td>
-                  <td>Authoritative state, migrations, caching</td>
-                </tr>
-                <tr>
-                  <td>Integration</td>
-                  <td>httpx / aiohttp, RabbitMQ, MinIO</td>
-                  <td>HTTP services, messaging, object storage</td>
-                </tr>
-                <tr>
-                  <td>Deployment</td>
-                  <td>Docker, Docker Compose, isolated service networks</td>
-                  <td>
-                    Environment-based configuration and sovereign deployment
-                  </td>
-                </tr>
-                <tr>
-                  <td>Quality</td>
-                  <td>
-                    Pytest, pytest-asyncio, Ruff / Black / Flake8, mypy,
-                    Prometheus
-                  </td>
-                  <td>Testing, formatting, typing, and operational metrics</td>
-                </tr>
-              </tbody>
-            </table>
+            <section class="stack-overview-grid" aria-label="Services technology stack">
+              <article class="stack-overview-card stack-overview-card--backend">
+                <div class="stack-overview-card__tags"><b>BACKEND</b></div>
+                <div class="stack-overview-card__identity"><div class="stack-overview-card__logos"><img src="https://cdn.simpleicons.org/python" alt="Python" /><img src="https://cdn.simpleicons.org/fastapi" alt="FastAPI" /><img src="https://cdn.simpleicons.org/pydantic" alt="Pydantic" /></div><div><h3>Backend</h3><small>Python 3.11&ndash;3.13, FastAPI, Uvicorn, Pydantic</small></div></div>
+                <p>API control plane, validation, orchestration</p>
+              </article>
+              <article class="stack-overview-card stack-overview-card--ai">
+                <div class="stack-overview-card__tags"><b>AI / NLU</b></div>
+                <div class="stack-overview-card__identity"><div class="stack-overview-card__logos"><img src="https://cdn.simpleicons.org/googlegemini" alt="Google Gemini" /><img src="https://cdn.simpleicons.org/huggingface" alt="Hugging Face" /><img src="https://cdn.simpleicons.org/pytorch" alt="PyTorch" /></div><div><h3>AI / NLU</h3><small>Google Gemini, Sentence Transformers, PyTorch</small></div></div>
+                <p>Language understanding, generation, embedding workflows</p>
+              </article>
+              <article class="stack-overview-card stack-overview-card--rag">
+                <div class="stack-overview-card__tags"><b>RAG / SEARCH</b></div>
+                <div class="stack-overview-card__identity"><div class="stack-overview-card__logos"><img src="https://cdn.simpleicons.org/qdrant" alt="Qdrant" /></div><div><h3>RAG / Search</h3><small>Qdrant, dense embeddings, semantic retrieval</small></div></div>
+                <p>Grounded search across official customs knowledge</p>
+              </article>
+              <article class="stack-overview-card stack-overview-card--data">
+                <div class="stack-overview-card__tags"><b>DATA</b></div>
+                <div class="stack-overview-card__identity"><div class="stack-overview-card__logos"><img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL" /><img src="https://cdn.simpleicons.org/redis" alt="Redis" /></div><div><h3>Data</h3><small>PostgreSQL + Alembic, Redis</small></div></div>
+                <p>Authoritative state, migrations, caching</p>
+              </article>
+              <article class="stack-overview-card stack-overview-card--integration">
+                <div class="stack-overview-card__tags"><b>INTEGRATION</b></div>
+                <div class="stack-overview-card__identity"><div class="stack-overview-card__logos"><img src="https://cdn.simpleicons.org/rabbitmq" alt="RabbitMQ" /><img src="https://cdn.simpleicons.org/minio" alt="MinIO" /></div><div><h3>Integration</h3><small>httpx / aiohttp, RabbitMQ, MinIO</small></div></div>
+                <p>HTTP services, messaging, object storage</p>
+              </article>
+              <article class="stack-overview-card stack-overview-card--deployment">
+                <div class="stack-overview-card__tags"><b>DEPLOYMENT</b></div>
+                <div class="stack-overview-card__identity"><div class="stack-overview-card__logos"><img src="https://cdn.simpleicons.org/docker" alt="Docker" /></div><div><h3>Deployment</h3><small>Docker, Docker Compose, isolated service networks</small></div></div>
+                <p>Environment-based configuration and sovereign deployment</p>
+              </article>
+              <article class="stack-overview-card stack-overview-card--quality">
+                <div class="stack-overview-card__tags"><b>QUALITY</b></div>
+                <div class="stack-overview-card__identity"><div class="stack-overview-card__logos"><img src="https://cdn.simpleicons.org/pytest" alt="Pytest" /><img src="https://cdn.simpleicons.org/ruff" alt="Ruff" /><img src="https://cdn.simpleicons.org/black" alt="Black" /><img src="https://cdn.simpleicons.org/prometheus" alt="Prometheus" /></div><div><h3>Quality</h3><small>Pytest, pytest-asyncio, Ruff / Black / Flake8, mypy, Prometheus</small></div></div>
+                <p>Testing, formatting, typing, and operational metrics</p>
+              </article>
+            </section>
           </div>
         </div>
         <footer class="slide-footer">
@@ -4140,7 +4124,7 @@
             <div class="image-pair frontend-ui-pair">
               <figure class="frontend-ui-frame frontend-ui-frame--desktop">
                 <img
-                  src="img/services/ui_desktop.png"
+                  src="img/web/ui-desktop.png"
                   alt="GDCE Customs Assistant desktop interface"
                 />
                 <figcaption>
@@ -4155,7 +4139,7 @@
               </figure>
               <figure class="frontend-ui-frame frontend-ui-frame--mobile">
                 <img
-                  src="img/services/ur_mobile.png"
+                  src="img/web/ui-mobile-transparent.png"
                   alt="GDCE Customs Assistant mobile interface"
                 />
                 <figcaption>

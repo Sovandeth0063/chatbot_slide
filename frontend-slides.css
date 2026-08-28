@@ -2101,7 +2101,7 @@
   font-style: normal;
   text-align: center;
 }
-.architecture-diagram {
+.frontend-architecture-diagram {
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: 28px;
@@ -2245,7 +2245,7 @@
 .architecture-stage--8 i {
   background: #86aee9;
 }
-.architecture-diagram {
+.frontend-architecture-diagram {
   position: relative;
   height: 500px;
   min-height: 0;
@@ -2372,7 +2372,7 @@
 .architecture-stage p {
   display: none;
 }
-.architecture-diagram {
+.frontend-architecture-diagram {
   height: 500px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-rows: repeat(2, 1fr);

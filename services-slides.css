@@ -2327,6 +2327,140 @@ code {
   font-weight: 800;
 }
 
+.stack-overview-tech {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+
+.stack-overview-tech__logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 118px;
+}
+
+.stack-overview-tech__logos img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.slide-body--stack-overview {
+  padding: 22px 50px 14px;
+}
+
+.stack-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 290px;
+  gap: 16px;
+  max-width: 1480px;
+  min-height: 596px;
+  margin: 0 auto;
+  align-content: center;
+}
+
+.stack-overview-card {
+  min-height: 0;
+  padding: 23px 25px;
+  border: 1px solid #d9e3ed;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 8px 20px rgba(7, 61, 82, 0.07);
+}
+
+.stack-overview-card__tags {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 32px;
+}
+
+.stack-overview-card__tags b,
+.stack-overview-card__tags span {
+  padding: 5px 11px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.stack-overview-card__tags b {
+  color: #075a73;
+  background: #c7f2e1;
+}
+
+.stack-overview-card__tags span {
+  color: #526783;
+  background: #eef3f9;
+}
+
+.stack-overview-card--backend .stack-overview-card__tags b { color: #a44d00; background: #fff0bf; }
+.stack-overview-card--ai .stack-overview-card__tags b { color: #6136c8; background: #eadcff; }
+.stack-overview-card--rag .stack-overview-card__tags b { color: #00716c; background: #c5f5eb; }
+.stack-overview-card--data .stack-overview-card__tags b { color: #1763a6; background: #d6eaff; }
+.stack-overview-card--integration .stack-overview-card__tags b { color: #a14c21; background: #ffead8; }
+.stack-overview-card--deployment .stack-overview-card__tags b { color: #136db2; background: #d8efff; }
+.stack-overview-card--quality .stack-overview-card__tags b { color: #466d00; background: #e5f8b9; }
+
+.stack-overview-card__identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 116px;
+  margin: 17px 0;
+}
+
+.stack-overview-card__logos {
+  display: flex;
+  flex: 0 0 96px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 96px;
+  min-height: 96px;
+  padding: 6px;
+  border: 1px solid #dce5ef;
+  border-radius: 13px;
+  background: #f8fafc;
+}
+
+.stack-overview-card__logos img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.stack-overview-card__identity h3 {
+  margin: 0 0 4px;
+  color: var(--navy);
+  font-size: 27px;
+  line-height: 1.12;
+}
+
+.stack-overview-card__identity small {
+  display: block;
+  color: #527096;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.stack-overview-card p {
+  margin: 0;
+  color: #274767;
+  font-size: 19px;
+  line-height: 1.38;
+}
+
+.stack-overview-card p strong { color: #0a2f51; }
+
+.stack-overview-card--quality { grid-column: span 2; }
+
 /* Architecture high-level visual */
 .slide-body--architecture-visual,
 .slide-body--system-pipeline {
@@ -4964,8 +5098,8 @@ code {
   grid-template-columns: minmax(0, 1fr) repeat(6, 28px minmax(0, 1fr));
   align-items: center;
   gap: 8px;
-  min-height: 104px;
-  padding: 12px 18px;
+  min-height: 118px;
+  padding: 14px 18px;
   border: 1.2px solid rgba(107, 157, 231, 0.62);
   border-radius: 10px;
   background:
@@ -4981,19 +5115,19 @@ code {
 }
 
 .calculator-flow__node {
-  min-height: 70px;
-  padding: 8px 10px;
-  font-size: 12px;
+  min-height: 82px;
+  padding: 10px 12px;
+  font-size: 14px;
 }
 
 .calculator-flow__node .trade-flow-node__icon {
-  width: 32px;
-  height: 32px;
-  font-size: 18px;
+  width: 38px;
+  height: 38px;
+  font-size: 21px;
 }
 
 .calculator-flow__node .trade-flow-node__body strong {
-  font-size: 12.5px;
+  font-size: 14px;
 }
 
 .calculator-flow__arrow {
@@ -5024,7 +5158,11 @@ code {
 }
 
 .calculator-pipeline-slide .trade-pipeline-header h2 {
-  font-size: 31px;
+  font-size: 38px;
+}
+
+.calculator-pipeline-slide .trade-pipeline-subtitle {
+  font-size: 19px;
 }
 
 .calculator-pipeline-slide .trade-pipeline-grid {
@@ -5032,8 +5170,126 @@ code {
 }
 
 .calculator-pipeline-slide .trade-pipeline-card p {
-  font-size: 12.2px;
-  line-height: 1.22;
+  font-size: 14px;
+  line-height: 1.32;
+}
+
+.calculator-pipeline-slide .trade-pipeline-card h3 {
+  font-size: 18px;
+}
+
+#trade-query-service-pipeline .trade-pipeline-header h2 {
+  font-size: 38px;
+}
+
+#trade-query-service-pipeline .trade-pipeline-subtitle {
+  font-size: 19px;
+}
+
+#trade-query-service-pipeline .trade-flow-diagram {
+  height: 202px;
+}
+
+#trade-query-service-pipeline .trade-flow-node {
+  min-height: 72px;
+  font-size: 15px;
+}
+
+#trade-query-service-pipeline .trade-flow-node__icon {
+  width: 40px;
+  height: 40px;
+  font-size: 23px;
+}
+
+#trade-query-service-pipeline .trade-flow-node__body strong {
+  font-size: 16px;
+}
+
+#trade-query-service-pipeline .trade-pipeline-card h3 {
+  font-size: 18px;
+}
+
+#trade-query-service-pipeline .trade-pipeline-card p {
+  font-size: 14px;
+  line-height: 1.32;
+}
+
+#trade-query-service-pipeline .trade-pipeline-note {
+  font-size: 17px;
+}
+
+#general-retrieval-architecture .retrieval-architecture__title {
+  font-size: 38px;
+}
+
+#general-retrieval-architecture .retrieval-architecture__node h3 {
+  font-size: 25px;
+}
+
+#general-retrieval-architecture .retrieval-architecture__service-layer > h2 {
+  font-size: 19px;
+}
+
+#general-retrieval-architecture .retrieval-architecture__service-card h3 {
+  font-size: 25px;
+}
+
+#general-retrieval-architecture .retrieval-architecture__service-card p {
+  font-size: 16px;
+}
+
+#general-retrieval-architecture .retrieval-architecture__dependency h3 {
+  font-size: 23px;
+}
+
+#general-retrieval-architecture .retrieval-architecture__dependency p {
+  font-size: 15px;
+}
+
+#general-retrieval-architecture .retrieval-architecture__details > div {
+  font-size: 15.5px;
+  line-height: 1.34;
+}
+
+#general-retrieval-architecture .retrieval-architecture__details > div::before {
+  font-size: 13px;
+}
+
+#hs-code-retrieval-architecture .retrieval-architecture__title {
+  font-size: 38px;
+}
+
+#hs-code-retrieval-architecture .retrieval-architecture__node h3 {
+  font-size: 25px;
+}
+
+#hs-code-retrieval-architecture .retrieval-architecture__service-layer > h2 {
+  font-size: 19px;
+}
+
+#hs-code-retrieval-architecture .retrieval-architecture__service-card h3 {
+  font-size: 25px;
+}
+
+#hs-code-retrieval-architecture .retrieval-architecture__service-card p {
+  font-size: 16px;
+}
+
+#hs-code-retrieval-architecture .retrieval-architecture__dependency h3 {
+  font-size: 23px;
+}
+
+#hs-code-retrieval-architecture .retrieval-architecture__dependency p {
+  font-size: 15px;
+}
+
+#hs-code-retrieval-architecture .retrieval-architecture__details > div {
+  font-size: 15.5px;
+  line-height: 1.34;
+}
+
+#hs-code-retrieval-architecture .retrieval-architecture__details > div::before {
+  font-size: 13px;
 }
 
 /* Zoomable evidence panels (xaringan scroll-box style) */
